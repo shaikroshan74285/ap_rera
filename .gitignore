@@ -1,3 +1,7 @@
+!FRONTEND/**
+!BACKEND/**
+
+
 # Logs
 logs
 *.log
