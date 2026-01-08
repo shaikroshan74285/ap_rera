@@ -1,0 +1,112 @@
+/* Page Container */
+.page-container {
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;            /* ⭐ centers entire content */
+  padding: 8px 12px;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  background-color: #0b87e7;
+  color: #fff;
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+.breadcrumb a {
+  color: #fff;
+  text-decoration: underline;
+  margin: 0 3px;
+}
+
+.breadcrumb span {
+  font-weight: bold;
+  margin-left: 3px;
+}
+
+/* Title */
+.title-section {
+  margin: 12px 0 6px;
+}
+
+.title-section h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.title-underline {
+  width: 40px;
+  height: 3px;
+  background-color: #0b87e7;
+  margin-top: 4px;
+}
+
+/* Table Wrapper */
+.table-wrapper {
+  margin: 10px auto;         /* ⭐ keeps table centered */
+  border: 1px solid #000;
+}
+
+/* Table */
+.manual-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+/* Header */
+.manual-table th {
+  background-color: #344f63;
+  color: #fff;
+  padding: 8px;
+  font-size: 13px;
+  border-right: 1px solid #fff;
+}
+
+/* Column widths */
+.blank-header {
+  width: 200px;
+}
+
+.manual-table th:nth-child(2) {
+  width: calc(100% - 300px);
+}
+
+.download-header {
+  width: 100px;
+  text-align: center;
+}
+
+/* Table cells */
+.manual-table td {
+  padding: 7px 10px;
+  font-size: 13px;
+  border-bottom: 1px solid #dcdcdc;
+  border-right: 1px solid #dcdcdc;
+}
+
+/* Category column */
+.category {
+  background-color: #3f6f8e;
+  color: #fff;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+/* Download column */
+.download {
+  text-align: center;
+}
+
+.icon {
+  color: #0b87e7;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Remove last borders */
+.manual-table tr td:last-child,
+.manual-table tr th:last-child {
+  border-right: none;
+}

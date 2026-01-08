@@ -1,6 +1,11 @@
 import "../styles/navbar.css";
+import { useNavigate } from "react-router-dom";
+import OfficeorderPdf from "../assets/Officeorder.pdf";
+import CAUSELISTPdf from "../assets/CAuselist.pdf";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       {/* Top Header */}
@@ -15,16 +20,133 @@ const Navbar = () => {
 
       {/* Main Navbar */}
       <nav className="navbar">
-        <ul>
+        <ul className="nav-list">
           <li>HOME</li>
-          <li>ABOUT US</li>
-          <li>APREAT</li>
-          <li>NOTIFICATIONS</li>
-          <li>REGISTRATION</li>
-          <li>REPORTS</li>
-          <li>REGISTERED</li>
-          <li className="highlight">JUDGEMENTS / ORDERS</li>
-          <li>KNOWLEDGE HUB</li>
+
+          {/* ABOUT US DROPDOWN */}
+          <li className="dropdown">ABOUT US <span className="arrow">▾</span>
+
+            <ul className="dropdown-menu">
+              <li>What is APRERA</li>
+              <li>Organogram</li>
+              <li>Our Services</li>
+              <li onClick={() => navigate("/recruitment")}>Recruitment</li>
+              
+              <li onClick={() => navigate("/rti")}>Rti</li>
+              <li>Recruitment</li>
+              <li>RTI</li>
+              <li>Our Leadership</li>
+              <li>Contact Us</li>
+            </ul>
+          </li>
+
+          {/* <li>APREAT</li> */}
+          <li onClick={() => navigate("/apreat")}>APREAT</li>
+          <li className="dropdown">NOTIFICATIONS <span className="arrow">▾</span>
+            <ul className="dropdown-menu">
+              <li>GOI Notifications</li>
+              <li>GOAP Notifications</li>
+              <li>Authority Notificatoins</li>
+            <li onClick={() => navigate("/cidcandaprerajoint")}>
+  CIDC and APRERA Joint Notifications
+</li>
+
+<li>
+                <a
+    href={CAUSELISTPdf}
+    target="_blank" 
+    rel="noopener noreferrer"
+    style={{ textDecoration: "none", color: "inherit" }}
+  >
+    Complaints: Cause List Motion Hearing Before Adjudicating Officer
+  </a>
+</li>
+              <li>
+  <a
+    href={OfficeorderPdf}
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{ textDecoration: "none", color: "inherit" }}
+  >
+    Office Order
+  </a>
+</li>
+            </ul>
+          </li>
+{/* REGISTRATION */}
+          <li className="dropdown">
+            REGISTRATION <span className="arrow">▾</span>
+            <ul className="dropdown-menu">
+              <li onClick={() => navigate("/promotregistration")}>
+                Promoter Registration
+              </li>
+              <li onClick={() => navigate("/guidelinesRegistration")}>
+                Guidelines for Registration
+              </li>
+              <li onClick={() => navigate("/project-registration")}>
+                Project Registration
+              </li>
+              <li onClick={() => navigate("/agent-registration")}>
+                Agent Registration
+              </li>
+              <li onClick={() => navigate("/complaintRegistration")}>
+                Complaint Registration
+              </li>
+              <li onClick={() => navigate("/feecalculater")}>
+                Fee Calculator
+              </li>
+              <li onClick={() => navigate("/usermanual")}>
+                User Manuals
+              </li>
+              <li onClick={() => navigate("/forms-download")}>
+                Forms Download
+              </li>
+              <li onClick={() => navigate("/videoTutorial")}>
+                Video Tutorials
+              </li>
+              <li onClick={() => navigate("/mobileapp")}>
+                Mobile App
+              </li>
+            </ul>
+          </li>
+          <li className="dropdown">REPORTS <span className="arrow">▾</span>
+            <ul className="dropdown-menu">
+              <li>Statistics</li>
+              <li>MIS reports</li>
+              <li>GIS reports</li>
+            </ul>
+          </li>
+          <li className="dropdown">REGISTERED <span className="arrow">▾</span>
+            <ul className="dropdown-menu">
+              <li>Projects</li>
+              <li>Agents</li>
+            </ul>
+          </li>
+          <li className="dropdown">JUDGEMENTS/ORDERS <span className="arrow">▾</span>
+            <ul className="dropdown-menu">
+              <li>Complaint Orders</li>
+            </ul>
+          </li>
+          <li className="dropdown">KNOWLEDGE HUB <span className="arrow">▾</span>
+            <ul className="dropdown-menu">
+              <li>Evolution of RERA</li>
+              <li>RACE</li>
+              <li>Task Vs Time</li>
+              <li>Chronology of Events</li>
+              <li>APRERA Presentation</li>
+              <li>Judgement</li>
+              <li>Vendor Database</li>
+              <li>Advertisement Guidelines</li>
+              <li>Audio Visual Gallery</li>
+              <li>Press Releases</li>
+              <li>Grading of Promoters</li>
+              <li>Grading of Agents</li>
+              <li>ACF</li>
+              <li>Testimonials</li>
+              <li>Appeal to Buyer</li>
+            </ul>
+          </li>
+
           <li>LOGIN</li>
         </ul>
       </nav>

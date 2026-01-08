@@ -1,0 +1,82 @@
+/* Page Background */
+.recruitment-page {
+  background: #f2f2f2;
+  padding: 20px;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  background: #1e88e5;
+  color: white;
+  padding: 10px 15px;
+  font-size: 14px;
+}
+
+.breadcrumb span {
+  color: #ffeb3b;
+  cursor: pointer;
+}
+
+.breadcrumb .active {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* Main Content Box */
+.content-box {
+  background: white;
+  padding: 20px;
+  margin-top: 15px;
+  border: 1px solid #ccc;
+}
+
+/* Heading */
+.content-box h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+/* Blue underline */
+.title-line {
+  width: 60px;
+  height: 3px;
+  background: #1565c0;
+  margin: 8px 0 20px;
+}
+
+/* Table */
+.recruitment-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.recruitment-table th {
+  background: #3f5468;
+  color: white;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+}
+
+.recruitment-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+/* Download Icon */
+.download {
+  text-align: center;
+}
+
+.download a {
+  font-size: 18px;
+  text-decoration: none;
+  color: #1e88e5;
+}
+
+.download a:hover {
+  color: #0d47a1;
+}

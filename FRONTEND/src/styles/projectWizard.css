@@ -1,0 +1,139 @@
+/* PAGE BACKGROUND */
+.wizard-page {
+  background: #f5f7fb;
+  min-height: 100vh;
+  font-family: "Segoe UI", Arial;
+}
+
+/* MAIN CARD */
+.wizard-card {
+  width: 80%;
+  margin: 20px auto 30px;
+  background: #ffffff;
+  border: 1px solid #d6d6d6;
+}
+
+/* breadcrumb inside card */
+.wizard-breadcrumb {
+  background: #0c84e4;
+  color: white;
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+.wizard-breadcrumb span {
+  color: #ffe14d;
+  font-weight: 600;
+}
+
+/* HEADER */
+.wizard-title {
+  margin: 15px 18px 0;
+}
+
+.header-line {
+  width: 60px;
+  height: 3px;
+  background: #0c84e4;
+  margin: 6px 18px 10px;
+}
+
+/* STEPPER */
+.stepper {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  align-items: center;
+  padding: 20px 25px 10px;
+  text-align: center;
+}
+
+/* gray line */
+.stepper::before {
+  content: "";
+  position: absolute;
+  top: 35px;
+  left: 45px;
+  right: 45px;
+  height: 1px;
+  background: #cfcfcf;
+  z-index: 0;
+}
+
+.step-item {
+  font-size: 11px;
+}
+
+.step-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #cfcfcf;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 5px;
+  position: relative;
+  z-index: 1;
+}
+
+.step-circle.active {
+  background: #6fbe4a;
+  border-color: #6fbe4a;
+  color: white;
+}
+
+/* FORM BODY */
+.form-body {
+  padding: 18px;
+}
+
+.section-block {
+  margin-bottom: 20px;
+}
+
+.section-block h3 {
+  margin: 0;
+}
+
+.section-line {
+  width: 55px;
+  height: 3px;
+  background: #0c84e4;
+  margin: 5px 0 10px;
+}
+
+.field-label {
+  font-size: 13px;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.text-input {
+  width: 260px;
+  padding: 6px 8px;
+  border: 1px solid #cfcfcf;
+}
+
+/* RADIO */
+.radio-row {
+  display: flex;
+  gap: 30px;
+  margin-top: 6px;
+}
+
+/* ROW */
+.row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn {
+  background: #0c84e4;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  cursor: pointer;
+}

@@ -1,0 +1,72 @@
+.wip-container {
+  /* padding: 15px; */
+  background: #f2f2f2;
+  margin: 0px 82.5px;
+  padding: 0px;
+  margin-top: 20px;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  background: #0b87e3;
+  color: #fff;
+  padding: 8px;
+  width: 100%;
+  font-size: 14px;
+  
+}
+
+.breadcrumb a {
+  color: #ffeb3b;
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+.breadcrumb .active {
+  font-weight: 600;
+}
+
+/* Content Box */
+.wip-box {
+  background: #ffffff;
+  margin-top: 15px;
+  /* padding: 40px; */
+  margin: 18px 30px;
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between; */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Images */
+/* .wip-left,
+.wip-right {
+  width: 30%;
+  text-align: center;
+}
+
+.wip-left img,
+.wip-right img {
+  max-width: 100%;
+} */
+
+/* Center Cloud */
+/* .wip-center {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+} */
+
+/* .cloud {
+  border: 4px solid #0b5ed7;
+  border-radius: 60px;
+  padding: 30px 40px;
+  text-align: center;
+  color: #f15a24;
+  font-size: 20px;
+}
+
+.cloud .bold {
+  font-weight: bold;
+} */

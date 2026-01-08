@@ -1,0 +1,109 @@
+body {
+  background: #f2f2f2;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.rti-wrapper {
+  padding: 20px;
+}
+
+.breadcrumb {
+  background: #1e88e5;
+  color: white;
+  padding: 10px 15px;
+  font-size: 14px;
+}
+
+.breadcrumb span {
+  color: yellow;
+}
+
+.breadcrumb .active {
+  color: white;
+  font-weight: bold;
+}
+
+.rti-container {
+  background: white;
+  padding: 25px;
+  border: 1px solid #ccc;
+}
+
+h2 {
+  margin: 0;
+}
+
+.title-line {
+  width: 70px;
+  height: 3px;
+  background: #1e5fd8;
+  margin: 8px 0 20px;
+}
+
+.intro-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Accordion */
+.acc-header {
+  background: #e0e0e0;
+  padding: 12px 15px;
+  margin-top: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.acc-header.dark {
+  background: #3f3f3f;
+  color: white;
+}
+
+.acc-body {
+  background: #f9f9f9;
+  padding: 15px;
+}
+
+.blue-left {
+  border-left: 4px solid #1e5fd8;
+}
+
+.acc-body p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.red-text {
+  color: red;
+}
+
+/* Links */
+.rti-link {
+  color: #1e5fd8;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.rti-link:hover {
+  text-decoration: underline;
+}
+
+/* Table */
+.rti-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.rti-table th {
+  background: #3f5468;
+  color: white;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.rti-table td {
+  padding: 8px;
+  border: 1px solid #ccc;
+}

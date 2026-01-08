@@ -1,3 +1,4 @@
+/* ===== TOP HEADER ===== */
 .top-header {
   display: flex;
   justify-content: space-between;
@@ -26,28 +27,68 @@
   font-weight: bold;
 }
 
+/* ===== NAVBAR ===== */
 .navbar {
   background: #0b4da2;
 }
 
-.navbar ul {
-  display: flex;
+.nav-list {
   list-style: none;
+  display: flex;
   margin: 0;
   padding: 0 30px;
 }
 
-.navbar li {
-  color: #fff;
+.nav-list > li {
+  position: relative;
   padding: 14px 16px;
+  color: #ffffff;
   cursor: pointer;
   font-size: 14px;
+  white-space: nowrap;
 }
 
-.navbar li:hover {
+.nav-list > li:hover {
   background: #083a78;
 }
 
 .highlight {
-  background: #ff0000;
+  background: red;
+}
+
+/* ===== DROPDOWN ===== */
+.arrow {
+  margin-left: 4px;
+  font-size: 12px;
+}
+
+/* HIDE dropdown by default */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  min-width: 230px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  z-index: 9999;
+  padding: 0;
+  list-style: none;
+}
+
+/* Dropdown items */
+.dropdown-menu li {
+  color: #000;
+  padding: 10px 14px;
+  border-bottom: 1px dotted #ccc;
+  font-size: 14px;
+}
+
+.dropdown-menu li:hover {
+  background: #f2f2f2;
+}
+
+/* SHOW dropdown ONLY when hovering ABOUT US */
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
