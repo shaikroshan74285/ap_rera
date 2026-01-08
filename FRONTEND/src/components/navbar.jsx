@@ -34,10 +34,21 @@ const Navbar = () => {
               <li onClick={() => navigate("/recruitment")}>Recruitment</li>
               
               <li onClick={() => navigate("/rti")}>Rti</li>
-              <li>Recruitment</li>
-              <li>RTI</li>
-              <li>Our Leadership</li>
-              <li>Contact Us</li>
+             
+                           <li onClick={() => navigate("/our-leadership")}>
+                Our Leadership
+              </li>
+             <li className="contact-submenu">
+                <span className="contact-title">
+                  Contact Us <span className="right-arrow">▶</span>
+                </span>
+
+                <ul className="contact-submenu-box">
+                  <li onClick={() => navigate("/contact-us/aprera")}>
+                    APRERA
+                  </li>
+                </ul>
+              </li>
             </ul>
           </li>
 

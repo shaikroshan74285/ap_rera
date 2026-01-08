@@ -34,6 +34,8 @@ import Testimonials from "./pages/Testimonials";
 import GradingOfAgents from "./pages/GradingOfAgents";
 import ChronologyOfEvents from "./pages/ChronologyOfEvents"
 import AdvertisementGuidelines from "./pages/AdvertisementGuidelines";
+import OurLeadership from "./pages/OurLeadership";
+import ContactUs from "./pages/ContactUs";
 
 
 
@@ -73,6 +75,8 @@ function App() {
            <Route path="/GradingOfAgents" element={<GradingOfAgents />}/>
            <Route path="/ChronologyOfEvents" element={<ChronologyOfEvents />}/>
            <Route path="/AdvertisementGuidelines" element={<AdvertisementGuidelines />}/>
+            <Route path="/our-leadership" element={<OurLeadership />} />
+            <Route path="/contact-us/aprera" element={<ContactUs />} />
         </Routes>
       </Layout>
     </BrowserRouter>
