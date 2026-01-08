@@ -36,6 +36,19 @@ import ChronologyOfEvents from "./pages/ChronologyOfEvents"
 import AdvertisementGuidelines from "./pages/AdvertisementGuidelines";
 import OurLeadership from "./pages/OurLeadership";
 import ContactUs from "./pages/ContactUs";
+import Footer from "./components/Footer";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import HyperlinkingPolicy from "./pages/HyperlinkingPolicy";
+import CopyrightPolicy from "./pages/CopyrightPolicy";
+import Disclaimer from "./pages/Disclaimer";
+import Accessibility from "./pages/Accessibility";
+import TermsConditions from "./pages/TermsConditions";
+import RateWebsite from "./pages/RateWebsite";
+import AgentRegistration from "./pages/AgentRegistration";
+import Guidelines2 from "./pages/Guidelines2";
+import AgentDetailNew from "./pages/AgentDetailNew";
+import AgentDetailExisting from "./pages/AgentDetailExisting";
+import ApplicantDetails from "./pages/ApplicantDetails";
 
 
 
@@ -77,6 +90,18 @@ function App() {
            <Route path="/AdvertisementGuidelines" element={<AdvertisementGuidelines />}/>
             <Route path="/our-leadership" element={<OurLeadership />} />
             <Route path="/contact-us/aprera" element={<ContactUs />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/hyperlinking-policy" element={<HyperlinkingPolicy />} />
+          <Route path="/copyrightPolicy" element={< CopyrightPolicy />} />
+          <Route path="/disclaimer" element={<Disclaimer />} />
+          <Route path="/accessibility" element={<Accessibility />} />
+          <Route path="/termsConditions" element={< TermsConditions />} />
+          <Route path="/rateWebsite" element={<RateWebsite />} />
+                     <Route path="/agent-registration" element={<AgentRegistration />} />
+           <Route path="/Guidelines" element={<Guidelines />} />
+           <Route path="/agent-detail-new" element={<AgentDetailNew />} />
+           <Route path="/agent-detail-existing" element={<AgentDetailExisting />} />
+           <Route path="/applicant-details" element={<ApplicantDetails />} />
         </Routes>
       </Layout>
     </BrowserRouter>

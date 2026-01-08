@@ -1,0 +1,92 @@
+import "../styles/GoiNotifications.css";
+import  firstpdf from "../assets/5067gi.pdf";
+import secpdf from "../assets/5324gi.pdf";
+import thipdf from "../assets/3gi.pdf";
+import foupdf from "../assets/4gi.pdf";
+
+const notifications = [
+  {
+    sno: 1,
+    orderNo: "S.O. 1544(E)",
+    date: "27.04.2016",
+    subject:
+      "Notification regarding commencement of Real Estate (Regulation and Development) Act, 2016",
+      file:firstpdf,
+
+  },
+  {
+    sno: 2,
+    orderNo: "16/2016",
+    date: "01.05.2016",
+    subject: "RERA India Gazette",
+    file:secpdf,
+    
+  },
+  {
+    sno: 3,
+    orderNo: "S.O. 3347(E)",
+    date: "28.10.2016",
+    subject: "Real Estate removal of Difficulties Order",
+    file:thipdf,
+  },
+  {
+    sno: 4,
+    orderNo: "S.O. 1216(E)",
+    date: "19.04.2017",
+    subject: "RERA - Centre notified pending sections of the Act",
+    file:foupdf
+    
+  },
+];
+
+function GoiRera() {
+  return (
+    <div className="wrapper">
+      {/* Breadcrumb */}
+      <div className="breadcrumb">
+        You are here :
+        <a href="/"className="home"> Home</a> / <a href="#">Notifications</a> / GOI Notifications
+      </div>
+
+      {/* Title */}
+      <h2 className="title">GOI RERA GO's</h2>
+      <div className="underline"></div>
+
+      {/* Table */}
+      <div className="table-box">
+        <div className="table-title">Central Government Notifications</div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>S.no</th>
+              <th>Order No</th>
+              <th>Date</th>
+              <th>Subject</th>
+              <th>Download</th>
+            </tr>
+          </thead>
+          <tbody>
+            {notifications.map((item) => (
+              <tr key={item.sno}>
+                <td>{item.sno}</td>
+                <td>{item.orderNo}</td>
+                <td>{item.date}</td>
+                <td>{item.subject}</td>
+                <td className="download">
+                  <a href={item.file} 
+                 title="Download PDF" target="_blank">
+                    <i className="fa fa-download" aria-hidden="true"></i>
+                  </a>
+                </td>
+
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+export default GoiRera;
