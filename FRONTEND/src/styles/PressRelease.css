@@ -1,0 +1,99 @@
+/* Page background */
+.press-page {
+  background: #f5f5f5;
+  padding: 20px 0;
+}
+
+/* Main container */
+.press-container {
+  background: #ffffff;
+  max-width: 1100px;
+  margin: 0 auto;
+  border: 1px solid #000;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  background: #1e90ff;
+  color: #ffffff;
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+.breadcrumb a,
+.breadcrumb span {
+  color: #ffffff;
+  text-decoration: underline;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Inner content */
+.press-content {
+  padding: 20px;
+}
+
+/* Page title */
+.page-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.page-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 30px;
+  height: 3px;
+  background-color: #1e90ff;
+}
+
+/* Table */
+.press-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.press-table th {
+  background: #3f556b;
+  color: #ffffff;
+  font-size: 13px;
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ffffff;
+}
+
+/* Table cell default */
+.press-table td {
+  font-size: 13px;
+  padding: 10px;
+  border: 1px solid #000;
+  text-align: center;   /* keep center for Date & Download */
+}
+
+/* ✅ FIX: Subject column left aligned */
+.press-table td.subject-text {
+  text-align: left;
+  padding-left: 12px;
+  font-weight: 600;
+}
+
+
+.date-text {
+  width: 180px;
+}
+
+.download-link {
+  font-size: 18px;
+  color: #1e90ff;
+  cursor: pointer;
+}
+
+.download-link:hover {
+  color: #0056b3;
+}

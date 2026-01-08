@@ -27,6 +27,13 @@ import MobileApp from "./pages/mobileapp";
 import ProjectRegistration from "./pages/ProjectRegistration";
 import Guidelines from "./pages/Guidelines";
 import ProjectWizard from "./pages/ProjectWizard";
+import Race from "./pages/Race";
+import JudgementHub from "./pages/JudgementHub";
+import PressRelease from "./pages/PressRelease";
+import Testimonials from "./pages/Testimonials";
+import GradingOfAgents from "./pages/GradingOfAgents";
+import ChronologyOfEvents from "./pages/ChronologyOfEvents"
+import AdvertisementGuidelines from "./pages/AdvertisementGuidelines";
 
 
 
@@ -59,6 +66,13 @@ function App() {
           <Route path="/project-registration" element={<ProjectRegistration />} />
           <Route path="/guidelines" element={<Guidelines />} />
           <Route path="/project-registration-wizard" element={<ProjectWizard />} />
+          <Route path="/race" element={<Race />}/>
+          <Route path="/JudgementHub" element={<JudgementHub />}/>
+          <Route path="/PressRelease" element={<PressRelease />}/>
+           <Route path="/Testimonials" element={<Testimonials />}/>
+           <Route path="/GradingOfAgents" element={<GradingOfAgents />}/>
+           <Route path="/ChronologyOfEvents" element={<ChronologyOfEvents />}/>
+           <Route path="/AdvertisementGuidelines" element={<AdvertisementGuidelines />}/>
         </Routes>
       </Layout>
     </BrowserRouter>

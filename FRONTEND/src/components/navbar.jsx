@@ -2,6 +2,7 @@ import "../styles/navbar.css";
 import { useNavigate } from "react-router-dom";
 import OfficeorderPdf from "../assets/Officeorder.pdf";
 import CAUSELISTPdf from "../assets/CAuselist.pdf";
+import appealPdf from "../assets/AppealToBuyer.pdf";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -129,21 +130,22 @@ const Navbar = () => {
           </li>
           <li className="dropdown">KNOWLEDGE HUB <span className="arrow">▾</span>
             <ul className="dropdown-menu">
-              <li>Evolution of RERA</li>
-              <li>RACE</li>
+        <li>Evolution of RERA</li>
+              <li onClick={() => navigate("/race")}>
+                RACE</li>
               <li>Task Vs Time</li>
-              <li>Chronology of Events</li>
+              <li onClick={() => navigate("/ChronologyOfEvents")}>Chronology of Events</li>
               <li>APRERA Presentation</li>
-              <li>Judgement</li>
+              <li onClick={() => navigate("/JudgementHub")}>Judgement</li>
               <li>Vendor Database</li>
-              <li>Advertisement Guidelines</li>
+              <li onClick={() => navigate("/AdvertisementGuidelines")}>Advertisement Guidelines</li>
               <li>Audio Visual Gallery</li>
-              <li>Press Releases</li>
+              <li onClick={() => navigate("/PressRelease")}>Press Releases</li>
               <li>Grading of Promoters</li>
-              <li>Grading of Agents</li>
+              <li onClick={() => navigate("/GradingOfAgents")}>Grading of Agents</li>
               <li>ACF</li>
-              <li>Testimonials</li>
-              <li>Appeal to Buyer</li>
+              <li onClick={() => navigate("/Testimonials")}>Testimonials</li>
+              <li onClick={() => window.open(appealPdf, "_blank")}>Appeal to Buyer</li>
             </ul>
           </li>
 
