@@ -5,15 +5,15 @@ export default function Apreat() {
   return (
     <>
       {/* ================= CONTENT ================= */}
-      <div className="page-wrapper">
-        <div className="content-box">
-          <div className="breadcrumb">
+      <div className="apreat-page-wrapper">
+        <div className="apreat-content-box">
+          <div className="apreat-breadcrumb">
             You are here : APREAT Contact Us
           </div>
 
           {/* CHAIRPERSON */}
-          <div className="section-title">CHAIRPERSON</div>
-          <div className="underline"></div>
+          <div className="apreat-section-title">CHAIRPERSON</div>
+          <div className="apreat-underline"></div>
 
           <table className="apreat-table">
             <thead className="apreat-thead">
@@ -30,14 +30,14 @@ export default function Apreat() {
               <tr>
                 <td>1</td>
                 <td>CHAIRPERSON</td>
-                <td className="name">
+                <td className="apreat-name">
                   HON'BLE JUSTICE SRI M. GANGARAO
                 </td>
                 <td>-</td>
                 <td>-</td>
                 <td>
                   <img
-                    className="photo"
+                    className="apreat-photo"
                     src="/public/images/JUSTICEMGangarao.jpg"
                     alt="Chairperson"
                   />
@@ -47,8 +47,8 @@ export default function Apreat() {
           </table>
 
           {/* MEMBERS */}
-          <div className="section-title">MEMBERS</div>
-          <div className="underline"></div>
+          <div className="apreat-section-title">MEMBERS</div>
+          <div className="apreat-underline"></div>
 
           <table>
             <thead>
@@ -65,14 +65,14 @@ export default function Apreat() {
               <tr>
                 <td>1</td>
                 <td>JUDICIAL MEMBER</td>
-                <td className="name">
+                <td className="apreat-name">
                   SRI RAMACHANDRA REDDY MANDALAPU
                 </td>
                 <td>-</td>
                 <td>-</td>
                 <td>
                   <img
-                    className="photo"
+                    className="apreat-photo"
                     src="/public/images/Ramachandrareddy sir.jpeg"
                     alt="Ramachandra Reddy Sir"
                   />
@@ -82,8 +82,8 @@ export default function Apreat() {
           </table>
 
           {/* REGISTRAR */}
-          <div className="section-title">REGISTRAR</div>
-          <div className="underline"></div>
+          <div className="apreat-section-title">REGISTRAR</div>
+          <div className="apreat-underline"></div>
 
           <table>
             <thead>
@@ -100,7 +100,7 @@ export default function Apreat() {
               <tr>
                 <td>1</td>
                 <td>REGISTRAR</td>
-                <td className="name">SRI GUDURI RAMA KRISHNA</td>
+                <td className="apreat-name">SRI GUDURI RAMA KRISHNA</td>
                 <td>-</td>
                 <td>-</td>
                 <td>-</td>
@@ -109,8 +109,6 @@ export default function Apreat() {
           </table>
         </div>
       </div>
-
-     
     </>
   );
 }

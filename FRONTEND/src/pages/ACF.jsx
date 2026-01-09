@@ -6,14 +6,14 @@ export default function Acf() {
     <div className="acf-wrapper">
       <div className="acf-container">
         {/* Breadcrumb */}
-        <div className="breadcrumb">
+        <div className="acf-breadcrumb">
           You are here : <span>Home</span> / <span>Promotions</span> /{" "}
           <strong>ACF</strong>
         </div>
-
+        <div className="act-textcontaint">
         {/* Title */}
-        <h2 className="page-title">ACF (Amicable Conciliation Forum)</h2>
-        <div className="title-underline"></div>
+        <h2 className="acf-page-title">ACF (Amicable Conciliation Forum)</h2>
+        <div className="acf-title-underline"></div>
 
         {/* Content */}
         <p>
@@ -44,12 +44,12 @@ export default function Acf() {
         </p>
 
         {/* Objectives */}
-        <h3 className="section-title">
+        <h3 className="acf-section-title">
           The objectives of the APRERA - ACF (Amicable Conciliation Forum) shall
           be as follows:
         </h3>
 
-        <ul className="arrow-list">
+        <ul className="acf-arrow-list">
           <li>
             Constitute / establish panel of eminent Conciliators representing
             different stakeholder groups.
@@ -76,6 +76,7 @@ export default function Acf() {
           </li>
           <li>Finally providing the best platform for ADR.</li>
         </ul>
+        </div>
       </div>
     </div>
   );

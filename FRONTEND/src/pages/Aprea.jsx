@@ -4,18 +4,18 @@ import "../styles/aprera.css";
 
 export default function Aprea() {
   return (
-    <div className="aprera-wrapper">
-      <div className="aprera-page">
-        <div className="aprera-breadcrumb">
+    <div className="aprer-wrapper">
+      <div className="aprer-page">
+        <div className="aprer-breadcrumb">
           You are here : <span>Home</span> / <span>About Us</span> /{" "}
           <span>What is APRERA</span>
         </div>
 
-        <div className="aprera-layout">
+        <div className="aprer-layout">
           {/* LEFT CONTENT */}
           <div>
             <h2>About Andhra Pradesh RERA</h2>
-            <div className="aprera-line"></div>
+            <div className="aprer-line"></div>
 
             <p>
               Welcome to Andhra Pradesh Real Estate Regulatory Authority. This portal has been developed under section 4.3 of the Real Estate (Regulation & Development) Act, 2016. The department of Municipal Administration & Urban Development, Government of Andhra Pradesh is the nodal department for the implementation of RERA Act in the state of Andhra Pradesh.
@@ -26,7 +26,7 @@ export default function Aprea() {
             </p>
 
             <h3>About The Real Estate (Regulation & Development) Act, 2016</h3>
-            <div className="aprera-line"></div>
+            <div className="aprer-line"></div>
 
             <p>
               The Real Estate (Regulation & Development) Act, 2016 is considered as one of the landmark legislations passed by the Government of India. Its objective is to reform the real estate sector in India, encouraging greater transparency, citizen centricity, accountability and financial discipline. This is in line with the vast and growing economy of India as in future many people will be investing in real estate sector
@@ -45,6 +45,7 @@ export default function Aprea() {
             </ul>
 
             <h4>The Salient Features of this Act are</h4>
+            <div className="aprer-grid">
             <ul>
               <li>
                 It establishes the State Real Estate Regulatory Authority as the government body to be approached for redressal of grievances against any builder.
@@ -68,10 +69,11 @@ export default function Aprea() {
                 Every project measuring more than 500 square meters of site area or more than eight apartments will have to be registered with the RERA
               </li>
             </ul>
+            </div>
           </div>
 
           {/* RIGHT IMAGES */}
-          <div className="aprera-images">
+          <div className="aprer-images">
             <img src="/public/images/building1.jpg"/>
             <img src="/images/building.png" />
           </div>

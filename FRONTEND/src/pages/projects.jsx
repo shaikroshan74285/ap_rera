@@ -122,18 +122,18 @@ const Project = () => {
   };
 
   return (
-    <div className="project-container">
+    <div className="apr-project-container">
 
       {/* Breadcrumb */}
-      <div className="breadcrumb">
+      <div className="apr-breadcrumb">
         You are here : <span>Home</span> / <span>MIS Reports</span> /{" "}
         <b>R4.1-Approved Project Report</b>
       </div>
 
-      <h2 className="page-title">R4.1-Approved Projects Report</h2>
+      <h2 className="apr-page-title">R4.1-Approved Projects Report</h2>
 
       {/* Controls */}
-      <div className="table-controls">
+      <div className="apr-table-controls">
         <div>
           Show{" "}
           <select
@@ -151,17 +151,17 @@ const Project = () => {
           entries
         </div>
 
-        <div className="right-controls">
+        <div className="apr-right-controls">
           <img
             src="https://cdn-icons-png.flaticon.com/512/732/732220.png"
-            className="icon-btn"
+            className="apr-icon-btn"
             title="Download Excel"
             onClick={downloadExcel}
           />
 
           <img
             src="https://cdn-icons-png.flaticon.com/512/337/337946.png"
-            className="icon-btn"
+            className="apr-icon-btn"
             title="Download PDF"
             onClick={downloadPDF}
           />
@@ -178,8 +178,8 @@ const Project = () => {
       </div>
 
       {/* Table */}
-      <div className="table-wrapper">
-        <table className="project-table">
+      <div className="apr-table-wrapper">
+        <table className="apr-project-table">
           <thead>
             <tr>
               <th>S.No</th>
@@ -197,7 +197,7 @@ const Project = () => {
               <tr key={p.sno}>
                 <td>{p.sno}</td>
                 <td>{p.regId}</td>
-                <td className="project-link">{p.projectName}</td>
+                <td className="apr-project-link">{p.projectName}</td>
                 <td>{p.place}</td>
                 <td>{p.type}</td>
                 <td>{p.status}</td>
@@ -210,12 +210,12 @@ const Project = () => {
       </div>
 
       {/* ✅ PAGINATION FOOTER */}
-      <div className="pagination-container">
-        <div className="pagination-info">
+      <div className="apr-pagination-container">
+        <div className="apr-pagination-info">
           Showing {start + 1} to {end} of {filtered.length} entries
         </div>
 
-        <div className="pagination">
+        <div className="apr-pagination">
           <button disabled={currentPage === 1} onClick={() => setCurrentPage(1)}>
             First
           </button>
@@ -235,7 +235,7 @@ const Project = () => {
             .map((page) => (
               <button
                 key={page}
-                className={currentPage === page ? "active" : ""}
+                className={currentPage === page ? "apr-active" : ""}
                 onClick={() => setCurrentPage(page)}
               >
                 {page}

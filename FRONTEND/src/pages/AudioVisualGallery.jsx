@@ -15,17 +15,17 @@ export default function AudioVisualGallery() {
     <div className="avg-wrapper">
       <div className="avg-container">
 
-        <div className="breadcrumb">
+        <div className="avg-breadcrumb">
           You are here : <span>Home</span> / <span>Promotions</span> /{" "}
           <strong>Audio Visual Gallery</strong>
         </div>
+      <div className="avg-mainheader">
+        <h2 className="avg-page-title">Audio Jingles</h2>
+        <div className="avg-title-underline"></div>
 
-        <h2 className="page-title">Audio Jingles</h2>
-        <div className="title-underline"></div>
-
-        <div className="audio-grid">
+        <div className="avg-audio-grid">
           {audioFiles.map((src, index) => (
-            <div className="audio-box" key={index}>
+            <div className="avg-audio-box" key={index}>
               <audio
                 controls
                 preload="metadata"
@@ -35,19 +35,19 @@ export default function AudioVisualGallery() {
           ))}
         </div>
 
-        <h2 className="page-title">Videos</h2>
-        <div className="title-underline"></div>
-        <div className="accordion">
-          <div className="accordion-header">+ Videos</div>
+        <h2 className="avg-page-title">Videos</h2>
+        <div className="avg-title-underline"></div>
+        <div className="avg-accordion">
+          <div className="avg-accordion-header">+ Videos</div>
         </div>
 
-        <h2 className="page-title">Photo Gallery</h2>
-        <div className="title-underline"></div>
-        <div className="accordion">
-          <div className="accordion-header">+ Office Inauguration Photos</div>
-          <div className="accordion-header">+ Website Launch Photos</div>
+        <h2 className="avg-page-title">Photo Gallery</h2>
+        <div className="avg-title-underline"></div>
+        <div className="avg-accordion">
+          <div className="avg-accordion-header">+ Office Inauguration Photos</div>
+          <div className="avg-accordion-header">+ Website Launch Photos</div>
         </div>
-
+</div>
       </div>
     </div>
   );

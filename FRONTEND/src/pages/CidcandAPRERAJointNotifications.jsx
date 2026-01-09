@@ -16,13 +16,13 @@ export default function CidcandAPRERAJointNotifications() {
 
   return (
     <div className="cidc-aprera-page-container">
-
+<div className="cidc-border">
       <div className="cidc-aprera-breadcrumb">
         You are here :
         <span> Home</span> / <span> Notifications</span> /{" "}
         <span> CIDC and APRERA Joint Notifications</span>
       </div>
-
+      <div className="cidc-container">
       <h1 className="cidc-aprera-main-title">
         Notice No. 001/2018 Enlistment/Registration of Agencies of Agencies, Companies, Professionals etc
         to Render the Services to Real Estate, Construction and Infrastructure projects in the state of Andhra Pradesh
@@ -126,7 +126,9 @@ export default function CidcandAPRERAJointNotifications() {
         <p>
           <strong>Web:</strong> www.cidcdatabase.com & https://rera.ap.gov.in
         </p>
+        </div>
       </div>
+    </div>
     </div>
   );
 }

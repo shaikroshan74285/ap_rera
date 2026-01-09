@@ -1,27 +1,30 @@
 /* PAGE */
-.agent-registration-page {
+.agent-reg-page {
   max-width: 1140px;
   margin: 0 auto;
   padding: 0 15px;
+  border: 1px solid #d6d6d6;
+  
 }
 
 /* BREADCRUMB */
-.breadcrumb-box {
+.agent-reg-breadcrumb-box {
   background: #0b7dda;
   color: white;
   padding: 8px 15px;
   font-size: 14px;
-  margin-bottom: 20px;
-   margin-top: 15px;
+  /* margin-bottom: 20px; */
+  margin: 25px 200px;
+  border: 1px solid #ccc;
 }
 
-.breadcrumb-box .link {
+.agent-reg-breadcrumb-box .agent-reg-link {
   color: yellow;
   margin: 0 5px;
 }
 
 /* TITLE */
-.page-title {
+.agent-reg-wrapper .agent-reg-page-title {
   font-size: 22px;
   border-bottom: 3px solid #0b7dda;
   display: inline-block;
@@ -30,7 +33,7 @@
 }
 
 /* STEP WIZARD */
-.step-box {
+.agent-reg-wrapper .agent-reg-step-box {
   margin: 25px 0;
   position: relative;
   display: flex;
@@ -40,7 +43,7 @@
   padding: 20px;
 }
 
-.step-line {
+.agent-reg-wrapper .agent-reg-step-line {
   position: absolute;
   top: 45%;
   left: 40px;
@@ -49,12 +52,14 @@
   background: #ccc;
 }
 
-.step-item {
+.agent-reg-wrapper .agent-reg-step-item {
   text-align: center;
   z-index: 1;
 }
-
-.step-circle {
+.agent-reg-main-container{
+  margin: 10px 240px;
+}
+.agent-reg-wrapper .agent-reg-step-circle {
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -66,37 +71,37 @@
   margin: auto;
 }
 
-.step-circle.active {
+.agent-reg-wrapper .agent-reg-step-circle.agent-reg-active {
   background: #0bb35c;
   color: #fff;
   border-color: #0bb35c;
 }
 
 /* INSTRUCTIONS */
-.instructions h3 {
+.agent-reg-wrapper .agent-reg-instructions h3 {
   color: #0073b1;
   margin-top: 20px;
 }
 
-.red-text {
+.agent-reg-wrapper .agent-reg-red-text {
   color: red;
   font-weight: bold;
 }
 
-.guideline-link {
+.agent-reg-wrapper .agent-reg-guideline-link {
   color: purple;
   text-decoration: underline;
 }
 
 /* APPLICATION TYPE */
-.application-row {
+.agent-reg-wrapper .agent-reg-application-row {
   margin: 30px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.application-type {
+.agent-reg-wrapper .agent-reg-application-type {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -104,13 +109,13 @@
   gap: 25px;
 }
 
-.application-type label {
+.agent-reg-wrapper .agent-reg-application-type label {
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-.submit-btn {
+.agent-reg-wrapper .agent-reg-submit-btn {
   background: #0b7dda;
   color: #fff;
   border: none;
@@ -119,40 +124,41 @@
 }
 
 /* AGENT DETAIL */
-.agent-detail-box {
+.agent-reg-wrapper .agent-reg-agent-detail-box {
   margin-top: 30px;
   border-top: 1px solid #ddd;
   padding-top: 20px;
 }
 
-.section-title {
+.agent-reg-wrapper .agent-reg-section-title {
   color: #0073b1;
   border-bottom: 3px solid #0b7dda;
   display: inline-block;
   padding-bottom: 5px;
 }
 
-.form-row {
+.agent-reg-wrapper .agent-reg-form-row {
   margin-top: 15px;
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-.form-row input[type="text"] {
+.agent-reg-wrapper .agent-reg-form-row input[type="text"] {
   padding: 6px;
   width: 220px;
 }
 
-.blue-btn {
+.agent-reg-wrapper .agent-reg-blue-btn {
   background: #0b7dda;
   color: #fff;
   border: none;
   padding: 6px 12px;
   cursor: pointer;
 }
+
 /* ONE BIG OUTER BOX (LIKE AP RERA) */
-.outer-box {
+.agent-reg-wrapper .agent-reg-outer-box {
   border: 1px solid #dcdcdc;
   padding: 20px;
   margin-top: 15px;

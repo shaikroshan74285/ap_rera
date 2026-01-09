@@ -7,25 +7,25 @@
 }
 
 /* Breadcrumb */
-.breadcrumb {
+.recruitment-breadcrumb {
   background: #1e88e5;
   color: white;
   padding: 10px 15px;
   font-size: 14px;
 }
 
-.breadcrumb span {
+.recruitment-breadcrumb span {
   color: #ffeb3b;
   cursor: pointer;
 }
 
-.breadcrumb .active {
+.recruitment-breadcrumb .recruitment-active {
   color: #ffffff;
   font-weight: bold;
 }
 
 /* Main Content Box */
-.content-box {
+.recruitment-content-box {
   background: white;
   padding: 20px;
   margin-top: 15px;
@@ -33,13 +33,13 @@
 }
 
 /* Heading */
-.content-box h2 {
+.recruitment-content-box h2 {
   margin: 0;
   font-size: 22px;
 }
 
 /* Blue underline */
-.title-line {
+.recruitment-title-line {
   width: 60px;
   height: 3px;
   background: #1565c0;
@@ -67,16 +67,16 @@
 }
 
 /* Download Icon */
-.download {
+.recruitment-download {
   text-align: center;
 }
 
-.download a {
+.recruitment-download a {
   font-size: 18px;
   text-decoration: none;
   color: #1e88e5;
 }
 
-.download a:hover {
+.recruitment-download a:hover {
   color: #0d47a1;
 }

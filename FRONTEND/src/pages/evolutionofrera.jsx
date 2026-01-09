@@ -55,21 +55,21 @@ const timelineData = [
 
 const EvolutionOfRera = () => {
   return (
-    <div className="page-container">
+    <div className="evofrera-page-container">
 
       {/* BREADCRUMB */}
-      <div className="breadcrumb">
+      <div className="evofrera-breadcrumb">
         <span>You are here :</span>
-        <span className="link"> Home </span> /
-        <span className="link"> Knowledge Hub </span> /
-        <span className="active"> Evolution of RERA </span>
+        <span className="evofrera-link"> Home </span> /
+        <span className="evofrera-link"> Knowledge Hub </span> /
+        <span className="evofrera-active"> Evolution of RERA </span>
       </div>
 
       {/* INTRO SECTION */}
-      <div className="intro-section">
-        <div className="intro-left">
+      <div className="evofrera-intro-section">
+        <div className="evofrera-intro-left">
           <h2>Evolution of RERA</h2>
-          <div className="underline"></div>
+          <div className="evofrera-underline"></div>
 
           <p>
             The real estate sector plays a catalytic role in fulfilling the need
@@ -86,21 +86,21 @@ const EvolutionOfRera = () => {
           </p>
         </div>
 
-        <div className="intro-right">
+        <div className="evofrera-intro-right">
           <img src={evalution} alt="Evalutionimg" />
         </div>
       </div>
 
       {/* TIMELINE */}
-      <div className="timeline-container">
-        <div className="timeline-line"></div>
+      <div className="evofrera-timeline-container">
+        <div className="evofrera-timeline-line"></div>
 
         {timelineData.map((item, index) => (
-          <div key={index} className={`timeline-item ${item.side}`}>
-            <div className={`timeline-card ${item.color}`}>
+          <div key={index} className={`evofrera-timeline-item ${item.side}`}>
+            <div className={`evofrera-timeline-card ${item.color}`}>
               {item.text}
             </div>
-            <div className="timeline-year">{item.year}</div>
+            <div className="evofrera-timeline-year">{item.year}</div>
           </div>
         ))}
       </div>

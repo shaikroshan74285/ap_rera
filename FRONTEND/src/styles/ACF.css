@@ -2,6 +2,7 @@
 .acf-wrapper {
   background: #f2f2f2;
   padding: 20px 0;
+
 }
 
 /* Main content box */
@@ -10,31 +11,33 @@
   margin: auto;
   background: #fff;
   border: 1px solid #cfcfcf;
-  padding: 15px 25px 25px;
+  /* padding: 15px 25px 25px; */
 }
 
 /* Breadcrumb */
-.breadcrumb {
+.acf-breadcrumb {
   background: #0b7dda;
   color: #fff;
   padding: 6px 10px;
   font-size: 13px;
 }
-
-.breadcrumb span {
+.act-textcontaint{
+  padding: 5px 20px;
+}
+.acf-breadcrumb span {
   text-decoration: underline;
   cursor: pointer;
 }
 
 /* Page title */
-.page-title {
+.acf-page-title {
   font-size: 18px;
   font-weight: 600;
   margin: 15px 0 5px;
 }
 
 /* Blue underline */
-.title-underline {
+.acf-title-underline {
   width: 40px;
   height: 2px;
   background: #0b7dda;
@@ -49,7 +52,7 @@
 }
 
 /* Section heading */
-.section-title {
+.acf-section-title {
   font-size: 14px;
   font-weight: 600;
   color: #0b7dda;
@@ -58,19 +61,19 @@
 }
 
 /* Arrow bullet list */
-.arrow-list {
+.acf-arrow-list {
   list-style: none;
   padding-left: 18px;
 }
 
-.arrow-list li {
+.acf-arrow-list li {
   position: relative;
   padding-left: 14px;
   font-size: 13px;
   margin-bottom: 6px;
 }
 
-.arrow-list li::before {
+.acf-arrow-list li::before {
   content: "▶";
   position: absolute;
   left: 0;

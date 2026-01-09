@@ -4,7 +4,7 @@ body {
 }
 
 /* PAGE */
-.page-container {
+.evofrera-page-container {
   background: #fff;
   padding: 15px;
   border:2px gray solid;
@@ -14,61 +14,61 @@ body {
 }
 
 /* BREADCRUMB */
-.breadcrumb {
+.evofrera-breadcrumb {
   background: #1e90ff;
   color: #fff;
   padding: 8px 12px;
   font-size: 13px;
 }
 
-.breadcrumb .link {
+.evofrera-breadcrumb .evofrera-link {
   margin: 0 4px;
 }
 
-.breadcrumb .active {
+.evofrera-breadcrumb .evofrera-active {
   font-weight: bold;
 }
 
 /* INTRO */
-.intro-section {
+.evofrera-intro-section {
   display: flex;
   gap: 20px;
   padding: 20px 10px;
 }
 
-.intro-left {
+.evofrera-intro-left {
   flex: 2;
 }
 
-.intro-left h2 {
+.evofrera-intro-left h2 {
   margin: 0;
 }
 
-.underline {
+.evofrera-underline {
   width: 30px;
   height: 3px;
   background: #0b5aa3;
   margin: 8px 0 15px;
 }
 
-.intro-left p {
+.evofrera-intro-left p {
   font-size: 14px;
   line-height: 1.6;
   text-align: justify;
 }
 
-.intro-right {
+.evofrera-intro-right {
   flex: 1;
   border: 1px solid #1e90ff;
   padding: 10px;
 }
 
-.intro-right img {
+.evofrera-intro-right img {
   width: 100%;
 }
 
 /* TIMELINE */
-.timeline-container {
+.evofrera-timeline-container {
   position: relative;
   width: 90%;
   margin: 3px auto;
@@ -77,7 +77,7 @@ body {
   background-color: #f5f5f5;
 }
 
-.timeline-line {
+.evofrera-timeline-line {
   position: absolute;
   left: 50%;
   top: 0;
@@ -88,23 +88,23 @@ body {
 
 }
 
-.timeline-item {
+.evofrera-timeline-item {
   position: relative;
   width: 50%;
   padding: 20px 40px;
 }
 
-.timeline-item.left {
+.evofrera-timeline-item.left {
   left: 0;
   text-align: right;
 }
 
-.timeline-item.right {
+.evofrera-timeline-item.right {
   left: 50%;
   text-align: left;
 }
 
-.timeline-year {
+.evofrera-timeline-year {
   position: absolute;
   top: 20px;
   width: 44px;
@@ -118,16 +118,16 @@ body {
   font-weight: bold;
 }
 
-.timeline-item.left .timeline-year {
+.evofrera-timeline-item.left .evofrera-timeline-year {
   right: -22px;
 }
 
-.timeline-item.right .timeline-year {
+.evofrera-timeline-item.right .evofrera-timeline-year {
   left: -22px;
 }
 
 /* CARD */
-.timeline-card {
+.evofrera-timeline-card {
   padding: 14px 18px;
   border-radius: 6px;
   color: #fff;
@@ -136,7 +136,7 @@ body {
 }
 
 /* COLORS */
-.timeline-card.blue { background: #2196f3; }
-.timeline-card.red { background: #e53935; }
-.timeline-card.green { background: #4caf50; }
-.timeline-card.orange { background: #fb8c00; }
+.evofrera-timeline-card.blue { background: #2196f3; }
+.evofrera-timeline-card.red { background: #e53935; }
+.evofrera-timeline-card.green { background: #4caf50; }
+.evofrera-timeline-card.orange { background: #fb8c00; }

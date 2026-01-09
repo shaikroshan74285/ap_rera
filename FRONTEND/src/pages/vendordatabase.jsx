@@ -162,19 +162,19 @@ export default function vendordatabase() {
   return (
     <div className="vendor-container">
       {/* Breadcrumb */}
-      <div className="breadcrumb">
+      <div className="vendor-breadcrumb">
         You are here : <span>Home</span> / <span>Promotions</span> /{" "}
         <strong>Vendor Database</strong>
       </div>
 
       {/* Title */}
-      <h2 className="title">Vendor Database</h2>
-      <div className="title-underline"></div>
+      <h2 className="vendor-title">Vendor Database</h2>
+      <div className="vendor-title-underline"></div>
 
       {/* Filters */}
-      <div className="filter-row">
+      <div className="vendor-filter-row">
         <label>
-          Category Type <span className="required">*</span>
+          Category Type <span className="vendor-required">*</span>
         </label>
         <select
           value={category}
@@ -187,7 +187,7 @@ export default function vendordatabase() {
       </div>
 
       {/* Controls */}
-      <div className="controls">
+      <div className="vendor-controls">
         <div>
           Show{" "}
           <select
@@ -201,9 +201,9 @@ export default function vendordatabase() {
           entries
         </div>
 
-        <div className="right-controls">
-          <span className="icon excel">X</span>
-          <span className="icon pdf">PDF</span>
+        <div className="vendor-right-controls">
+          <span className="vendor-icon vendor-excel">X</span>
+          <span className="vendor-icon vendor-pdf">PDF</span>
           Search:
           <input
             type="text"
@@ -234,9 +234,9 @@ export default function vendordatabase() {
               <td>{row.category}</td>
               <td>{row.company}</td>
               <td>{row.address}</td>
-              <td className="multiline">{row.contact}</td>
-              <td className="multiline">{row.phone}</td>
-              <td className="multiline">{row.email}</td>
+              <td className="vendor-multiline">{row.contact}</td>
+              <td className="vendor-multiline">{row.phone}</td>
+              <td className="vendor-multiline">{row.email}</td>
               <td>{row.products}</td>
             </tr>
           ))}

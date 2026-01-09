@@ -4,6 +4,7 @@ import OfficeorderPdf from "../assets/Officeorder.pdf";
 import CAUSELISTPdf from "../assets/CAuselist.pdf";
 import appealPdf from "../assets/AppealToBuyer.pdf";
 import legalpdf from "../assets/LEGAL_APRERA_CORPORATE_PRESENTATION.pdf";
+import Logo from "../assets/images/logo.jpg";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -12,9 +13,10 @@ const Navbar = () => {
     <>
       {/* Top Header */}
       <div className="top-header">
-        <div className="logo">
-          <h2>AP RERA</h2>
-          <p>ANDHRA PRADESH REAL ESTATE REGULATORY AUTHORITY</p>
+        <div className="header-center">
+          
+          <img src={Logo} alt="APRERA Logo" className="header-logo"/>
+          <p className="header-title">ANDHRA PRADESH REAL ESTATE REGULATORY AUTHORITY</p>
         </div>
 
         <button className="search-btn">SEARCH RERA PROJECTS</button>
@@ -23,7 +25,9 @@ const Navbar = () => {
       {/* Main Navbar */}
       <nav className="navbar">
         <ul className="nav-list">
-          <li>HOME</li>
+          <li onClick={() => navigate("/")}>
+                HOME
+              </li>
 
           {/* ABOUT US DROPDOWN */}
           <li className="dropdown">ABOUT US <span className="arrow">▾</span>
@@ -157,7 +161,7 @@ const Navbar = () => {
              <li onClick={() => navigate("/registered/projects")}>
                 Projects
               </li>
-              <li onClick={() => navigate("/registered/agents")}>
+              <li onClick={() => navigate("/agents")}>
                 Agents </li>
             </ul>
           </li>

@@ -188,3 +188,24 @@
 .required {
   color: red;
 }
+
+.section-title {
+  color: #0077b6;
+  font-weight: bold;
+  margin: 16px 0 8px;
+}
+
+.link-text {
+  color: #0047ff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.link-text:hover {
+  color: #002fa7;
+}
+
+.cr-footer.right {
+  text-align: right;
+  margin-top: 20px;
+}

@@ -217,28 +217,28 @@ const AgentsReport = () => {
   };
 
   return (
-    <div className="agents-report-container">
+    <div className="ar-container">
 
       {/* Breadcrumb */}
-      <div className="breadcrumb">
+      <div className="ar-breadcrumb">
         You are here / Home / MIS Reports / <strong>R4.2-Approved Agent Report</strong>
       </div>
 
       {/* Header */}
-      <div className="report-header">
+      <div className="ar-report-header">
         <h1>R4.2-Approved Agent Report</h1>
-        <div className="agents-count">
-          Total Agents: <span className="count-badge">{totalAgents}</span>
-        </div>
+        {/* <div className="ar-agents-count">
+          Total Agents: <span className="ar-count-badge">{totalAgents}</span>
+        </div> */}
       </div>
 
       {/* Controls - Now in one line with search on right */}
-      <div className="controls-row">
+      <div className="ar-controls-row">
         {/* Left side: Show entries */}
-        <div className="show-entries">
+        <div className="ar-show-entries">
           <span>Show</span>
           <select
-            className="entries-select"
+            className="ar-entries-select"
             value={entriesPerPage}
             onChange={(e) => {
               setEntriesPerPage(Number(e.target.value));
@@ -254,18 +254,18 @@ const AgentsReport = () => {
         </div>
 
         {/* Right side: Export Icons + Search */}
-        <div className="controls-right">
+        <div className="ar-controls-right">
           {/* Export Icons */}
-          <div className="export-icons">
+          <div className="ar-export-icons">
             <button 
-              className="export-icon-btn pdf-icon" 
+              className="ar-export-icon-btn ar-pdf-icon" 
               onClick={downloadPDF}
               title="Download PDF"
             >
               <i className="fas fa-file-pdf"></i>
             </button>
             <button 
-              className="export-icon-btn excel-icon" 
+              className="ar-export-icon-btn ar-excel-icon" 
               onClick={downloadExcel}
               title="Download Excel"
             >
@@ -274,11 +274,11 @@ const AgentsReport = () => {
           </div>
 
           {/* Search Bar */}
-          <div className="search-box">
-            <span className="search-label">Search:</span>
+          <div className="ar-search-box">
+            <span className="ar-search-label">Search:</span>
             <input
               type="text"
-              className="search-input"
+              className="ar-search-input"
               placeholder=""
               value={searchTerm}
               onChange={(e) => {
@@ -291,8 +291,8 @@ const AgentsReport = () => {
       </div>
 
       {/* Table */}
-      <div className="table-container">
-        <table className="agents-table">
+      <div className="ar-table-container">
+        <table className="ar-agents-table">
           <thead>
             <tr>
               <th>S.No.</th>
@@ -302,24 +302,19 @@ const AgentsReport = () => {
               <th>Date of Submission</th>
               <th>Date of Approval</th>
               <th>Valid Till</th>
-              <th>Status</th>
+              {/* <th>Status</th> */}
             </tr>
           </thead>
           <tbody>
             {currentAgents.map((agent, index) => (
               <tr key={agent.id}>
                 <td>{startIndex + index + 1}</td>
-                <td className="registration-id">{agent.registrationId}</td>
-                <td><strong>{agent.name}</strong></td>
+                <td className="ar-registration-id">{agent.registrationId}</td>
+                <td><strong className='agentnames'>{agent.name}</strong></td>
                 <td>{agent.place}</td>
                 <td>{agent.dateOfSubmission}</td>
                 <td>{agent.dateOfApproval}</td>
                 <td>{agent.validTill}</td>
-                <td>
-                  <span className={`status-badge ${getStatusColor(agent.status)}`}>
-                    {agent.status}
-                  </span>
-                </td>
               </tr>
             ))}
           </tbody>
@@ -327,14 +322,14 @@ const AgentsReport = () => {
       </div>
 
       {/* Pagination */}
-      <div className="table-footer">
-        <div className="pagination-info">
+      <div className="ar-table-footer">
+        <div className="ar-pagination-info">
           Showing {startIndex + 1} to {Math.min(endIndex, totalAgents)} of {totalAgents} entries
         </div>
 
-        <div className="pagination-controls">
+        <div className="ar-pagination-controls">
           <button
-            className="pagination-btn prev-btn"
+            className="ar-pagination-btn ar-prev-btn"
             onClick={() => setCurrentPage(currentPage - 1)}
             disabled={currentPage === 1}
           >
@@ -343,11 +338,11 @@ const AgentsReport = () => {
 
           {getPageNumbers().map((page, index) => (
             page === '...' ? (
-              <span key={`ellipsis-${index}`} className="pagination-ellipsis">...</span>
+              <span key={`ellipsis-${index}`} className="ar-pagination-ellipsis">...</span>
             ) : (
               <button
                 key={page}
-                className={`pagination-btn page-number ${currentPage === page ? 'active' : ''}`}
+                className={`ar-pagination-btn ar-page-number ${currentPage === page ? 'active' : ''}`}
                 onClick={() => setCurrentPage(page)}
               >
                 {page}
@@ -356,7 +351,7 @@ const AgentsReport = () => {
           ))}
 
           <button
-            className="pagination-btn next-btn"
+            className="ar-pagination-btn ar-next-btn"
             onClick={() => setCurrentPage(currentPage + 1)}
             disabled={currentPage === totalPages}
           >

@@ -1,7 +1,7 @@
 /* ===============================
    PAGE WRAPPER
 ================================ */
-.services-page {
+.orse-services-page {
   max-width: 950px;
   margin: 25px auto;
   background: #ffffff;
@@ -14,7 +14,7 @@
 /* ===============================
    BREADCRUMB
 ================================ */
-.breadcrumb {
+.orse-breadcrumb {
   background: #1e88e5;
   color: #ffffff;
   padding: 6px 12px;
@@ -23,14 +23,14 @@
   border-bottom: 1px solid #bfbfbf;
 }
 
-.breadcrumb span {
+.orse-breadcrumb span {
   font-weight: 500;
 }
 
 /* ===============================
    SERVICE SECTION
 ================================ */
-.service-section {
+.orse-service-section {
   display: flex;
   justify-content: space-between;
   align-items: center;        /* ✅ vertical center */
@@ -42,22 +42,22 @@
 /* ===============================
    TEXT AREA
 ================================ */
-.service-text {
+.orse-service-text {
   width: 65%;
   font-size: 14px;
   line-height: 1.6;
 }
 
-.service-text h3 {
+.orse-service-text h3 {
   font-size: 16px;
   margin-bottom: 6px;
 }
 
-.service-text p {
+.orse-service-text p {
   margin-bottom: 8px;
 }
 
-.blue-text {
+.orse-blue-text {
   color: #008798;
   font-weight: 600;
 }
@@ -65,19 +65,19 @@
 /* ===============================
    LIST STYLES
 ================================ */
-.arrow-list {
+.orse-arrow-list {
   list-style: none;
   padding-left: 0;
   margin-bottom: 8px;
 }
 
-.arrow-list li {
+.orse-arrow-list li {
   position: relative;
   padding-left: 18px;
   margin-bottom: 6px;
 }
 
-.arrow-list li::before {
+.orse-arrow-list li::before {
   content: "▶";
   position: absolute;
   left: 0;
@@ -85,16 +85,16 @@
   font-size: 10px;
 }
 
-.number-list {
+.orse-number-list {
   padding-left: 20px;
   margin-top: 6px;
 }
 
-.number-list li {
+.orse-number-list li {
   margin-bottom: 6px;
 }
 
-.roman-list {
+.orse-roman-list {
   list-style-type: lower-roman;
   padding-left: 20px;
   margin-top: 6px;
@@ -105,14 +105,14 @@
 /* ===============================
    IMAGE AREA (CENTERED)
 ================================ */
-.service-image {
+.orse-service-image {
   width: 30%;
   display: flex;
   justify-content: center;    /* ✅ horizontal center */
   align-items: center;        /* ✅ vertical center */
 }
 
-.service-image img {
+.orse-service-image img {
   display: block;
   margin: auto;               /* ✅ double safety centering */
   width: 100%;
@@ -128,19 +128,19 @@
 ================================ */
 
 /* 1️⃣ PROMOTERS */
-.service-section:nth-of-type(1) .service-image img {
+.orse-service-section:nth-of-type(1) .service-image img {
   max-height: 500px;          /* 🔼 increased */
 }
 
 /* 2️⃣ AGENTS */
-.service-section:nth-of-type(2) .service-image img {
+.orse-service-section:nth-of-type(2) .service-image img {
   max-height: 500px;          /* 🔼 increased */
 }
 
 /* ===============================
    DOTTED SEPARATOR
 ================================ */
-.dotted-line {
+.orse-dotted-line {
   border-bottom: 2px dotted #1e88e5;
   margin: 0;
 }
@@ -148,7 +148,7 @@
 /* ===============================
    SECTION TITLE UNDERLINE
 ================================ */
-.section-title::after {
+.orse-section-title::after {
   content: "";
   display: block;
   width: 28px;
@@ -161,26 +161,26 @@
    RESPONSIVE
 ================================ */
 @media (max-width: 900px) {
-  .services-page {
+  .orse-services-page {
     max-width: 100%;
     margin: 15px;
   }
 
-  .service-section {
+  .orse-service-section {
     flex-direction: column;
     padding: 12px;
   }
 
-  .service-text,
-  .service-image {
+  .orse-service-text,
+  .orse-service-image {
     width: 100%;
   }
 
-  .service-image {
+  .orse-service-image {
     margin-top: 12px;
   }
 
-  .service-image img {
+  .orse-service-image img {
     max-width: 100%;
     max-height: none;
   }

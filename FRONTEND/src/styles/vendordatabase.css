@@ -11,24 +11,24 @@ body {
 }
 
 /* Breadcrumb */
-.breadcrumb {
+.vendor-breadcrumb {
   background: #118bee;
   color: #fff;
   padding: 8px 12px;
   font-size: 14px;
 }
 
-.breadcrumb span {
+.vendor-breadcrumb span {
   color: #dff0ff;
 }
 
 /* Title */
-.title {
+.vendor-title {
   margin: 20px 0 5px;
   font-size: 22px;
 }
 
-.title-underline {
+.vendor-title-underline {
   width: 50px;
   height: 3px;
   background: #118bee;
@@ -36,57 +36,57 @@ body {
 }
 
 /* Filter */
-.filter-row {
+.vendor-filter-row {
   margin-bottom: 15px;
 }
 
-.filter-row label {
+.vendor-filter-row label {
   margin-right: 10px;
   font-weight: bold;
 }
 
-.filter-row select {
+.vendor-filter-row select {
   padding: 6px;
   width: 200px;
 }
 
-.required {
+.vendor-required {
   color: red;
 }
 
 /* Controls */
-.controls {
+.vendor-controls {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
 }
 
-.controls select,
-.controls input {
+.vendor-controls select,
+.vendor-controls input {
   padding: 4px;
 }
 
-.right-controls {
+.vendor-right-controls {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
 /* Icons */
-.icon {
+.vendor-icon {
   padding: 4px 8px;
   border: 1px solid #ccc;
   font-size: 12px;
   cursor: pointer;
 }
 
-.icon.excel {
+.vendor-icon .vendor-excel {
   background: #e8f5e9;
   color: green;
 }
 
-.icon.pdf {
+.vendor-icon .vendor-pdf {
   background: #ffebee;
   color: red;
 }
@@ -114,6 +114,6 @@ body {
   background: #fafafa;
 }
 
-.multiline {
+.vendor-multiline {
   white-space: pre-line;
 }

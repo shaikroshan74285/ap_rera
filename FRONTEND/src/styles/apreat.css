@@ -5,12 +5,12 @@ body {
 }
 
 /* Page wrapper */
-.page-wrapper {
+.apreat-page-wrapper {
   background: #ffffff;
   padding: 30px 0;
 }
 
-.content-box {
+.apreat-content-box {
   max-width: 1120px;
   margin: auto;
   background: #ffffff;
@@ -18,7 +18,7 @@ body {
 }
 
 /* Breadcrumb */
-.breadcrumb {
+.apreat-breadcrumb {
   background: #1e88e5;
   color: #fff;
   padding: 10px 15px;
@@ -27,13 +27,13 @@ body {
 }
 
 /* Section headings */
-.section-title {
+.apreat-section-title {
   font-size: 18px;
   font-weight: bold;
   margin-top: 28px;
 }
 
-.underline {
+.apreat-underline {
   width: 40px;
   height: 3px;
   background: #0b4fa2;
@@ -66,89 +66,7 @@ td.name {
   text-align: left;
 }
 
-.photo {
+.apreat-photo {
   width: 80px;
   border: 1px solid #bdbdbd;
-}
-
-/* Footer links */
-.footer-links {
-  background: #3b3b3b;
-  color: #fff;
-  padding: 10px 20px;
-  font-size: 13px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-social img {
-  width: 34px;
-  margin-left: 8px;
-}
-
-/* Footer main */
-.footer-main {
-  background: linear-gradient(135deg, #0b5aa3 50%, #000 50%);
-  color: #fff;
-  padding: 14px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 13px;
-}
-
-.footer-main .left {
-  font-weight: bold;
-}
-
-.footer-main .center {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: yellow;
-  font-weight: bold;
-  white-space: nowrap;
-}
-
-/* Visitor counter */
-.counter {
-  display: inline-flex;
-  align-items: center;
-}
-
-.counter span {
-  width: 22px;
-  height: 26px;
-  background: #e5e5e5;
-  border: 1px solid #777;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  font-weight: bold;
-  margin-right: 2px;
-  color: #000;
-}
-
-/* Footer right */
-.footer-main .right img {
-  height: 26px;
-}
-
-/* Scroll top */
-.scroll-top {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  background: #1e88e5;
-  color: white;
-  border-radius: 50%;
-  width: 42px;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 18px;
 }

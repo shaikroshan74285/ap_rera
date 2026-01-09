@@ -77,7 +77,7 @@ function GoiRera() {
                 <td>{item.subject}</td>
                 <td className="goi-notif-download">
                   <a href={item.file} 
-                 title="Download PDF" target="_blank">
+                 target="_blank">
                   
                     <i className="fa fa-download" aria-hidden="true"></i>
                   </a>

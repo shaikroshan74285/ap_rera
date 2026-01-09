@@ -2,19 +2,19 @@ import "../styles/ourServices.css";
 
 export default function OurServices() {
   return (
-    <div className="services-page">
+    <div className="orse-services-page">
 
       {/* Breadcrumb */}
-      <div className="breadcrumb">
+      <div className="orse-breadcrumb">
         You are here : <span>Home</span> / <span>About Us</span> / <span>Our Services</span>
       </div>
 
       {/* ===== PROMOTERS ===== */}
-      <div className="service-section">
-        <div className="service-text">
-          <h3 className="section-title">For PROMOTERS</h3>
+      <div className="orse-service-section">
+        <div className="orse-service-text">
+          <h3 className="orse-section-title">For PROMOTERS</h3>
 
-          <ul className="arrow-list">
+          <ul className="orse-arrow-list">
             <li>
               All the Real Estate Projects for development of plots, buildings and
               apartments for the purpose of selling, must be registered with APRERA.
@@ -25,11 +25,11 @@ export default function OurServices() {
             </li>
           </ul>
 
-          <p className="blue-text">
+          <p className="orse-blue-text">
             Promoter will be provided the following services:
           </p>
 
-          <ol className="number-list">
+          <ol className="orse-number-list">
             <li>Registration of the Real Estate Project.</li>
             <li>Extension of registration upon valid reasons as per the provisions of Act.</li>
             <li>Designated web page for each project.</li>
@@ -39,19 +39,19 @@ export default function OurServices() {
           </ol>
         </div>
 
-        <div className="service-image">
+        <div className="orse-service-image">
           <img src="/public/images/building3.jfif" alt="Promoters" />
         </div>
       </div>
 
-      <div className="dotted-line"></div>
+      <div className="orse-dotted-line"></div>
 
       {/* ===== AGENTS ===== */}
-      <div className="service-section">
-        <div className="service-text">
-          <h3 className="section-title">For AGENTS</h3>
+      <div className="orse-service-section">
+        <div className="orse-service-text">
+          <h3 className="orse-section-title">For AGENTS</h3>
 
-          <ul className="arrow-list">
+          <ul className="orse-arrow-list">
             <li>
               No real estate agent shall facilitate sale or purchase without
               obtaining registration from APRERA.
@@ -62,39 +62,39 @@ export default function OurServices() {
             </li>
           </ul>
 
-          <p className="blue-text">
+          <p className="orse-blue-text">
             Real Estate Agents will be provided the following services:
           </p>
 
-          <ol className="number-list">
+          <ol className="orse-number-list">
             <li>Registration of the Real Estate Agents upon application.</li>
             <li>Renewal of registration.</li>
             <li>Complaint filing in case of grievance.</li>
           </ol>
         </div>
 
-        <div className="service-image">
+        <div className="orse-service-image">
           <img src="/images/agents.jfif" alt="Agents" />
         </div>
       </div>
 
-      <div className="dotted-line"></div>
+      <div className="orse-dotted-line"></div>
 
       {/* ===== ALLOTTEES ===== */}
-      <div className="service-section">
-        <div className="service-text">
-          <h3 className="section-title">For ALLOTTEES</h3>
+      <div className="orse-service-section">
+        <div className="orse-service-text">
+          <h3 className="orse-section-title">For ALLOTTEES</h3>
 
-          <p className="blue-text">
+          <p className="orse-blue-text">
             Allottees will be provided the following services:
           </p>
 
-          <ol className="number-list">
+          <ol className="orse-number-list">
             <li>Access to sanctioned plan and specifications.</li>
             <li>Access to stage-wise project completion schedule.</li>
             <li>
               Claim refund (along with interest) in case:
-              <ol className="roman-list">
+              <ol className="orse-roman-list">
                 <li>Promoter fails to give possession on time.</li>
                 <li>Promoter discontinues business due to suspension or revocation.</li>
               </ol>
@@ -105,23 +105,23 @@ export default function OurServices() {
           </ol>
         </div>
 
-        <div className="service-image">
+        <div className="orse-service-image">
           <img src="/images/allottes.jfif" alt="Allottees" />
         </div>
       </div>
 
-      <div className="dotted-line"></div>
+      <div className="orse-dotted-line"></div>
 
       {/* ===== CITIZENS ===== */}
-      <div className="service-section">
-        <div className="service-text">
-          <h3 className="section-title">For CITIZENS</h3>
+      <div className="orse-service-section">
+        <div className="orse-service-text">
+          <h3 className="orse-section-title">For CITIZENS</h3>
 
-          <p className="blue-text">
+          <p className="orse-blue-text">
             Citizens will be provided the following services:
           </p>
 
-          <ol className="number-list">
+          <ol className="orse-number-list">
             <li>Access to information regarding real estate projects and agents.</li>
             
               <li>Complaint filing on any promoter or agent in case of any default.</li>
@@ -129,7 +129,7 @@ export default function OurServices() {
           </ol>
         </div>
 
-        <div className="service-image">
+        <div className="orse-service-image">
           <img src="/images/citizens.jfif" alt="Citizens" />
         </div>
       </div>

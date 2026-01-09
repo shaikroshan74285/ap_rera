@@ -5,19 +5,19 @@ export default function OurLeadership() {
     <div className="ourleadership-page">
 
       {/* Breadcrumb */}
-      <div className="breadcrumb">
+      <div className="ourleadership-breadcrumb">
         You are here : <span>Home</span> / <span>About Us</span> /{" "}
         <span className="active">Our Leadership</span>
       </div>
 
       {/* Page Title */}
-      <div className="page-header">
+      <div className="ourleadership-page-header">
         <h2>OUR LEADERSHIP</h2>
-        <div className="title-line"></div>
+        <div className="ourleadership-title-line"></div>
       </div>
 
       {/* Leadership Table */}
-      <table className="leadership-table">
+      <table className="ourleadership-leadership-table">
         <thead>
           <tr>
             <th>S.No.</th>
@@ -112,12 +112,12 @@ export default function OurLeadership() {
       </table>
 
       {/* Office Section */}
-      <div className="office-section">
+      <div className="ourleadership-office-section">
         <h3>Office</h3>
-        <div className="title-line"></div>
+        <div className="ourleadership-title-line"></div>
 
-        <div className="office-box">
-          <div className="office-details">
+        <div className="ourleadership-office-box">
+          <div className="ourleadership-office-details">
             <h4>ANDHRA PRADESH REAL ESTATE REGULATORY AUTHORITY</h4>
             <p>
               D.No:60-5-1, Y Tower,<br />
@@ -127,16 +127,16 @@ export default function OurLeadership() {
               Krishna District, A.P.
             </p>
 
-            <p className="blue">
+            <p className="ourleadership-blue">
               Help Desk ☎ 6304906011 (All Working Days, 10AM - 6PM)
             </p>
-            <p className="blue">
+            <p className="ourleadership-blue">
               ✉ helpdesk-rera@ap.gov.in <br />
               ✉ complaint@ap-rera.in
             </p>
           </div>
 
-          <div className="map-box">
+          <div className="ourleadership-map-box">
             <iframe
               title="APRERA Map"
               src="https://www.google.com/maps?q=Andhra%20Pradesh%20Real%20Estate%20Regulatory%20Authority%20Vijayawada&output=embed"

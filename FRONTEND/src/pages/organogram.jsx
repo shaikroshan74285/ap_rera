@@ -6,7 +6,7 @@ export default function Organogram() {
     <div className="org-page">
 
       {/* Breadcrumb */}
-      <div className="breadcrumb">
+      <div className="org-breadcrumb">
         You are here : <span>Home</span> / <span>About Us</span> / <span>Organogram</span>
       </div>
 

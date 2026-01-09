@@ -10,7 +10,7 @@ const Race = () => {
         
         {/* Left Content */}
         <div className="race-content">
-          <p className="breadcrumb">
+          <p className="racebreadcrumb">
             You are here : <span>Home</span> / <span>Knowledge Hub</span> /{" "}
             <strong>RACE</strong>
           </p>
@@ -52,7 +52,7 @@ const Race = () => {
           </div>
 
           {/* <div className="race-content-1"> */}
-          <h3 className="sub-title">NEW Construction Technologies</h3>
+          <h3 className="race-sub-title">NEW Construction Technologies</h3>
 
           <p>
             With the government focus on bringing transparency and
@@ -73,7 +73,7 @@ const Race = () => {
                     and precast are being adopted for speedier completion of projects. Use of software for 
                     project design and management is also becoming essential for builders who want the best solutions for their projects for example: Building Information Modelling, Virtual reality in construction monitoring etc.,
           </p>
-          <h3 className="sub-title">VR Innovation in Construction</h3>
+          <h3 className="race-sub-title">VR Innovation in Construction</h3>
           <h4>What is Virtual Reality?</h4>
           <p>Virtual reality is a computer simulated environment, accessed through stereoscopic goggles
              that include a variety of different tracking mechanisms that track the viewer's movement 
@@ -90,7 +90,7 @@ Residential sales are another great area of opportunity for virtual reality goin
 There is also an opportunity to use virtual reality for professional training, helping workers learn about potential risks on the job site in a virtual reality setting or training them on heavy equipment operation in a virtual environment without deploying or risking any material assets.
 Establishing Appellate Tribunal to hear appeals from the decisions, directions or orders of the Real Estate Regulatory Authority</p>
 {/* DRONES SECTION */}
-<h3 className="section-title">
+<h3 className="race-section-title">
   Real Time Context Capture Using Drones
 </h3>
 
@@ -106,7 +106,7 @@ Establishing Appellate Tribunal to hear appeals from the decisions, directions o
   making it easier to accurately measure our world so we can better manage it.
 </p>
 
-<h4 className="sub-heading">
+<h4 className="race-sub-heading">
   Uses for Drones in Construction Projects
 </h4>
 
@@ -149,7 +149,7 @@ Establishing Appellate Tribunal to hear appeals from the decisions, directions o
   days to come.
 </p>
 
-<h4 className="sub-heading">Analyzing the Data</h4>
+<h4 className="race-sub-heading">Analyzing the Data</h4>
 
 <p>
   Models such as high-resolution 3D types use browser-based technology so
@@ -162,7 +162,7 @@ Establishing Appellate Tribunal to hear appeals from the decisions, directions o
   to very easily visualize the progress of the very important duties.
 </p>
 
-<h4 className="sub-heading">Showing the progress to Clients</h4>
+<h4 className="race-sub-heading">Showing the progress to Clients</h4>
 
 <p>
   When clients stay away from the job site and cannot afford to come to the
@@ -189,7 +189,7 @@ Establishing Appellate Tribunal to hear appeals from the decisions, directions o
   on the ground and upwards.
 </p>
 
-<h4 className="sub-heading">Monitoring Job Sites</h4>
+<h4 className="race-sub-heading">Monitoring Job Sites</h4>
 
 <p>
   When you have to frequently shuttle between multiple job sites, or have
@@ -212,7 +212,7 @@ Establishing Appellate Tribunal to hear appeals from the decisions, directions o
   the ground.
 </p>
 
-<h4 className="sub-heading">Better Safety Records</h4>
+<h4 className="race-sub-heading">Better Safety Records</h4>
 
 <p>
   With your eyes & ears in the sky, all the time, you will be in a much better
@@ -237,7 +237,7 @@ Establishing Appellate Tribunal to hear appeals from the decisions, directions o
   dispatched.
 </p>
 
-<h3 className="section-title">Building Information Modelling</h3>
+<h3 className="race-section-title">Building Information Modelling</h3>
 
 <p>
   BIM or Building Information Modelling is a process for creating and managing
@@ -266,7 +266,7 @@ Establishing Appellate Tribunal to hear appeals from the decisions, directions o
   of development and construction.
 </p>
 
-<h3 className="section-title">
+<h3 className="race-section-title">
   Challenges Of Indian Real Estate Sector
 </h3>
 {/* CHALLENGES OF INDIAN REAL ESTATE SECTOR – DETAILS */}
@@ -291,7 +291,7 @@ Establishing Appellate Tribunal to hear appeals from the decisions, directions o
   <li>Rare virtual environment work</li>
 </ul>
 
-<h3 className="section-title">
+<h3 className="race-section-title">
   Influence Of Technology In Real Estate Sector
 </h3>
 
@@ -313,11 +313,11 @@ Establishing Appellate Tribunal to hear appeals from the decisions, directions o
   management, business management, marketing and customer service.
 </p>
 
-<h3 className="section-title">
+<h3 className="race-section-title">
   How BIM Modeling Benefits To Real Estate Sector
 </h3>
 
-<h4 className="sub-heading">
+<h4 className="race-sub-heading">
   BETTER OUTPUT THROUGH BIM COLLABORATION
 </h4>
 
@@ -332,7 +332,7 @@ Establishing Appellate Tribunal to hear appeals from the decisions, directions o
   value throughout the project from inception to eventual decommissioning.
 </p>
 
-<h4 className="sub-heading">OPTIMIZED PERFORMANCE</h4>
+<h4 className="race-sub-heading">OPTIMIZED PERFORMANCE</h4>
 
 <p>
   BIM enables seamless coordination among all stakeholders by using a shared
@@ -340,7 +340,7 @@ Establishing Appellate Tribunal to hear appeals from the decisions, directions o
   performance across all project stages.
 </p>
 
-<h4 className="sub-heading">BETTER FORECAST</h4>
+<h4 className="race-sub-heading">BETTER FORECAST</h4>
 {/* BIM BENEFITS – CONTINUATION */}
 
 <p>
@@ -357,7 +357,7 @@ Establishing Appellate Tribunal to hear appeals from the decisions, directions o
   desired output.
 </p>
 
-<h4 className="sub-heading">QUICK PROJECT TURNAROUND</h4>
+<h4 className="race-sub-heading">QUICK PROJECT TURNAROUND</h4>
 
 <p>
   As BIM allows changes in design concepts at early stages of the project,
@@ -372,7 +372,7 @@ Establishing Appellate Tribunal to hear appeals from the decisions, directions o
   time up to 50%.
 </p>
 
-<h4 className="sub-heading">ENHANCED SAFETY MEASURES</h4>
+<h4 className="race-sub-heading">ENHANCED SAFETY MEASURES</h4>
 
 <p>
   Designs using BIM can optimize public safety with the help of crowd behavior
@@ -385,7 +385,7 @@ Establishing Appellate Tribunal to hear appeals from the decisions, directions o
   starts, reducing construction risks significantly.
 </p>
 
-<h4 className="sub-heading">
+<h4 className="race-sub-heading">
   ELIMINATION OF ERRORS AT EARLY DESIGN STAGE
 </h4>
 
@@ -399,7 +399,7 @@ Establishing Appellate Tribunal to hear appeals from the decisions, directions o
   seamless integration of existing and new assets.
 </p>
 
-<h3 className="section-title">
+<h3 className="race-section-title">
   Scope Of Using BIM To Link Property Data In RERA
 </h3>
 
@@ -444,7 +444,7 @@ Establishing Appellate Tribunal to hear appeals from the decisions, directions o
     making it easier for builders to plan cost requirements at each stage.
   </li>
 </ul>
-<h3 className="section-title">Building Automatic Systems</h3>
+<h3 className="race-section-title">Building Automatic Systems</h3>
 
 <p>
   A big trend in the construction industry today is retrofitting updated
@@ -484,7 +484,7 @@ Establishing Appellate Tribunal to hear appeals from the decisions, directions o
   the brink of a shift in the way business and operations are carried out.
 </p>
 
-<h3 className="section-title">
+<h3 className="race-section-title">
   E-Commerce Site For Construction Materials
 </h3>
 
@@ -527,12 +527,12 @@ Establishing Appellate Tribunal to hear appeals from the decisions, directions o
   quicker to the purchaser.
 </p>
 
-<h3 className="section-title">
+<h3 className="race-section-title">
   VIRTUAL DESIGN AND CONSTRUCTION
 </h3>
-<div className="vdc-section">
-  <div className="vdc-text">
-    <div className="vdc-firstpara">
+<div className="race-vdc-section">
+  <div className="race-vdc-text">
+    <div className="race-vdc-firstpara">
       <div>
     <p>
       <strong>Virtual Design and Construction (VDC)</strong> is the management
@@ -561,7 +561,7 @@ Establishing Appellate Tribunal to hear appeals from the decisions, directions o
       </li>
     </ul>
     </div>
-    <div className="vdc-image">
+    <div className="race-vdc-image">
     <img
       src={raceImg2}
       alt="Virtual Design and Construction Model"

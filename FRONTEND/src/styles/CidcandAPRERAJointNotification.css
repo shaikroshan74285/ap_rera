@@ -4,7 +4,12 @@
   padding: 20px;
   font-family: Arial, sans-serif;
 }
-
+.cidc-border{
+  border: 1px solid #ddd;
+}
+.cidc-container{
+  padding: 10px 20px;
+}
 .cidc-aprera-breadcrumb {
   background: #1580d4;
   color: white;

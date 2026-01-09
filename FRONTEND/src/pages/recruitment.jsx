@@ -57,18 +57,18 @@ const Recruitment = () => {
     <div className="recruitment-page">
 
       {/* Breadcrumb */}
-      <div className="breadcrumb">
+      <div className="recruitment-breadcrumb">
         You are here : <span>Home</span> / <span>About Us</span> /{" "}
-        <span className="active">Recruitment</span>
+        <span className="recruitment-active">Recruitment</span>
       </div>
 
       {/* Content Box */}
-      <div className="content-box">
+      <div className="recruitment-content-box">
         <h2>Recruitment</h2>
-        <div className="title-line"></div>
+        <div className="recruitment-title-line"></div>
 
         {/* Table */}
-        <table className="recruitment-table">
+        <table className="recruitment-recruitment-table">
           <thead>
             <tr>
               <th>S.No</th>
@@ -89,7 +89,7 @@ const Recruitment = () => {
               </td>
 
               {/* ✅ DIRECT 404 LINK */}
-              <td className="download">
+              <td className="recruitment-download">
                 <a
                   href="https://rera.ap.gov.in:443/RERA/DOCUMENTS/Notice/Assistant_Legal_officer.pdf"
                   target="_blank"
