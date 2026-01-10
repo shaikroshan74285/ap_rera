@@ -3,10 +3,10 @@ import "../styles/cards.css";
 export default function Expertise() {
   return (
     <section className="expertise">
-      <h2 className="section-title">OUR EXPERTISE</h2>
-      <div className="title-line"></div>
+      <h2 className="expertise-section-title">OUR EXPERTISE</h2>
+      <div className="expertise-title-line"></div>
 
-      <p className="section-subtitle">
+      <p className="expertise-section-subtitle">
         APRERA strives to achieve its objectives by providing an integrated
         platform for real estate sector
       </p>

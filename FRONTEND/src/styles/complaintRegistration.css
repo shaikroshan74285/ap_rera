@@ -1,5 +1,5 @@
 /* ================= PAGE WRAPPER ================= */
-.page-wrapper {
+.complaintReg-page-wrapper {
   background: #efefef;
   min-height: 100vh;
   padding: 20px 0;
@@ -7,7 +7,7 @@
 }
 
 /* ================= CONTAINER ================= */
-.container {
+.complaintReg-container {
   max-width: 1100px;
   margin: 0 auto;
   background: #ffffff;
@@ -16,7 +16,7 @@
 }
 
 /* ================= BREADCRUMB ================= */
-.breadcrumb {
+.complaintReg-breadcrumb {
   background: #1e88e5;
   color: #fff;
   padding: 6px 12px;
@@ -24,13 +24,13 @@
   margin-bottom: 12px;
 }
 
-.breadcrumb a {
+.complaintReg-breadcrumb a {
   color: #ffff00;
   text-decoration: underline;
 }
 
 /* ================= HEADINGS ================= */
-.main-heading {
+.complaintReg-main-heading {
   font-size: 18px;
   font-weight: bold;
   margin: 10px 0 15px;
@@ -38,31 +38,31 @@
   display: inline-block;
 }
 
-.subheading {
+.complaintReg-subheading {
   font-size: 14px;
   font-weight: bold;
   margin: 15px 0 8px;
 }
 
-.link-heading {
+.complaintReg-link-heading {
   color: #0072bc;
   text-decoration: underline;
 }
 
 /* ================= STEP WIZARD ================= */
-.stepwizard {
+.complaintReg-stepwizard {
   border: 1px solid #d2d2d2;
   padding: 18px;
   margin-bottom: 20px;
 }
 
-.stepwizard-row {
+.complaintReg-stepwizard-row {
   display: flex;
   justify-content: space-between;
   position: relative;
 }
 
-.stepwizard-row::before {
+.complaintReg-stepwizard-row::before {
   content: "";
   position: absolute;
   top: 18px;
@@ -72,13 +72,13 @@
   background: #cfcfcf;
 }
 
-.stepwizard-step {
+.complaintReg-stepwizard-step {
   width: 20%;
   text-align: center;
   position: relative;
 }
 
-.step-circle {
+.complaintReg-step-circle {
   width: 34px;
   height: 34px;
   border-radius: 50%;
@@ -89,11 +89,11 @@
   font-size: 13px;
 }
 
-.step-circle.active {
+.complaintReg-step-circle.active {
   background: #4caf50;
 }
 
-.stepwizard-step p {
+.complaintReg-stepwizard-step p {
   font-size: 12px;
   margin-top: 6px;
 }
@@ -102,8 +102,8 @@
 /* ===== FORCE NORMAL LIST BEHAVIOR (FIX INVISIBLE TEXT) ===== */
 
 /* Reset OL / LI from flex pollution */
-.step-box ol,
-.step-box ul {
+.complaintReg-step-box ol,
+.complaintReg-step-box ul {
   display: block !important;
   width: 100% !important;
   margin: 8px 0 18px 20px;
@@ -111,7 +111,7 @@
   list-style-position: outside;
 }
 
-.step-box li {
+.complaintReg-step-box li {
   display: list-item !important;
   float: none !important;
   clear: both !important;
@@ -123,24 +123,24 @@
 }
 
 /* Prevent flex inheritance */
-.step-box * {
+.complaintReg-step-box * {
   flex: none;
 }
 
 /* Ensure step-box is normal block container */
-.step-box {
+.complaintReg-step-box {
   display: block;
   overflow: visible;
 }
 
 /* Fix subheading alignment */
-.subheading {
+.complaintReg-subheading {
   display: block;
   clear: both;
 }
 
 /* Fix Proceed button position */
-.cr-footer {
+.complaintReg-cr-footer {
   display: block;
   text-align: right;
   margin-top: 20px;
@@ -148,29 +148,29 @@
 
 
 /* ================= LIST ================= */
-.instruction-list {
+.complaintReg-instruction-list {
   font-size: 13px;
   line-height: 1.6;
   padding-left: 20px;
 }
 
-.instruction-list li {
+.complaintReg-instruction-list li {
   margin-bottom: 6px;
 }
 
 /* ================= TEXT ================= */
-.blue-text {
+.complaintReg-blue-text {
   color: #0072bc;
   cursor: pointer;
 }
 
 /* ================= BUTTON ================= */
-.cr-footer {
+.complaintReg-cr-footer {
   text-align: right;
   margin-top: 15px;
 }
 
-.proceed-btn {
+.complaintReg-proceed-btn {
   background: #1e88e5;
   color: #fff;
   border: none;
@@ -180,32 +180,32 @@
   border-radius: 3px;
 }
 
-.proceed-btn:hover {
+.complaintReg-proceed-btn:hover {
   background: #1565c0;
 }
 
 /* ================= REQUIRED ================= */
-.required {
+.complaintReg-required {
   color: red;
 }
 
-.section-title {
+.complaintReg-section-title {
   color: #0077b6;
   font-weight: bold;
   margin: 16px 0 8px;
 }
 
-.link-text {
+.complaintReg-link-text {
   color: #0047ff;
   cursor: pointer;
   text-decoration: underline;
 }
 
-.link-text:hover {
+.complaintReg-link-text:hover {
   color: #002fa7;
 }
 
-.cr-footer.right {
+.complaintReg-cr-footer.right {
   text-align: right;
   margin-top: 20px;
 }

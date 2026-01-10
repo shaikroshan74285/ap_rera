@@ -7,44 +7,44 @@
 }
 
 /* LEFT BOX */
-.reach-box {
+.feedback-reach-box {
   flex: 1;
   background: #0a66b2;
   padding: 25px;
 }
 
-.reach-inner {
+.feedback-reach-inner {
   border: 4px solid #fff;
   padding: 40px 30px;
   color: #fff;
   text-align: center;
 }
 
-.reach-inner h4 {
+.feedback-reach-inner h4 {
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 25px;
 }
 
-.reach-inner h2 {
+.feedback-reach-inner h2 {
   font-size: 26px;
   font-weight: bold;
   line-height: 1.3;
   margin-bottom: 30px;
 }
 
-.reach-inner p {
+.feedback-reach-inner p {
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 20px;
 }
 
-.helpdesk span {
+.feedback-helpdesk span {
   color: yellow;
   font-weight: bold;
 }
 
-.email span {
+.feedback-email span {
   color: yellow;
   font-weight: bold;
 }
@@ -63,7 +63,7 @@
   margin-bottom: 8px;
 }
 
-.title-line {
+.feedback-title-line {
   width: 35px;
   height: 3px;
   background: #0a5ca8;
@@ -75,7 +75,7 @@
   width: 100%;
 }
 
-.form-row {
+.feedback-form-row {
   display: flex;
   gap: 30px;
   margin-bottom: 25px;
@@ -127,7 +127,7 @@
     flex-direction: column;
   }
 
-  .form-row {
+  .feedback-form-row {
     flex-direction: column;
   }
 

@@ -5,18 +5,18 @@
   margin: 0px 82px;
 }
 
-.breadcrumb {
+.forms-breadcrumb {
   background: #0b84e3;
   color: #ffffff;
   padding: 8px 12px;
   font-size: 14px;
 }
 
-.breadcrumb span {
+.forms-breadcrumb span {
   color: #ffffff;
 }
 
-h2 {
+.formdownload {
   margin: 15px 0;
   padding-bottom: 5px;
   border-bottom: 2px solid #0b84e3;
@@ -39,7 +39,7 @@ h2 {
   border-right: 1px solid #cfcfcf;
 }
 
-.category {
+.forms-category {
   background: #4f7894;
   color: #ffffff;
   font-weight: bold;
@@ -47,14 +47,14 @@ h2 {
   text-align: center;
 }
 
-.code {
+.forms-code {
   color: red;
   font-weight: bold;
   text-align: center;
   width: 90px;
 }
 
-.icon {
+.forms-icon {
   text-align: center;
   cursor: pointer;
 }

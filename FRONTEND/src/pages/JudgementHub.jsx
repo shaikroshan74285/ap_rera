@@ -7,7 +7,7 @@ const JudgementHub = () => {
     <div className="judgement-page">
       <div className="judgement-container">
         {/* Breadcrumb */}
-        <div className="breadcrumb">
+        <div className="judgement-breadcrumb">
           You are here :&nbsp;
           <a href="#">Home</a> /&nbsp;
           <a href="#">Knowledge Hub</a> /&nbsp;
@@ -16,7 +16,7 @@ const JudgementHub = () => {
 
         {/* Content */}
         <div className="judgement-content">
-          <h2 className="page-title">Judgement</h2>
+          <h2 className="judgement-page-title">Judgement</h2>
 
           <table className="judgement-table">
             <thead>
@@ -29,9 +29,9 @@ const JudgementHub = () => {
             <tbody>
               <tr>
                 <td>1</td>
-                <td className="desc-text">Judgement</td>
+                <td className="judgement-desc-text">Judgement</td>
                 <td>
-                  <span className="download-link" onClick={() => window.open(ApReraJud, "_blank")}>⬇️</span>
+                  <span className="judgement-download-link" onClick={() => window.open(ApReraJud, "_blank")}>⬇️</span>
                 </td>
               </tr>
             </tbody>

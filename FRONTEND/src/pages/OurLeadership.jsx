@@ -3,18 +3,18 @@ import "../styles/OurLeadership.css";
 export default function OurLeadership() {
   return (
     <div className="ourleadership-page">
-
+<div className="ourleadership-maincontainer"></div>
       {/* Breadcrumb */}
       <div className="ourleadership-breadcrumb">
         You are here : <span>Home</span> / <span>About Us</span> /{" "}
-        <span className="active">Our Leadership</span>
+        <span className="ourleadership-active">Our Leadership</span>
       </div>
 
       {/* Page Title */}
       <div className="ourleadership-page-header">
-        <h2>OUR LEADERSHIP</h2>
+        <h2 className="ourleadership-h2">OUR LEADERSHIP</h2>
         <div className="ourleadership-title-line"></div>
-      </div>
+      
 
       {/* Leadership Table */}
       <table className="ourleadership-leadership-table">
@@ -120,11 +120,11 @@ export default function OurLeadership() {
           <div className="ourleadership-office-details">
             <h4>ANDHRA PRADESH REAL ESTATE REGULATORY AUTHORITY</h4>
             <p>
-              D.No:60-5-1, Y Tower,<br />
-              Siddhartha Nagar 1st Lane,<br />
-              Pinnamaneni Polyclinic Road,<br />
-              Vijayawada - 520010,<br />
-              Krishna District, A.P.
+              6th & 7th Floors,<br />
+              APCRDA Project Office,<br />
+              Rayapudi,Tulluru Mandal,<br />
+              Amaravati, Guntur District,<br />
+              Andhra Pradesh. Pin - 522237.
             </p>
 
             <p className="ourleadership-blue">
@@ -137,11 +137,8 @@ export default function OurLeadership() {
           </div>
 
           <div className="ourleadership-map-box">
-            <iframe
-              title="APRERA Map"
-              src="https://www.google.com/maps?q=Andhra%20Pradesh%20Real%20Estate%20Regulatory%20Authority%20Vijayawada&output=embed"
-              loading="lazy"
-            ></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d61194.37276190021!2d80.496107!3d16.543844!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35ed004f0fedc3%3A0x1f16a1b1d63e2a81!2sAPCRDA%20Project%20Office!5e0!3m2!1sen!2sin!4v1767983217513!5m2!1sen!2sin" ></iframe>
+          </div>
           </div>
         </div>
       </div>

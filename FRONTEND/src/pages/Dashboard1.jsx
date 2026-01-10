@@ -7,10 +7,10 @@ export default function Dashboard1() {
     <section className="dashboard-wrapper">
 
       {/* LEFT : DATA ANALYSIS */}
-      <div className="analysis-box">
-        <div className="box-header">DATA ANALYSIS</div>
+      <div className="dashboard-analysis-box">
+        <div className="dashboard-box-header">DATA ANALYSIS</div>
 
-        <div className="filters">
+        <div className="dashboard-filters">
           <div>
             Year :
             <select>
@@ -26,7 +26,7 @@ export default function Dashboard1() {
           </div>
         </div>
 
-        <h4 className="analysis-title">
+        <h4 className="dashboard-analysis-title">
           STATUS OF PROJECTS, AGENTS AND COMPLAINTS
         </h4>
 
@@ -36,12 +36,12 @@ export default function Dashboard1() {
 
       {/* RIGHT : DASHBOARD */}
       <div className="dashboard-box">
-        <div className="box-header">DASHBOARD</div>
+        <div className="dashboard-box-header">DASHBOARD</div>
 
         {/* PROJECTS */}
-        <div className="dash-row">
-          <div className="dash-icon">📊</div>
-          <div className="dash-content">
+        <div className="dashboard-dash-row">
+          <div className="dashboard-dash-icon">📊</div>
+          <div className="dashboard-dash-content">
             <h4>STATUS OF PROJECTS</h4>
             <p>Received : <b>7134</b></p>
             <p>Approved : <b>6289</b></p>
@@ -49,9 +49,9 @@ export default function Dashboard1() {
         </div>
 
         {/* AGENTS */}
-        <div className="dash-row">
-          <div className="dash-icon">👥</div>
-          <div className="dash-content">
+        <div className="dashboard-dash-row">
+          <div className="dashboard-dash-icon">👥</div>
+          <div className="dashboard-dash-content">
             <h4>STATUS OF AGENTS</h4>
             <p>Received : <b>303</b></p>
             <p>Approved : <b>295</b></p>
@@ -59,12 +59,12 @@ export default function Dashboard1() {
         </div>
 
         {/* COMPLAINTS */}
-        <div className="dash-row">
-          <div className="dash-icon">⚖️</div>
-          <div className="dash-content">
+        <div className="dashboard-dash-row">
+          <div className="dashboard-dash-icon">⚖️</div>
+          <div className="dashboard-dash-content">
             <h4>STATUS OF COMPLAINTS</h4>
 
-            <div className="complaints-grid">
+            <div className="dashboard-complaints-grid">
               <div>
                 <p>Total Cases (Form-M)</p>
                 <p>Received : 657</p>

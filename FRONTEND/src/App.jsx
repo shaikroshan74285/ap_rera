@@ -35,7 +35,6 @@ import GradingOfAgents from "./pages/GradingOfAgents";
 import ChronologyOfEvents from "./pages/ChronologyOfEvents"
 import AdvertisementGuidelines from "./pages/AdvertisementGuidelines";
 import OurLeadership from "./pages/OurLeadership";
-import ContactUs from "./pages/ContactUs";
 import Footer from "./components/Footer";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import HyperlinkingPolicy from "./pages/HyperlinkingPolicy";
@@ -67,6 +66,11 @@ import Acf from "./pages/ACF";
 import ComplaintRegistration from "./pages/complaintRegistration";
 import GradingOfPromoters from "./pages/GradingOfPromotors";
 import FormsDownload from "./pages/formsdownload";
+import UploadDocuments from "./pages/UploadDocuments";
+import Preview from "./pages/Preview";
+import Payment from "./pages/Payment";
+import ContactUs from "./pages/contactus";
+
 
 
 
@@ -138,6 +142,9 @@ function App() {
           <Route path="AudioVisualGallery" element={<AudioVisualGallery />} />
           <Route path="/complaintregistration" element={<ComplaintRegistration />} />
           <Route path="/formsdownload"element={<FormsDownload/>} />
+          <Route path="/agent-upload-documents" element={<UploadDocuments />} />
+            <Route path="/agent-preview" element={<Preview />} />
+            <Route path="/agent-payment" element={<Payment />} />
         </Routes>
       </Layout>
     </BrowserRouter>

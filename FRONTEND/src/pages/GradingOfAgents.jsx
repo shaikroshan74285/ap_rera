@@ -3,7 +3,7 @@ import "../styles/GradingOfAgents.css";
 
 const GradingOfAgents = () => {
   return (
-    <div className="page-wrapper">
+    <div className="zpage-wrapper">
       {/* Breadcrumb */}
       <div className="breadcrumb-bar">
         You are here : <span>Home</span> / <span>Promotions</span> /{" "}

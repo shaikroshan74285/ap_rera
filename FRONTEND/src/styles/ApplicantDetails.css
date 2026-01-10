@@ -1,33 +1,44 @@
 .page-wrapper {
   background: #f2f2f2;
-  padding: 20px;
+  padding: 15px 0;
   font-family: Arial, sans-serif;
 }
 
+/* ✅ CENTER CONTAINER */
+.rera-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Breadcrumb */
 .breadcrumb {
   background: #0078d7;
   color: #fff;
-  padding: 8px 12px;
+  padding: 8px 15px;
   font-size: 13px;
+  margin: 0;
 }
 
 .breadcrumb span {
   font-weight: bold;
 }
 
+/* Content */
 .content-box {
   background: #fff;
   padding: 20px;
-  margin-top: 10px;
   border: 1px solid #ddd;
+  border-top: none; /* 🔥 CRITICAL */
 }
 
+/* Title */
 .page-title {
   font-size: 22px;
   border-bottom: 2px solid #0078d7;
   padding-bottom: 5px;
 }
 
+/* Stepper */
 .stepper {
   display: flex;
   justify-content: space-between;
@@ -57,6 +68,7 @@
   border-color: green;
 }
 
+/* Sections */
 .section {
   margin-top: 25px;
 }
@@ -69,12 +81,7 @@
   font-size: 16px;
 }
 
-.radio-row {
-  display: flex;
-  gap: 20px;
-  font-size: 14px;
-}
-
+/* Form grid */
 .grid-4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -84,7 +91,6 @@
 .grid-4 label {
   font-size: 13px;
   font-weight: bold;
-  display: block;
   margin-bottom: 4px;
 }
 
@@ -95,6 +101,15 @@
   border: 1px solid #ccc;
 }
 
+/* Radios */
+.radio-row,
+.radio-inline {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Button */
 .btn-row {
   text-align: right;
   margin-top: 30px;
@@ -111,24 +126,108 @@
 .btn-row button:hover {
   background: #005fa3;
 }
-.radio-inline {
-  display: flex;
-  align-items: center;
+.conditional-box {
+  margin-top: 15px;
 }
 
-.radio-option {
-  margin-left: 20px; /* space between Yes and No */
-}
-.radio-inline {
-  display: flex;
-  align-items: center;
-}
-
-.radio-inline span {
-  margin-right: 20px; /* space after question text */
-}
-
-.radio-inline label {
-  margin-right: 20px; /* space between Yes and No */
+.add-btn {
+  align-self: flex-end;
+  margin-top: 22px;
+  background: #0078d7;
+  color: #fff;
+  border: none;
+  padding: 6px 16px;
   cursor: pointer;
+}
+
+.add-btn:hover {
+  background: #005fa3;
+}
+.litigation-row {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.inline-file {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.inline-file label {
+  font-weight: bold;
+  font-size: 13px;
+}
+/* =========================
+   STEPPER WITH BIGGER BOX
+========================= */
+
+.stepper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+
+  /* 🔥 INCREASE BOX SIZE */
+  padding: 35px 35px 35px;
+  margin: 30px 0 40px;
+
+  border: 1px solid #ddd;
+  background: #ffffff;
+}
+
+/* 🔹 HORIZONTAL CONNECTING LINE */
+.stepper::before {
+  content: "";
+  position: absolute;
+
+  /* 🔥 MOVE LINE TO CENTER */
+  top: 52px;
+  left: 60px;
+  right: 60px;
+
+  height: 2px;
+  background: #cfcfcf;
+  z-index: 0;
+}
+
+/* EACH STEP */
+.step {
+  text-align: center;
+  z-index: 1;
+  width: 100%;
+}
+
+/* STEP CIRCLE */
+.circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid #bdbdbd;
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: auto;
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* ACTIVE STEP */
+.circle.active {
+  background: #17a65b;
+  border-color: #17a65b;
+  color: #ffffff;
+}
+
+/* STEP LABEL */
+.step span {
+  display: block;
+  margin-top: 12px; /* 🔥 more space below circle */
+  font-size: 14px;
+  color: #000;
 }

@@ -1,235 +1,401 @@
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import "../styles/ApplicantDetails.css";
 
 const ApplicantDetails = () => {
   const navigate = useNavigate();
+  const [litigationStatus, setLitigationStatus] = useState("No");
 
-  const handleSaveContinue = () => {
-    // later you can add validation here
-    navigate("/upload-documents");
+  /* -------------------- STATE -------------------- */
+  const [form, setForm] = useState({
+    agentName: "",
+    fatherName: "",
+    occupation: "",
+    email: "",
+    aadhaar: "",
+    pan: "",
+    mobile: "",
+    address1: "",
+    district: "",
+    mandal: "",
+    village: "",
+  });
+
+  const [showProjects, setShowProjects] = useState(false);
+  const [showLitigation, setShowLitigation] = useState(false);
+  const [showOtherState, setShowOtherState] = useState(false);
+  const [showInterimCert, setShowInterimCert] = useState(false);
+  const [showFinalCert, setShowFinalCert] = useState(false);
+
+  /* -------------------- HANDLERS -------------------- */
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  const validateFile = (file, type) => {
+    if (!file) return false;
+    const name = file.name.toLowerCase();
+    if (type === "jpg" && !name.endsWith(".jpg")) {
+      alert("Only JPG files allowed");
+      return false;
+    }
+    if (type === "pdf" && !name.endsWith(".pdf")) {
+      alert("Only PDF files allowed");
+      return false;
+    }
+    return true;
+  };
+
+  /* -------------------- VALIDATION -------------------- */
+  const handleSaveContinue = () => {
+    if (!form.agentName) return alert("Please Enter Agent Name");
+    if (!form.fatherName) return alert("Please Enter Father Name");
+    if (!form.occupation) return alert("Please Select Occupation");
+    if (!form.email) return alert("Please Enter Email");
+    if (form.aadhaar.length !== 12) return alert("Aadhaar Number must be 12 digits");
+
+    if (!form.pan) return alert("Please Enter PAN Card Number");
+    if (!form.mobile) return alert("Please Enter Mobile Number");
+    if (!form.address1) return alert("Please Enter Address Line 1");
+    if (!form.district) return alert("Please Select District");
+    if (!form.mandal) return alert("Please Select Mandal");
+    if (!form.village) return alert("Please Select Local Area / Village");
+
+    alert("Agent details saved successfully");
+    navigate("/agent-upload-documents");
+  };
+
+  /* -------------------- UI -------------------- */
   return (
     <div className="page-wrapper">
-      {/* Breadcrumb */}
-      <div className="breadcrumb">
-        You are here : <span>Home</span> / <span>Registration</span> /{" "}
-        <span>Real Estate Agent Registration</span>
-      </div>
+      <div className="rera-container">
 
-      {/* Main Container */}
-      <div className="content-box">
-        <h2 className="page-title">Real Estate Agent Registration</h2>
-
-        {/* Stepper */}
-        <div className="stepper">
-          {[
-            "Agent Detail",
-            "Upload Documents",
-            "Preview",
-            "Payment",
-            "Acknowledgement",
-          ].map((s, i) => (
-            <div className="step" key={i}>
-              <div className={`circle ${i === 0 ? "active" : ""}`}>
-                {i + 1}
-              </div>
-              <span>{s}</span>
-            </div>
-          ))}
+        {/* Breadcrumb */}
+        <div className="breadcrumb">
+          You are here : <span>Home</span> / <span>Registration</span> /{" "}
+          <span>Real Estate Agent Registration</span>
         </div>
 
-        {/* Agent Type */}
-        <section className="section">
-          <h3 className="section-title">Agent Type</h3>
-          <div className="radio-row">
-            <label>
-              <input type="radio" name="agentType" defaultChecked /> Individual
-            </label>
-            <label>
-              <input type="radio" name="agentType" /> Other than Individual
-            </label>
+        <div className="content-box">
+          <h2 className="page-title">Real Estate Agent Registration</h2>
+
+          {/* Stepper */}
+          <div className="stepper">
+            {["Agent Detail", "Upload Documents", "Preview", "Payment", "Acknowledgement"].map(
+              (s, i) => (
+                <div className="step" key={i}>
+                  <div className={`circle ${i === 0 ? "active" : ""}`}>{i + 1}</div>
+                  <span>{s}</span>
+                </div>
+              )
+            )}
           </div>
-        </section>
 
-        {/* Applicant Details */}
-        <section className="section">
-          <h3 className="section-title">Applicant Details</h3>
+          {/* Applicant Details */}
+          <section className="section">
+            <h3 className="section-title">Applicant Details</h3>
 
-          <div className="grid-4">
-            <div>
-              <label>Agent Name *</label>
-              <input type="text" />
+            <div className="grid-4">
+              <div>
+                <label>Agent Name *</label>
+                <input name="agentName" onChange={handleChange} />
+              </div>
+
+              <div>
+                <label>Upload Photograph (JPG) *</label>
+                <input type="file" onChange={(e) => validateFile(e.target.files[0], "jpg")} />
+              </div>
+
+              <div>
+                <label>Father's Name *</label>
+                <input name="fatherName" onChange={handleChange} />
+              </div>
+
+              <div>
+                <label>Occupation *</label>
+                <select name="occupation" onChange={handleChange}>
+                  <option value="">Select</option>
+                  <option>Self</option>
+                  <option>Business</option>
+                </select>
+              </div>
+
+              <div>
+                <label>Email Id *</label>
+                <input type="email" name="email" onChange={handleChange} />
+              </div>
+
+              <div>
+  <label>Aadhaar Number *</label>
+  <input
+    name="aadhaar"
+    value={form.aadhaar}
+    maxLength="12"
+    onChange={(e) => {
+      // allow only numbers
+      const value = e.target.value.replace(/\D/g, "");
+      setForm({ ...form, aadhaar: value });
+    }}
+  />
+</div>
+
+
+              <div>
+  <label>PAN Card Number *</label>
+  <input
+    name="pan"
+    value={form.pan}
+    maxLength="10"
+    onChange={(e) => {
+      const value = e.target.value.toUpperCase();
+      setForm({ ...form, pan: value });
+    }}
+  />
+</div>
+
+              <div>
+                <label>Upload PAN Card (PDF) *</label>
+                <input type="file" onChange={(e) => validateFile(e.target.files[0], "pdf")} />
+              </div>
+
+              <div>
+  <label>Mobile Number *</label>
+  <input
+    name="mobile"
+    value={form.mobile}
+    maxLength="10"
+    onChange={(e) => {
+      const value = e.target.value.replace(/\D/g, "");
+      setForm({ ...form, mobile: value });
+    }}
+  />
+</div>
+
+              <div>
+                <label>Land Line Number</label>
+                <input />
+              </div>
+
+              <div>
+                <label>License Number by local bodies</label>
+                <input />
+              </div>
+
+              <div>
+                <label>License Issued Date</label>
+                <input type="date" />
+              </div>
+            </div>
+          </section>
+
+          {/* Address */}
+          <section className="section">
+            <h3 className="section-title">Local Address For Communication</h3>
+
+            <div className="grid-4">
+              <div>
+                <label>Address Line 1 *</label>
+                <input name="address1" onChange={handleChange} />
+              </div>
+
+              <div>
+                <label>Address Line 2</label>
+                <input />
+              </div>
+
+              <div>
+                <label>State *</label>
+                <select>
+                  <option>Andhra Pradesh</option>
+                </select>
+              </div>
+
+              <div>
+                <label>District *</label>
+                <input name="district" onChange={handleChange} />
+              </div>
+
+              <div>
+                <label>Mandal *</label>
+                <input name="mandal" onChange={handleChange} />
+              </div>
+
+              <div>
+                <label>Local Area / Village *</label>
+                <input name="village" onChange={handleChange} />
+              </div>
+
+              <div>
+                <label>PIN Code *</label>
+                <input />
+              </div>
+
+              <div>
+                <label>Upload Address Proof (PDF) *</label>
+                <input type="file" onChange={(e) => validateFile(e.target.files[0], "pdf")} />
+              </div>
+            </div>
+          </section>
+
+          {/* Projects */}
+          <section className="section">
+            <h3 className="section-title">Projects Launched In The Past 5 Years</h3>
+
+            <div className="radio-inline">
+              <span>Last five years project details *</span>
+              <label><input type="radio" onChange={() => setShowProjects(true)} /> Yes</label>
+              <label><input type="radio" defaultChecked onChange={() => setShowProjects(false)} /> No</label>
             </div>
 
-            <div>
-              <label>Upload Photograph *</label>
-              <input type="file" />
-            </div>
+            {showProjects && (
+              <div className="grid-4 conditional-box">
+                <div>
+                  <label>Project Name *</label>
+                  <input />
+                </div>
+                <div></div><div></div>
+                <div><button className="add-btn">Add</button></div>
+              </div>
+            )}
+          </section>
 
-            <div>
-              <label>Father's Name *</label>
-              <input type="text" />
-            </div>
-
-            <div>
-              <label>Occupation *</label>
-              <select>
-                <option>Self</option>
-                <option>Business</option>
-              </select>
-            </div>
-
-            <div>
-              <label>Email Id *</label>
-              <input type="email" />
-            </div>
-
-            <div>
-              <label>Aadhaar Number *</label>
-              <input type="text" />
-            </div>
-
-            <div>
-              <label>PAN Card Number *</label>
-              <input type="text" />
-            </div>
-
-            <div>
-              <label>Upload PAN Card *</label>
-              <input type="file" />
-            </div>
-
-            <div>
-              <label>Mobile Number *</label>
-              <input type="text" />
-            </div>
-
-            <div>
-              <label>Land Line Number</label>
-              <input type="text" />
-            </div>
-
-            <div>
-              <label>License Number by local bodies</label>
-              <input type="text" />
-            </div>
-
-            <div>
-              <label>License Issued Date</label>
-              <input type="date" />
-            </div>
-          </div>
-        </section>
-
-        {/* Address */}
-        <section className="section">
-          <h3 className="section-title">Local Address For Communication</h3>
-
-          <div className="grid-4">
-            <div>
-              <label>Address Line 1 *</label>
-              <input type="text" />
-            </div>
-
-            <div>
-              <label>Address Line 2</label>
-              <input type="text" />
-            </div>
-
-            <div>
-              <label>State *</label>
-              <select>
-                <option>Andhra Pradesh</option>
-              </select>
-            </div>
-
-            <div>
-              <label>District *</label>
-              <select>
-                <option>Select</option>
-              </select>
-            </div>
-
-            <div>
-              <label>Mandal *</label>
-              <select>
-                <option>Select</option>
-              </select>
-            </div>
-
-            <div>
-              <label>Local Area / Village *</label>
-              <select>
-                <option>Select</option>
-              </select>
-            </div>
-
-            <div>
-              <label>PIN Code *</label>
-              <input type="text" />
-            </div>
-
-            <div>
-              <label>Upload Address Proof *</label>
-              <input type="file" />
-            </div>
-          </div>
-        </section>
-
-        {/* Other Sections */}
-         <section className="section">
-  <h3 className="section-title">Projects Launched In The Past 5 Years</h3>
-
-  <div className="radio-inline">
-    <span>Last five years project details *</span>
-
-    <label>
-      <input type="radio" name="proj" /> Yes
-    </label>
-
-    <label>
-      <input type="radio" name="proj" defaultChecked /> No
-    </label>
-  </div>
-</section>
-
-<section className="section">
+          {/* Litigations */}
+          <section className="section">
   <h3 className="section-title">Litigations</h3>
 
-  <div className="radio-inline">
+  <div className="radio-inline litigation-row">
     <span>Any Civil/Criminal Cases *</span>
 
     <label>
-      <input type="radio" name="lit" /> Yes
+      <input
+        type="radio"
+        name="litigation"
+        value="Yes"
+        checked={litigationStatus === "Yes"}
+        onChange={() => setLitigationStatus("Yes")}
+      />{" "}
+      Yes
     </label>
 
     <label>
-      <input type="radio" name="lit" defaultChecked /> No
+      <input
+        type="radio"
+        name="litigation"
+        value="No"
+        checked={litigationStatus === "No"}
+        onChange={() => setLitigationStatus("No")}
+      />{" "}
+      No
     </label>
+
+    {/* ✅ FILE APPEARS NEXT TO NO */}
+    {litigationStatus === "No" && (
+      <div className="inline-file">
+        <label>Self Declared Affidavit *</label>
+        <input type="file" />
+      </div>
+    )}
   </div>
+
+  {/* ================= WHEN YES ================= */}
+  {litigationStatus === "Yes" && (
+    <>
+      <p style={{ color: "red", marginTop: "10px" }}>
+        Note : In case Petitioner/Respondent are more than one, please provide
+        their names by comma separated.
+      </p>
+
+      <div className="conditional-box grid-4">
+        <div>
+          <label>Case No *</label>
+          <input />
+        </div>
+
+        <div>
+          <label>Name & Place of Tribunal/Authority *</label>
+          <input />
+        </div>
+
+        <div>
+          <label>Name of the Petitioner *</label>
+          <input />
+        </div>
+
+        <div>
+          <label>Name of the Respondent *</label>
+          <input />
+        </div>
+
+        <div>
+          <label>Facts of the Case/Contents of the Petitioner *</label>
+          <input />
+        </div>
+
+        <div>
+          <label>Present Status of the case *</label>
+          <select>
+            <option>Select</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Interim Order if any *</label>
+          <label><input type="radio" /> Yes</label>
+          <label><input type="radio" /> No</label>
+        </div>
+
+        <div>
+          <label>Details of final order if disposed *</label>
+          <label><input type="radio" /> Yes</label>
+          <label><input type="radio" /> No</label>
+        </div>
+
+        <div>
+          <label>Interim Order Certificate *</label>
+          <input type="file" />
+        </div>
+
+        <div>
+          <label>Disposed Certificate *</label>
+          <input type="file" />
+        </div>
+
+        <div></div>
+
+        <div>
+          <button className="add-btn">Add</button>
+        </div>
+      </div>
+    </>
+  )}
 </section>
 
 
-        <section className="section">
-  <h3 className="section-title">Other State/UT RERA Registration Details</h3>
+          {/* Other State */}
+          <section className="section">
+            <h3 className="section-title">Other State/UT RERA Registration Details</h3>
 
-  <div className="radio-inline">
-    <span>Do you have registration in other states *</span>
+            <div className="radio-inline">
+              <span>Do you have registration in other states *</span>
+              <label><input type="radio" onChange={() => setShowOtherState(true)} /> Yes</label>
+              <label><input type="radio" defaultChecked onChange={() => setShowOtherState(false)} /> No</label>
+            </div>
 
-    <label className="radio-option">
-      <input type="radio" name="other" /> Yes
-    </label>
+            {showOtherState && (
+              <div className="grid-4 conditional-box">
+                <div><label>Registration Number *</label><input /></div>
+                <div><label>State / UT *</label><select><option>Select</option></select></div>
+                <div><label>District *</label><select><option>Select</option></select></div>
+                <div><button className="add-btn">Add</button></div>
+              </div>
+            )}
+          </section>
 
-    <label className="radio-option">
-      <input type="radio" name="other" defaultChecked /> No
-    </label>
-  </div>
-</section>
+          {/* Save */}
+          <div className="btn-row">
+            <button onClick={handleSaveContinue}>Save And Continue</button>
+          </div>
 
-        {/* Save Button */}
-        <div className="btn-row">
-          <button onClick={handleSaveContinue}>Save And Continue</button>
         </div>
       </div>
     </div>

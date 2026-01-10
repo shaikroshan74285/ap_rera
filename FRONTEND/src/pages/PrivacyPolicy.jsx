@@ -4,22 +4,22 @@ import privaccy from "../assets/privaccy.jpg";
 
 const PrivacyPolicy = () => {
   return (
-    <div className="privacy-page">
+    <div className="privacypolicy-page">
       {/* Breadcrumb */}
-      <div className="breadcrumb">
+      <div className="privacypolicy-breadcrumb">
         <span>You are here :</span>
         <a href="/"> Home</a>
         <span> / Privacy Policy</span>
       </div>
 
       {/* Main Content */}
-      <div className="privacy-container">
-        <h1 className="privacy-title">Privacy Policy</h1>
-        <div className="title-underline"></div>
+      <div className="privacypolicy-container">
+        <h1 className="privacypolicy-title">Privacy Policy</h1>
+        <div className="privacypolicy-title-underline"></div>
 
-        <div className="privacy-content">
+        <div className="privacypolicy-content">
           {/* Text Section */}
-          <div className="privacy-text fade-in-left">
+          <div className="privacypolicy-text privacypolicy-fade-in-left">
             <p>
               We do not collect personal information for any purpose other than
               to respond to you (for example, to respond to your queries). If you
@@ -40,7 +40,7 @@ const PrivacyPolicy = () => {
           </div>
 
           {/* Image Section */}
-          <div className="privacy-image fade-in-right">
+          <div className="privacypolicy-image privacypolicy-fade-in-right">
             <img src={privaccy} alt="Privacy Policy" />
           </div>
         </div>

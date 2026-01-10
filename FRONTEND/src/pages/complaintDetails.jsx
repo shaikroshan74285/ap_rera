@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../styles/complaintdetails.css";
 
 const ComplaintDetails = ({ setCurrentStep }) => {
   const [complaintAgainst, setComplaintAgainst] = useState("");
@@ -34,13 +35,13 @@ const ComplaintDetails = ({ setCurrentStep }) => {
 
   return (
     <>
-      <h3 className="subheading">Complaint Details</h3>
+      <h3 className="compdetails-subheading">Complaint Details</h3>
 
       {/* ================= COMPLAINT AGAINST ================= */}
-      <div className="row">
-        <div className="col">
+      <div className="compdetails-row">
+        <div className="compdetails-col">
           <label>
-            Complaint Against <span className="required">*</span>
+            Complaint Against <span className="compdetails-required">*</span>
           </label>
           <select
             value={complaintAgainst}
@@ -53,9 +54,9 @@ const ComplaintDetails = ({ setCurrentStep }) => {
           </select>
         </div>
 
-        <div className="col">
+        <div className="compdetails-col">
           <label>
-            Complaint By <span className="required">*</span>
+            Complaint By <span className="compdetails-required">*</span>
           </label>
           <select>
             <option value="">Select</option>
@@ -67,10 +68,10 @@ const ComplaintDetails = ({ setCurrentStep }) => {
       {/* ================= AGENT / PROMOTER ================= */}
       {(complaintAgainst === "agent" || complaintAgainst === "promoter") && (
         <>
-          <h4 className="subheading">Details Of The Respondent</h4>
+          <h4 className="compdetails-subheading">Details Of The Respondent</h4>
 
-          <div className="row">
-            <div className="col">
+          <div className="compdetails-row">
+            <div className="compdetails-col">
               <label>Is He/She Registered with AP RERA?</label>
               <div>
                 <label>
@@ -99,20 +100,20 @@ const ComplaintDetails = ({ setCurrentStep }) => {
       {/* ================= ALLOTTEE ================= */}
       {complaintAgainst === "allottee" && (
         <>
-          <h4 className="subheading">Details Of The Respondent</h4>
+          <h4 className="compdetails-subheading">Details Of The Respondent</h4>
 
-          <div className="row">
-            <div className="col">
+          <div className="compdetails-row">
+            <div className="compdetails-col">
               <label>Project Name *</label>
               <input type="text" />
             </div>
 
-            <div className="col">
+            <div className="compdetails-col">
               <label>Name *</label>
               <input type="text" />
             </div>
 
-            <div className="col">
+            <div className="compdetails-col">
               <label>Mobile No *</label>
               <input type="text" />
             </div>
@@ -121,30 +122,29 @@ const ComplaintDetails = ({ setCurrentStep }) => {
       )}
 
       {/* ================= DETAILS OF COMPLAINT ================= */}
-      <h4 className="subheading">Details Of The Complaint</h4>
-
-      <div className="row">
-        <div className="col">
+      <h4 className="compdetails-subheading">Details Of The Complaint</h4>
+      <div className="compdetails-row">
+        <div className="compdetails-col">
           <label>Subject of Complaint *</label>
           <input type="text" />
         </div>
 
-        <div className="col">
+        <div className="compdetails-col">
           <label>Relief Sought from APRERA *</label>
           <input type="text" />
         </div>
 
-        <div className="col">
+        <div className="compdetails-col">
           <label>Upload Agreement for Sale *</label>
           <input type="file" />
         </div>
       </div>
 
       {/* ================= SUPPORTING DOCUMENTS ================= */}
-      <h4 className="subheading">Supporting Documents</h4>
+      <h4 className="compdetails-subheading">Supporting Documents</h4>
 
-      <div className="row">
-        <div className="col">
+      <div className="compdetails-row">
+        <div className="compdetails-col">
           <label>Document Description</label>
           <input
             type="text"
@@ -154,7 +154,7 @@ const ComplaintDetails = ({ setCurrentStep }) => {
           />
         </div>
 
-        <div className="col">
+        <div className="compdetails-col">
           <label>Upload Document</label>
           <input
             type="file"
@@ -162,8 +162,8 @@ const ComplaintDetails = ({ setCurrentStep }) => {
           />
         </div>
 
-        <div className="col" style={{ alignSelf: "flex-end" }}>
-          <button className="proceed-btn" onClick={handleAddDocument}>
+        <div className="compdetails-col" style={{ alignSelf: "flex-end" }}>
+          <button className="compdetails-proceed-btn" onClick={handleAddDocument}>
             Add
           </button>
         </div>
@@ -171,7 +171,7 @@ const ComplaintDetails = ({ setCurrentStep }) => {
 
       {/* ================= DOCUMENT TABLE ================= */}
       {documents.length > 0 && (
-        <table className="doc-table">
+        <table className="compdetails-doc-table">
           <thead>
             <tr>
               <th>S.No</th>
@@ -192,7 +192,7 @@ const ComplaintDetails = ({ setCurrentStep }) => {
                 </td>
                 <td>
                   <button
-                    className="proceed-btn"
+                    className="compdetails-proceed-btn"
                     onClick={() => handleDelete(doc.id)}
                   >
                     Delete
@@ -205,16 +205,16 @@ const ComplaintDetails = ({ setCurrentStep }) => {
       )}
 
       {/* ================= DECLARATION ================= */}
-      <h4 className="subheading">Declaration</h4>
+      <h4 className="compdetails-subheading">Declaration</h4>
 
-      <div className="declaration-box">
+      <div className="compdetails-declaration-box">
         <label>
           <input type="checkbox" /> I hereby declare that the complaint mentioned
           above is not pending before any court or tribunal.
         </label>
       </div>
 
-      <div className="declaration-box">
+      <div className="compdetails-declaration-box">
         <label>
           <input type="checkbox" /> I declare that the above information is true
           to the best of my knowledge.
@@ -222,9 +222,9 @@ const ComplaintDetails = ({ setCurrentStep }) => {
       </div>
 
       {/* ================= FOOTER ================= */}
-      <div className="cr-footer">
+      <div className="compdetails-cr-footer">
         <button
-          className="proceed-btn"
+          className="compdetails-proceed-btn"
           onClick={() => setCurrentStep(4)}
         >
           Save And Continue

@@ -184,20 +184,20 @@
   text-align: center;
 }
 
-.section-title {
+.expertise-section-title {
   color: #0a5ca8;
   font-size: 32px;
   font-weight: bold;
 }
 
-.title-line {
+.expertise-title-line {
   width: 35px;
   height: 3px;
   background: #0a5ca8;
   margin: 10px auto 20px;
 }
 
-.section-subtitle {
+.expertise-section-subtitle {
   color: #666;
   font-size: 18px;
   margin-bottom: 50px;
@@ -288,20 +288,20 @@
   text-align: center;
 }
 
-.learning .section-title {
+.learning .learning-section-title {
   color: #0a5ca8;
   font-size: 32px;
   font-weight: bold;
 }
 
-.learning .title-line {
+.learning .learning-title-line {
   width: 35px;
   height: 3px;
   background: #0a5ca8;
   margin: 10px auto 20px;
 }
 
-.learning .section-subtitle {
+.learning .learning-section-subtitle {
   color: #666;
   font-size: 18px;
   margin-bottom: 60px;

@@ -2,23 +2,23 @@ import "../styles/ContactUs.css";
 
 export default function ContactUs() {
   return (
-    <div className="contact-wrapper">
+    <div className="contactus-wrapper">
 
       {/* Breadcrumb */}
-      <div className="breadcrumb-bar">
+      <div className="contactus-breadcrumb-bar">
         You are here : <span>Home</span> / <span>About Us</span> /{" "}
         <span>Contact Us</span> / <b>APRERA</b>
       </div>
 
       {/* Help Desk */}
-      <div className="helpdesk">
+      <div className="contactus-helpdesk">
         Help Desk : <span>📞 6304906011</span>
       </div>
 
       {/* A. CHAIRPERSON */}
       <section>
-        <h3 className="section-title">A. CHAIRPERSON</h3>
-        <table className="data-table">
+        <h3 className="contactus-section-title">A. CHAIRPERSON</h3>
+        <table className="contactus-data-table">
           <thead>
             <tr>
               <th>S.No.</th>
@@ -46,8 +46,8 @@ export default function ContactUs() {
 
       {/* B. MEMBERS */}
       <section>
-        <h3 className="section-title">B. MEMBERS</h3>
-        <table className="data-table">
+        <h3 className="contactus-section-title">B. MEMBERS</h3>
+        <table className="contactus-data-table">
           <thead>
             <tr>
               <th>S.No.</th>
@@ -85,8 +85,8 @@ export default function ContactUs() {
 
       {/* C. ADJUDICATION */}
       <section>
-        <h3 className="section-title">C. ADJUDICATION</h3>
-        <table className="data-table">
+        <h3 className="contactus-section-title">C. ADJUDICATION</h3>
+        <table className="contactus-data-table">
           <thead>
             <tr>
               <th>S.No.</th>
@@ -112,8 +112,8 @@ export default function ContactUs() {
 
       {/* D. RTI */}
       <section>
-        <h3 className="section-title">D. RTI</h3>
-        <table className="data-table">
+        <h3 className="contactus-section-title">D. RTI</h3>
+        <table className="contactus-data-table">
           <thead>
             <tr>
               <th>S.No.</th>
@@ -155,8 +155,8 @@ export default function ContactUs() {
 
       {/* E. ACCOUNTS & AUDIT */}
       <section>
-        <h3 className="section-title">E. ACCOUNTS & AUDIT</h3>
-        <table className="data-table">
+        <h3 className="contactus-section-title">E. ACCOUNTS & AUDIT</h3>
+        <table className="contactus-data-table">
           <thead>
             <tr>
               <th>S.No.</th>
@@ -182,10 +182,10 @@ export default function ContactUs() {
 
       {/* ================= OFFICE SECTION ================= */}
       <section>
-        <h3 className="section-title">Office</h3>
+        <h3 className="contactus-section-title">Office</h3>
 
-        <div className="office-box">
-          <div className="office-left">
+        <div className="contactus-office-box">
+          <div className="contactus-office-left">
             <h4>ANDHRA PRADESH REAL ESTATE REGULATORY AUTHORITY</h4>
             <p>6th &amp; 7th Floors,</p>
             <p>APCRDA Project Office,</p>
@@ -193,12 +193,12 @@ export default function ContactUs() {
             <p>Amaravati, Guntur District,</p>
             <p>Andhra Pradesh. Pin - 522237.</p>
 
-            <p className="office-help">
+            <p className="contactus-office-help">
               <strong>Help Desk :</strong>{" "}
               <span>6304906011</span> (All Working Days, 10AM - 5.30PM)
             </p>
 
-            <p className="office-mail">
+            <p className="contactus-office-mail">
               Write to<br />
               authority.aprera@gmail.com<br />
               helpdesk-rera@ap.gov.in<br />
@@ -206,7 +206,7 @@ export default function ContactUs() {
             </p>
           </div>
 
-          <div className="office-right">
+          <div className="contactus-office-right">
             <iframe
               title="APRERA Office"
               src="https://www.google.com/maps?q=16.5439,80.2911&z=15&output=embed"

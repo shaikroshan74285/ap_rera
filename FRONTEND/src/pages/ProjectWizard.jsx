@@ -16,32 +16,32 @@ export default function ProjectWizard() {
   ];
 
   return (
-    <div className="wizard-page">
+    <div className="projwizard-page">
 
       {/* MAIN BOX */}
-      <div className="wizard-card">
+      <div className="projwizard-card">
 
         {/* breadcrumb inside card */}
-        <div className="wizard-breadcrumb">
+        <div className="projwizard-breadcrumb">
           You are here : <span>Home</span> / <span>Registration</span> / Project Registration
         </div>
 
         {/* TITLE */}
-        <h2 className="wizard-title">Project Registration</h2>
-        <div className="header-line"></div>
+        <h2 className="projwizard-title">Project Registration</h2>
+        <div className="projwizard-header-line"></div>
 
         {/* STEPPER */}
-        <div className="stepper">
+        <div className="projwizard-stepper">
           {steps.map((label, index) => {
             const num = index + 1;
 
             return (
-              <div key={index} className="step-item">
-                <div className={`step-circle ${step === num ? "active" : ""}`}>
+              <div key={index} className="projwizard-step-item">
+                <div className={`projwizard-step-circle ${step === num ? "projwizard-active" : ""}`}>
                   {num}
                 </div>
 
-                <div className="step-label">
+                <div className="projwizard-step-label">
                   {label.split(" ").map((w, i) => (
                     <div key={i}>{w}</div>
                   ))}
@@ -52,27 +52,27 @@ export default function ProjectWizard() {
         </div>
 
         {/* FORM BODY */}
-        <div className="form-body">
+        <div className="projwizard-form-body">
 
           {/* APPLICATION NUMBER */}
-          <div className="section-block">
-            <h3>Application Number</h3>
-            <div className="section-line"></div>
+          <div className="projwizard-section-block">
+            <h3 className="projwizard-h3">Application Number</h3>
+            <div className="projwizard-section-line"></div>
 
-            <label className="field-label">Application Number*</label>
+            <label className="projwizard-field-label">Application Number*</label>
             <input
               type="text"
               defaultValue="0701268144746"
-              className="text-input"
+              className="projwizard-text-input"
             />
           </div>
 
           {/* PROMOTER TYPE */}
-          <div className="section-block">
-            <h3>Promoter Type</h3>
-            <div className="section-line"></div>
+          <div className="projwizard-section-block">
+            <h3 className="projwizard-h3">Promoter Type</h3>
+            <div className="projwizard-section-line"></div>
 
-            <div className="radio-row">
+            <div className="projwizard-radio-row">
               <label>
                 <input type="radio" name="ptype" /> Individual
               </label>
@@ -84,13 +84,13 @@ export default function ProjectWizard() {
           </div>
 
           {/* PAN */}
-          <div className="section-block">
-            <h3>PAN Card Number</h3>
-            <div className="section-line"></div>
+          <div className="projwizard-section-block">
+            <h3 className="projwizard-h3">PAN Card Number</h3>
+            <div className="projwizard-section-line"></div>
 
-            <div className="row">
-              <input className="text-input" placeholder="PAN Card Number" />
-              <button className="btn">Get Details</button>
+            <div className="projwizard-row">
+              <input className="projwizard-text-input" placeholder="PAN Card Number" />
+              <button className="projwizard-btn">Get Details</button>
             </div>
           </div>
 

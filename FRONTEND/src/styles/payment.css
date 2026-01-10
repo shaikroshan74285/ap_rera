@@ -1,0 +1,150 @@
+/* =============================
+   COMMON PAGE LAYOUT
+============================= */
+
+.container-wrapper {
+  background: #ffffff;
+}
+
+.main-container {
+  width: 92%;
+  margin: 16px auto;
+  background: #ffffff;
+  border: 1px solid #d6d6d6;
+}
+
+.content-padding {
+  padding: 20px;
+}
+
+/* =============================
+   BREADCRUMB
+============================= */
+
+.breadcrumb-bar {
+  background: #1087e6;
+  color: #ffffff;
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.breadcrumb-link {
+  color: #ffeb3b;
+  margin: 0 5px;
+}
+
+/* =============================
+   TITLE
+============================= */
+
+.page-title {
+  font-size: 22px;
+  border-bottom: 3px solid #1087e6;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 25px;
+}
+
+/* =============================
+   CENTER PAYMENT BOX
+============================= */
+
+.payment-center-box {
+  width: 520px;               /* 🔑 reduced width */
+  margin: 0 auto;             /* center align */
+  border: 3px solid #1087e6;  /* thick blue border */
+  padding: 15px;
+  background: #ffffff;
+}
+
+/* HEADER STRIP */
+.payment-box-header {
+  background: #1087e6;
+  color: #ffffff;
+  padding: 8px 12px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* =============================
+   TOP INFO
+============================= */
+
+.payment-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.payment-date {
+  text-align: right;
+}
+
+/* =============================
+   TABLE
+============================= */
+
+.payment-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.payment-table td {
+  border: 1px solid #e0e0e0;
+  padding: 6px 8px;
+}
+
+/* =============================
+   TOTAL AMOUNT BOX
+============================= */
+
+.payment-amount {
+  border: 2px solid #1087e6;
+  padding: 6px 10px;
+  width: fit-content;
+  margin-left: auto;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.payment-amount span {
+  margin-left: 8px;
+  font-weight: bold;
+}
+
+/* =============================
+   PAYMENT GATEWAY
+============================= */
+
+.payment-gateway {
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.payment-gateway label {
+  margin-right: 20px;
+}
+
+/* =============================
+   BUTTON
+============================= */
+
+.payment-btn-row {
+  text-align: right;
+}
+
+.payment-btn {
+  background: #1087e6;
+  color: #ffffff;
+  border: none;
+  padding: 6px 20px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.payment-btn:hover {
+  background: #0a5fb4;
+}

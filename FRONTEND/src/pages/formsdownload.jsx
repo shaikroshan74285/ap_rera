@@ -55,11 +55,11 @@ const categoryCounts = formsData.reduce((acc, cur) => {
 const FormsDownload = () => {
   return (
     <div className="forms-wrapper">
-      <div className="breadcrumb">
+      <div className="forms-breadcrumb">
         You are here : <span>Home</span> / <span>Registration</span> / <b>Forms Download</b>
       </div>
 
-      <h2>Forms Download</h2>
+      <h2 className="formdownload">Forms Download</h2>
 
       <table className="forms-table">
         <thead>
@@ -80,16 +80,16 @@ const FormsDownload = () => {
             return (
               <tr key={index}>
                 {isFirst && (
-                  <td className="category" rowSpan={categoryCounts[item.category]}>
+                  <td className="forms-category" rowSpan={categoryCounts[item.category]}>
                     {item.category}
                   </td>
                 )}
 
-                <td className="code">{item.code}</td>
+                <td className="forms-code">{item.code}</td>
                 <td>{item.subject}</td>
 
                 {/* DIRECT OPEN */}
-                <td className="icon">
+                <td className="forms-icon">
                   {item.file && (
                     <a
                       href={item.file}
@@ -101,7 +101,7 @@ const FormsDownload = () => {
                   )}
                 </td>
 
-                <td className="icon"></td>
+                <td className="forms-icon"></td>
               </tr>
             );
           })}

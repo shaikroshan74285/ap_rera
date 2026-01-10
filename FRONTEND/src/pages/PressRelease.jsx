@@ -5,10 +5,10 @@ import LastDatepdf from "../assets/LastDate_News.pdf";
 
 const PressRelease = () => {
   return (
-    <div className="press-page">
-      <div className="press-container">
+    <div className="pressRel-page">
+      <div className="pressRel-container">
         {/* Breadcrumb */}
-        <div className="breadcrumb">
+        <div className="pressRel-breadcrumb">
           You are here :&nbsp;
           <a href="#">Home</a> /&nbsp;
           <a href="#">Promotions</a> /&nbsp;
@@ -16,10 +16,10 @@ const PressRelease = () => {
         </div>
 
         {/* Content */}
-        <div className="press-content">
-          <h2 className="page-title">Press Releases</h2>
+        <div className="pressRel-content">
+          <h2 className="pressRel-page-title">Press Releases</h2>
 
-          <table className="press-table">
+          <table className="pressRel-table">
             <thead>
               <tr>
                 <th>Subject</th>
@@ -30,20 +30,20 @@ const PressRelease = () => {
 
             <tbody>
               <tr>
-                <td className="subject-text">Press note on Web launch</td>
-                <td className="date-text">05th Feb 2018</td>
+                <td className="pressRel-subject-text">Press note on Web launch</td>
+                <td className="pressRel-date-text">05th Feb 2018</td>
                 <td>
-                  <span className="download-link" onClick={() => window.open(PressNotepdf, "_blank")}>⬇️</span>
+                  <span className="pressRel-download-link" onClick={() => window.open(PressNotepdf, "_blank")}>⬇️</span>
                 </td>
               </tr>
 
               <tr>
-                <td className="subject-text">
+                <td className="pressRel-subject-text">
                   Press Note on Last Date to register with APRERA
                 </td>
-                <td className="date-text">27th Aug 2019</td>
+                <td className="pressRel-date-text">27th Aug 2019</td>
                 <td>
-                  <span className="download-link" onClick={() => window.open(LastDatepdf, "_blank")}>⬇️</span>
+                  <span className="pressRel-download-link" onClick={() => window.open(LastDatepdf, "_blank")}>⬇️</span>
                 </td>
               </tr>
             </tbody>

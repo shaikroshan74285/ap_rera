@@ -1,11 +1,11 @@
 /* Page background */
-.press-page {
+.pressRel-page {
   background: #f5f5f5;
   padding: 20px 0;
 }
 
 /* Main container */
-.press-container {
+.pressRel-container {
   background: #ffffff;
   max-width: 1100px;
   margin: 0 auto;
@@ -13,15 +13,15 @@
 }
 
 /* Breadcrumb */
-.breadcrumb {
+.pressRel-breadcrumb {
   background: #1e90ff;
   color: #ffffff;
   padding: 8px 12px;
   font-size: 13px;
 }
 
-.breadcrumb a,
-.breadcrumb span {
+.pressRel-breadcrumb a,
+.pressRel-breadcrumb span {
   color: #ffffff;
   text-decoration: underline;
   font-weight: 500;
@@ -29,12 +29,12 @@
 }
 
 /* Inner content */
-.press-content {
+.pressRel-content {
   padding: 20px;
 }
 
 /* Page title */
-.page-title {
+.pressRel-page-title {
   font-size: 18px;
   font-weight: 500;
   color: #000;
@@ -42,7 +42,7 @@
   position: relative;
 }
 
-.page-title::after {
+.pressRel-page-title::after {
   content: "";
   position: absolute;
   left: 0;
@@ -53,13 +53,13 @@
 }
 
 /* Table */
-.press-table {
+.pressRel-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
 
-.press-table th {
+.pressRel-table th {
   background: #3f556b;
   color: #ffffff;
   font-size: 13px;
@@ -69,7 +69,7 @@
 }
 
 /* Table cell default */
-.press-table td {
+.pressRel-table td {
   font-size: 13px;
   padding: 10px;
   border: 1px solid #000;
@@ -77,23 +77,23 @@
 }
 
 /* ✅ FIX: Subject column left aligned */
-.press-table td.subject-text {
+.pressRel-table td .pressRel-subject-text {
   text-align: left;
   padding-left: 12px;
   font-weight: 600;
 }
 
 
-.date-text {
+.pressRel-date-text {
   width: 180px;
 }
 
-.download-link {
+.pressRel-download-link {
   font-size: 18px;
   color: #1e90ff;
   cursor: pointer;
 }
 
-.download-link:hover {
+.pressRel-download-link:hover {
   color: #0056b3;
 }

@@ -13,15 +13,15 @@
 }
 
 /* Breadcrumb bar */
-.breadcrumb {
+.judgement-breadcrumb {
   background: #1e90ff;
   color: #ffffff;
   padding: 8px 12px;
   font-size: 13px;
 }
 
-.breadcrumb a,
-.breadcrumb span {
+.judgement-breadcrumb a,
+.judgement-breadcrumb span {
   color: #ffffff;
   text-decoration: underline;
   font-weight: 500;
@@ -34,7 +34,7 @@
 }
 
 /* Page heading */
-.page-title {
+.judgement-page-title {
   font-size: 18px;
   font-weight: 500;
   color: #000;
@@ -42,7 +42,7 @@
   position: relative;
 }
 
-.page-title::after {
+.judgement-page-title::after {
   content: "";
   position: absolute;
   left: 0;
@@ -75,18 +75,18 @@
   text-align: center;
 }
 
-.desc-text {
+.judgement-desc-text {
   text-align: left;
   font-weight: 600;
 }
 
 /* Download icon */
-.download-link {
+.judgement-download-link {
   font-size: 18px;
   color: #1e90ff;
   cursor: pointer;
 }
 
-.download-link:hover {
+.judgement-download-link:hover {
   color: #0056b3;
 }

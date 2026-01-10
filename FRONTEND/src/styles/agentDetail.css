@@ -11,7 +11,7 @@
 }
 
 /* BREADCRUMB */
-.agent-registration-page .breadcrumb-box {
+.breadcrumb-box {
   background: #0b7dda;
   color: #fff;
   padding: 8px 15px;
@@ -206,4 +206,9 @@
   align-items: flex-end;
   gap: 20px;
   margin-top: 40px;
+}
+.otp-message {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #000;
 }

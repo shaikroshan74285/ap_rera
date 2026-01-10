@@ -3,10 +3,10 @@ import "../styles/cards.css";
 export default function Learning() {
   return (
     <section className="learning">
-      <h2 className="section-title">LEARNING WITH US</h2>
-      <div className="title-line"></div>
+      <h2 className="learning-section-title">LEARNING WITH US</h2>
+      <div className="learning-title-line"></div>
 
-      <p className="section-subtitle">
+      <p className="learning-section-subtitle">
         Technology intervention in Infrastructure
       </p>
 

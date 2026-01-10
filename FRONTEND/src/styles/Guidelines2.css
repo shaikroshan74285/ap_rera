@@ -1,11 +1,11 @@
-.guidelines-wrapper {
+.guidelines2-wrapper {
   max-width: 1200px;
   margin: 20px auto;
   font-family: Arial, sans-serif;
 }
 
 /* Breadcrumb */
-.breadcrumb-bar {
+.guidelines2-breadcrumb-bar {
   background: #0b79d0;
   color: #fff;
   padding: 10px 15px;
@@ -13,12 +13,12 @@
   margin-bottom: 20px;
 }
 
-.breadcrumb-bar span {
+.guidelines2-breadcrumb-bar span {
   color: #ffeb3b;
 }
 
 /* STEP CARD */
-.step-card {
+.guidelines2-step-card {
   display: flex;
   background: #fff;
   border: 1px solid #ddd;
@@ -27,7 +27,7 @@
 }
 
 /* LEFT ARROW */
-.step-left {
+.guidelines2-step-left {
   width: 140px;
   position: relative;
   display: flex;
@@ -35,71 +35,71 @@
   justify-content: center;
 }
 
-.step-arrow {
+.guidelines2-step-arrow {
   color: #fff;
   text-align: center;
   font-weight: bold;
 }
 
-.step-arrow span {
+.guidelines2-step-arrow span {
   display: block;
   font-size: 14px;
 }
 
-.step-arrow strong {
+.guidelines2-step-arrow strong {
   font-size: 28px;
 }
 
 /* COLORS */
-.step-red { background: #e53935; }
-.step-orange { background: #fb8c00; }
-.step-blue { background: #006d8f; }
+.guidelines2-step-red { background: #e53935; }
+.guidelines2-step-orange { background: #fb8c00; }
+.guidelines2-step-blue { background: #006d8f; }
 
-.step-red-bg { background: #ff3d57; }
-.step-orange-bg { background: #ff9800; }
-.step-blue-bg { background: #005f7f; }
+.guidelines2-step-red-bg { background: #ff3d57; }
+.guidelines2-step-orange-bg { background: #ff9800; }
+.guidelines2-step-blue-bg { background: #005f7f; }
 
 /* CONTENT */
-.step-content {
+.guidelines2-step-content {
   flex: 1;
   padding: 20px;
   font-size: 14px;
 }
 
-.step-content ul {
+.guidelines2-step-content ul {
   margin: 8px 0 0 18px;
 }
 
-.step-content li {
+.guidelines2-step-content li {
   margin-bottom: 6px;
 }
 
-.note {
+.guidelines2-note {
   margin-top: 10px;
   color: #e65100;
   font-size: 13px;
 }
 
 /* RIGHT ICON */
-.step-icon {
+.guidelines2-step-icon {
   width: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.step-icon img {
+.guidelines2-step-icon img {
   width: 40px;
 }
 
 /* LINKS */
-.link-red {
+.guidelines2-link-red {
   color: red;
   font-weight: bold;
   text-decoration: none;
 }
 
-.link-blue {
+.guidelines2-link-blue {
   color: #0b79d0;
   font-weight: bold;
   text-decoration: none;

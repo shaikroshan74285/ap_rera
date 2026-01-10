@@ -6,7 +6,7 @@
 }
 
 /* COMMON */
-.box-header {
+.dashboard-box-header {
   background: #1f73b7;
   color: #fff;
   text-align: center;
@@ -16,31 +16,31 @@
 }
 
 /* LEFT */
-.analysis-box {
+.dashboard-analysis-box {
   flex: 1;
   background: #fff;
   border: 1px solid #ccc;
 }
 
-.filters {
+.dashboard-filters {
   display: flex;
   justify-content: space-between;
   padding: 15px;
 }
 
-.filters select {
+.dashboard-filters select {
   padding: 6px 10px;
   margin-left: 8px;
 }
 
-.analysis-title {
+.dashboard-analysis-title {
   text-align: center;
   font-weight: bold;
   margin: 10px 0;
   color: #444;
 }
 
-.graph-placeholder {
+.dashboard-graph-placeholder {
   height: 300px;
   margin: 20px;
   border: 1px solid #ccc;
@@ -51,7 +51,7 @@
   color: #777;
 }
 
-.legend {
+.dashboard-legend {
   display: flex;
   justify-content: center;
   gap: 25px;
@@ -59,9 +59,9 @@
   font-size: 14px;
 }
 
-.green { color: green; }
-.blue { color: #007bff; }
-.red { color: red; }
+.dashboard-green { color: green; }
+.dashboard-blue { color: #007bff; }
+.dashboard-red { color: red; }
 
 /* RIGHT */
 .dashboard-box {
@@ -70,12 +70,12 @@
   color: #fff;
 }
 
-.dash-row {
+.dashboard-dash-row {
   display: flex;
   border-bottom: 4px solid #333;
 }
 
-.dash-icon {
+.dashboard-dash-icon {
   width: 120px;
   background: #084a87;
   display: flex;
@@ -84,25 +84,25 @@
   font-size: 40px;
 }
 
-.dash-content {
+.dashboard-dash-content {
   flex: 1;
   padding: 20px;
 }
 
-.dash-content h4 {
+.dashboard-dash-content h4 {
   text-align: center;
   border-bottom: 1px solid #fff;
   padding-bottom: 6px;
   margin-bottom: 12px;
 }
 
-.complaints-grid {
+.dashboard-complaints-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
-.complaints-grid p {
+.dashboard-complaints-grid p {
   margin: 4px 0;
   font-size: 14px;
 }
@@ -114,7 +114,7 @@
 }
 
 /* COMMON HEADER */
-.box-header {
+.dashboard-box-header {
   background: #1f73b7;
   color: #fff;
   text-align: center;
@@ -124,24 +124,24 @@
 }
 
 /* LEFT */
-.analysis-box {
+.dashboard-analysis-box {
   flex: 1;
   background: #fff;
   border: 1px solid #ccc;
 }
 
-.filters {
+.dashboard-filters {
   display: flex;
   justify-content: space-between;
   padding: 15px;
 }
 
-.filters select {
+.dashboard-filters select {
   padding: 6px 10px;
   margin-left: 6px;
 }
 
-.analysis-title {
+.dashboard-analysis-title {
   text-align: center;
   font-weight: bold;
   margin: 10px 0;
@@ -155,12 +155,12 @@
   color: #fff;
 }
 
-.dash-row {
+.dashboard-dash-row {
   display: flex;
   border-bottom: 4px solid #333;
 }
 
-.dash-icon {
+.dashboard-dash-icon {
   width: 120px;
   background: #084a87;
   display: flex;
@@ -169,25 +169,25 @@
   font-size: 40px;
 }
 
-.dash-content {
+.dashboard-dash-content {
   flex: 1;
   padding: 20px;
 }
 
-.dash-content h4 {
+.dashboard-dash-content h4 {
   text-align: center;
   border-bottom: 1px solid #fff;
   padding-bottom: 6px;
   margin-bottom: 12px;
 }
 
-.complaints-grid {
+.dashboard-complaints-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
-.complaints-grid p {
+.dashboard-complaints-grid p {
   margin: 4px 0;
   font-size: 14px;
 }

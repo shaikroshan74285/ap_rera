@@ -1,7 +1,7 @@
 /* ==============================
    PAGE BASE
 ============================== */
-.privacy-page {
+.privacypolicy-page {
   background: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
   padding: 40px 90px;
@@ -12,7 +12,7 @@
 /* ==============================
    BREADCRUMB
 ============================== */
-.breadcrumb {
+.privacypolicy-breadcrumb {
   width: 100%;
   background: linear-gradient(135deg, #118bee 0%, #0b63c7 100%);
   color: #ffffff;
@@ -22,20 +22,20 @@
   box-shadow: 0 2px 8px rgba(17, 139, 238, 0.3);
 }
 
-.breadcrumb a {
+.privacypolicy-breadcrumb a {
   color: #ffeb3b;
   text-decoration: none;
   font-weight: 500;
 }
 
-.breadcrumb a:hover {
+.privacypolicy-breadcrumb a:hover {
   text-decoration: underline;
 }
 
 /* ==============================
    MAIN CONTENT CARD
 ============================== */
-.privacy-container {
+.privacypolicy-container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 35px;
@@ -50,7 +50,7 @@
 /* ==============================
    TITLE
 ============================== */
-.privacy-title {
+.privacypolicy-title {
   position: relative;
   display: inline-block;
   font-size: 28px;
@@ -61,7 +61,7 @@
 }
 
 /* Underline animation */
-.privacy-title::after {
+.privacypolicy-title::after {
   content: "";
   position: absolute;
   left: 0;
@@ -76,7 +76,7 @@
 }
 
 /* Shine effect */
-.privacy-title::before {
+.privacypolicy-title::before {
   content: "";
   position: absolute;
   left: 0;
@@ -95,14 +95,14 @@
 }
 
 /* Remove old underline div */
-.title-underline {
+.privacypolicy-title-underline {
   display: none;
 }
 
 /* ==============================
    CONTENT LAYOUT
 ============================== */
-.privacy-content {
+.privacypolicy-content {
   display: flex;
   gap: 40px;
   align-items: flex-start;
@@ -111,11 +111,11 @@
 /* ==============================
    TEXT
 ============================== */
-.privacy-text {
+.privacypolicy-text {
   flex: 2;
 }
 
-.privacy-text p {
+.privacypolicy-text p {
   font-size: 15.5px;
   line-height: 1.9;
   color: #2c2c2c;
@@ -126,13 +126,13 @@
 /* ==============================
    IMAGE
 ============================== */
-.privacy-image {
+.privacypolicy-image {
   flex: 1;
   display: flex;
   justify-content: center;
 }
 
-.privacy-image img {
+.privacypolicy-image img {
   width: 100%;
   max-width: 420px;
   border-radius: 8px;
@@ -143,7 +143,7 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.privacy-image img:hover {
+.privacypolicy-image img:hover {
   transform: scale(1.03);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
@@ -151,11 +151,11 @@
 /* ==============================
    SAFE ANIMATIONS
 ============================== */
-.fade-in-left {
+.privacypolicy-fade-in-left {
   animation: fadeLeft 0.8s ease forwards;
 }
 
-.fade-in-right {
+.privacypolicy-fade-in-right {
   animation: fadeRight 0.8s ease forwards;
 }
 
@@ -214,39 +214,39 @@
    MOBILE RESPONSIVE
 ============================== */
 @media (max-width: 768px) {
-  .privacy-page {
+  .privacypolicy-page {
     padding: 20px 15px;
   }
 
-  .breadcrumb {
+  .privacypolicy-breadcrumb {
     padding: 14px 18px;
     font-size: 13px;
   }
 
-  .privacy-container {
+  .privacypolicy-container {
     padding: 25px 18px;
   }
 
-  .privacy-title {
+  .privacypolicy-title {
     font-size: 22px;
   }
 
-  .privacy-title::after,
-  .privacy-title::before {
+  .privacypolicy-title::after,
+  .privacypolicy-title::before {
     height: 3px;
   }
 
-  .privacy-content {
+  .privacypolicy-content {
     flex-direction: column;
     gap: 25px;
   }
 
-  .privacy-text p {
+  .privacypolicy-text p {
     font-size: 14.5px;
     line-height: 1.8;
   }
 
-  .privacy-image img {
+  .privacypolicy-image img {
     max-width: 100%;
   }
 }

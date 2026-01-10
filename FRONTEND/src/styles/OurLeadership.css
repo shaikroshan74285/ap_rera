@@ -16,7 +16,7 @@
   color: yellow;
 }
 
-.ourleadership-breadcrumb .active {
+.ourleadership-breadcrumb .ourleadership-active {
   color: white;
   font-weight: bold;
 }
@@ -28,7 +28,7 @@
   border: 1px solid #ccc;
 }
 
-.ourleadership-page-header h2 {
+.ourleadership-h2 {
   margin: 0;
 }
 

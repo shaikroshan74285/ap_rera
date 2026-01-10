@@ -6,14 +6,14 @@
 }
 
 /* Breadcrumb */
-.breadcrumb {
+.guidelines-breadcrumb {
   background: #0c84e4;
   color: #fff;
   padding: 10px 18%;
   font-size: 13px;
 }
 
-.breadcrumb span {
+.guidelines-breadcrumb span {
   color: #ffe14d;
   font-weight: 600;
 }
@@ -30,7 +30,7 @@
 }
 
 /* LEFT — step box */
-.step-box {
+.guidelines-step-box {
   height: 100%;
   color: #fff;
   font-weight: 700;
@@ -40,9 +40,9 @@
   justify-content: center;
 }
 
-.step1 { background: #d9534f; }
-.step2 { background: #f0ad4e; }
-.step3 { background: #0d6efd; }
+.guidelines-step1 { background: #d9534f; }
+.guidelines-step2 { background: #f0ad4e; }
+.guidelines-step3 { background: #0d6efd; }
 
 /* CONTENT AREA */
 .guideline-content {
@@ -57,32 +57,38 @@
 }
 
 /* NOTE text */
-.note {
+.guidelines-note {
   margin-top: 5px;
   color: #c0392b;
   font-size: 13px;
 }
 
 /* Right icon box */
-.icon-box {
+.guidelines-icon-box {
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
 }
-
-.icon1 { background: #d9534f; }
-.icon2 { background: #f0ad4e; }
-.icon3 { background: #0d6efd; }
+.guidelines-pr-link{
+  color: #0c4da2;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-left: 3px;
+  gap: 2px;
+}
+.guidelines-icon1 { background: #d9534f; }
+.guidelines-icon2 { background: #f0ad4e; }
+.guidelines-icon3 { background: #0d6efd; }
 
 /* Links */
-.link-text {
+.guidelines-link-text {
   color: #0c4da2;
   text-decoration: underline;
   cursor: pointer;
 }
 
-.icon-box i {
+.guidelines-icon-box i {
   font-size: 28px;
 }

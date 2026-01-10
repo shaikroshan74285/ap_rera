@@ -5,24 +5,24 @@ const FeeCalculator = () => {
   const [projectType, setProjectType] = useState("");
 
   return (
-    <div className="page-wrapper">
-      <div className="content-card">
+    <div className="feecalc-page-wrapper">
+      <div className="feecalc-content-card">
 
         {/* Breadcrumb */}
-        <div className="breadcrumb-bar">
+        <div className="feecalc-breadcrumb-bar">
           You are here : <span>Home</span> / <span>Registration</span> /{" "}
-          <span className="active">Fee Calculator</span>
+          <span className="feecalc-active">Fee Calculator</span>
         </div>
 
         {/* Title */}
-        <h2 className="page-title">Fee Calculator for Project Registration</h2>
+        <h2 className="feecalc-page-title">Fee Calculator for Project Registration</h2>
 
-        <form className="fee-form">
+        <form className="feecalc-fee-form">
 
           {/* ---------------- PROJECT TYPE ---------------- */}
-          <div className="form-row">
+          <div className="feecalc-form-row">
             <label>
-              Project Type<span className="required">*</span>
+              Project Type<span className="feecalc-required">*</span>
             </label>
             <select
               value={projectType}
@@ -40,17 +40,17 @@ const FeeCalculator = () => {
           </div>
 
           {/* ================= COMMON FIELDS (ALWAYS SHOWN) ================= */}
-          <div className="form-row">
+          <div className="feecalc-form-row">
             <label>
-              Plan Approval Date<span className="required">*</span>
+              Plan Approval Date<span className="feecalc-required">*</span>
             </label>
             <input type="date" />
           </div>
 
-          <div className="form-row">
+          <div className="feecalc-form-row">
             <label>
               Date of Payment for Registration
-              <span className="required">*</span>
+              <span className="feecalc-required">*</span>
             </label>
             <input type="date" />
           </div>
@@ -60,9 +60,9 @@ const FeeCalculator = () => {
             projectType === "Residential" ||
             projectType === "Commercial" ||
             projectType === "Mixed") && (
-            <div className="form-row">
+            <div className="feecalc-form-row">
               <label>
-                Site Area<span className="required">*</span>
+                Site Area<span className="feecalc-required">*</span>
                 {(projectType === "Residential" ||
                   projectType === "Commercial" ||
                   projectType === "Mixed") && " (In Sq.m)"}
@@ -72,9 +72,9 @@ const FeeCalculator = () => {
           )}
 
           {(projectType === "Plots" || projectType === "PlotsBuildings") && (
-            <div className="form-row">
+            <div className="feecalc-form-row">
               <label>
-                Site Area<span className="required">*</span> (Acre)
+                Site Area<span className="feecalc-required">*</span> (Acre)
               </label>
               <input type="text" placeholder="Site Area" />
             </div>
@@ -85,12 +85,12 @@ const FeeCalculator = () => {
             projectType === "Residential" ||
             projectType === "Commercial" ||
             projectType === "Mixed") && (
-            <div className="form-row">
+            <div className="feecalc-form-row">
               <label>
                 Total Built-up area of all the Floors
                 <br />
                 (including stilt area)
-                <span className="required">*</span>
+                <span className="feecalc-required">*</span>
                 {(projectType === "Residential" ||
                   projectType === "Commercial" ||
                   projectType === "Mixed") && " (In Sq.m)"}
@@ -105,12 +105,12 @@ const FeeCalculator = () => {
           {/* ================= PLOTS & BUILDINGS ================= */}
           {projectType === "PlotsBuildings" && (
             <>
-              <div className="form-row">
+              <div className="feecalc-form-row">
                 <label>
                   Residential Built-up area
                   <br />
                   (including stilt area)
-                  <span className="required">*</span> (In Sq.m)
+                  <span className="feecalc-required">*</span> (In Sq.m)
                 </label>
                 <input
                   type="text"
@@ -118,12 +118,12 @@ const FeeCalculator = () => {
                 />
               </div>
 
-              <div className="form-row">
+              <div className="feecalc-form-row">
                 <label>
                   Commercial Built-up area
                   <br />
                   (including stilt area)
-                  <span className="required">*</span> (In Sq.m)
+                  <span className="feecalc-required">*</span> (In Sq.m)
                 </label>
                 <input type="text" placeholder="0.00" />
               </div>
@@ -131,8 +131,8 @@ const FeeCalculator = () => {
           )}
 
           {/* ================= CALCULATE BUTTON ================= */}
-          <div className="form-row last-row">
-            <button type="button" className="calculate-btn">
+          <div className="feecalc-form-row feecalc-last-row">
+            <button type="button" className="feecalc-calculate-btn">
               Calculate
             </button>
           </div>

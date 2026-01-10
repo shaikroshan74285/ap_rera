@@ -245,7 +245,7 @@ function ApreraGos() {
       {/* Breadcrumb */}
       <div className="goap-breadcrumb">
         You are here :
-        <a href="/" className="home"> Home</a> / <a>Notifications</a> / GOAP Notifications
+        <a href="/" className="goap-home"> Home</a> / <a>Notifications</a> / GOAP Notifications
       </div>
 
       {/* Title */}

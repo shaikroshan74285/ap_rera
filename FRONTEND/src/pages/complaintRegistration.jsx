@@ -16,14 +16,14 @@ function StepWizard({ currentStep }) {
     ];
 
     return (
-        <div className="stepwizard">
-            <div className="stepwizard-row">
+        <div className="complaintReg-stepwizard">
+            <div className="complaintReg-stepwizard-row">
                 {steps.map((label, index) => {
                     const step = index + 1;
                     return (
-                        <div className="stepwizard-step" key={step}>
+                        <div className="complaintReg-stepwizard-step" key={step}>
                             <div
-                                className={`step-circle ${currentStep === step ? "active" : ""
+                                className={`complaintReg-step-circle ${currentStep === step ? "active" : ""
                                     }`}
                             >
                                 {step}
@@ -102,25 +102,25 @@ export default function ComplaintRegistration() {
 
     /* ================= UI ================= */
     return (
-        <div className="page-wrapper">
-            <div className="container">
-                <div className="breadcrumb">
+        <div className="complaintReg-page-wrapper">
+            <div className="complaintReg-container">
+                <div className="complaintReg-breadcrumb">
                     <span>You are here : </span>
                     <a href="/">Home</a> / Registration /{" "}
                     <span>Complaint Registration</span>
                 </div>
 
-                <h2 className="main-heading">Complaint Registration</h2>
+                <h2 className="complaintReg-main-heading">Complaint Registration</h2>
 
                 <StepWizard currentStep={currentStep} />
 
                 {/* STEP 1 */}
                 {currentStep === 1 && (
-                    <div className="step-box">
+                    <div className="complaintReg-step-box">
 
-                        <h3 className="section-title">General Instructions :</h3>
+                        <h3 className="complaintReg-section-title">General Instructions :</h3>
 
-                        <ol className="instruction-list">
+                        <ol className="complaintReg-instruction-list">
                             <li>Clear the cookies before filling the online form</li>
                             <li>Remove pop-up block from your browser</li>
                             <li>
@@ -132,13 +132,13 @@ export default function ComplaintRegistration() {
                                 Site best viewed in "Google Chrome (Version 62.0.3202.94)"
                             </li>
                             <li>
-                                Fields marked with <span className="required">*</span> are mandatory.
+                                Fields marked with <span className="complaintReg-required">*</span> are mandatory.
                             </li>
                             <li>
                                 The Applicants are hereby informed to submit their application either in{" "}
                                 <a
                                     href="#"
-                                    className="link-text"
+                                    className="complaintReg-link-text"
                                     onClick={(e) => {
                                         e.preventDefault();
                                         downloadForm("M");
@@ -149,7 +149,7 @@ export default function ComplaintRegistration() {
                                 or{" "}
                                 <a
                                     href="#"
-                                    className="link-text"
+                                    className="complaintReg-link-text"
                                     onClick={(e) => {
                                         e.preventDefault();
                                         downloadForm("N");
@@ -171,13 +171,13 @@ export default function ComplaintRegistration() {
                             </li>
                         </ol>
 
-                        <h3 className="section-title">Guide to fill online registration form :</h3>
+                        <h3 className="complaintReg-section-title">Guide to fill online registration form :</h3>
 
-                        <ol className="instruction-list">
+                        <ol className="complaintReg-instruction-list">
                             <li>
                                 For step by step understanding of filing online application, kindly refer{" "}
                                 <span
-                                    className="link-text"
+                                    className="complaintReg-link-text"
                                     style={{ cursor: "pointer" }}
                                     onClick={() => navigate("/guidelinesRegistration")}
                                 >
@@ -201,9 +201,9 @@ export default function ComplaintRegistration() {
                             </li>
                         </ol>
 
-                        <div className="cr-footer right">
+                        <div className="complaintReg-footer right">
                             <button
-                                className="proceed-btn"
+                                className="complaintReg-proceed-btn"
                                 onClick={() => setCurrentStep(2)}
                             >
                                 Proceed
@@ -222,12 +222,12 @@ export default function ComplaintRegistration() {
                 {/* STEP 4 */}
                 {currentStep === 4 && (
                     <>
-                        <h3 className="subheading">Upload Documents</h3>
+                        <h3 className="complaintReg-subheading">Upload Documents</h3>
 
-                        <div className="row">
-                            <div className="col">
+                        <div className="complaintReg-row">
+                            <div className="complaintReg-col">
                                 <label>
-                                    Agreement for Sale <span className="required">*</span>
+                                    Agreement for Sale <span className="complaintReg-required">*</span>
                                 </label>
                                 <input
                                     type="file"
@@ -237,9 +237,9 @@ export default function ComplaintRegistration() {
                                 />
                             </div>
 
-                            <div className="col">
+                            <div className="complaintReg-col">
                                 <label>
-                                    Fee Receipt <span className="required">*</span>
+                                    Fee Receipt <span className="complaintReg-required">*</span>
                                 </label>
                                 <input
                                     type="file"
@@ -255,9 +255,9 @@ export default function ComplaintRegistration() {
                 {/* STEP 5 */}
                 {currentStep === 5 && (
                     <>
-                        <h3 className="subheading">Declaration</h3>
+                        <h3 className="complaintReg-subheading">Declaration</h3>
 
-                        <div className="declaration-box">
+                        <div className="complaintReg-declaration-box">
                             <label>
                                 <input
                                     type="checkbox"
@@ -269,7 +269,7 @@ export default function ComplaintRegistration() {
                             </label>
                         </div>
 
-                        <div className="declaration-box">
+                        <div className="complaintReg-declaration-box">
                             <label>
                                 <input
                                     type="checkbox"
@@ -284,13 +284,13 @@ export default function ComplaintRegistration() {
                                     placeholder="Enter Your Name"
                                     value={declaration.name}
                                     onChange={handleDeclarationChange}
-                                    className="inline-input"
+                                    className="complaintReg-inline-input"
                                 />{" "}
                                 confirm details are correct.
                             </label>
 
-                            <div className="cr-footer">
-                                <button className="proceed-btn">
+                            <div className="complaintReg-footer">
+                                <button className="complaintReg-proceed-btn">
                                     Submit Complaint
                                 </button>
                             </div>

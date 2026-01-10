@@ -19,7 +19,7 @@ const HyperlinkingPolicy = () => {
 
         <div className="hyperlink-content">
           {/* Text */}
-          <div className="hyperlink-text slide-left">
+          <div className="hyperlink-text hyperlink-slide-left">
             <p>
               We do not object to you linking directly to the information that is
               hosted on our site and no prior permission is required for the
@@ -36,7 +36,7 @@ const HyperlinkingPolicy = () => {
           </div>
 
           {/* Image */}
-          <div className="hyperlink-image slide-right">
+          <div className="hyperlink-image hyperlink-slide-right">
             <img src={hyperlinkImg} alt="Hyperlinking Policy" />
           </div>
         </div>

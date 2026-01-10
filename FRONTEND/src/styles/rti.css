@@ -1,147 +1,142 @@
-/* ================= Global ================= */
 body {
   background: #f2f2f2;
   font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
 }
 
-/* ================= Wrapper ================= */
-.rti-wrapper {
-  padding: 20px 0;
-}
-
-/* ================= Breadcrumb (FULL WIDTH) ================= */
-/* ================= Breadcrumb (FULL WIDTH + LEFT ALIGNED) ================= */
-.rti-wrapper .breadcrumb {
-  width: 100%;
-  background: #1e88e5;
-  color: #fff;
-}
-
-.rti-wrapper .breadcrumb-inner {
+/* ✅ changed from .rti-page to .rti */
+.rti {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 20px auto;
+  background: #fff;
+  border: 1px solid #cfcfcf;
+  
+}
+
+/* Breadcrumb full width like official site */
+.breadcrumb {
+  background: #1683e5;
+  color: #fff;
   padding: 10px 15px;
   font-size: 14px;
-  text-align: left;
+
+  /* 🔥 IMPORTANT PART */
+  margin: -20px -20px 20px -20px; /* top right bottom left */
 }
 
-/* Links */
-.rti-wrapper.breadcrumb-inner a {
+
+.breadcrumb span {
   color: yellow;
-  text-decoration: underline;
-  margin: 0 4px;
 }
 
-.rti-wrapper .breadcrumb-inner a:hover {
-  text-decoration: none;
+.rti-title {
+  font-size: 26px;
+  margin-top: 20px;
 }
 
-/* Active page */
-.rti-wrapper .breadcrumb-inner .active {
-  color: #fff;
-  font-weight: bold;
-}
-
-
-/* ================= RTI Content Container ================= */
-.rti-container {
-  max-width: 1200px;
-  margin:0 auto;
-  background: white;
-  padding: 25px;
-  border: 1px solid #ccc;
-  border-top: none;
-}
-
-/* ================= Title ================= */
-.rti-container h2 {
-  margin: 0;
-  font-size: 22px;
-  font-weight: bold;
-}
-
-.title-line {
-  width: 70px;
+.title-underline {
+  width: 60px;
   height: 3px;
-  background: #1e5fd8;
-  margin: 8px 0 20px;
+  background: #1683e5;
+  margin: 10px 0;
 }
 
-/* ================= Intro Text ================= */
-.intro-text {
-  font-size: 14px;
+.rti-desc {
   line-height: 1.6;
-  color: #333;
-   margin-top: 0;        /* ❌ extra gap remove */
-  margin-left: 0;
-  padding-left: 0;
-  text-indent: 0;       /* important */
-
 }
 
-/* ================= Accordion ================= */
+.accordion {
+  margin-top: 20px;
+}
+
 .acc-header {
-  background: #e0e0e0;
-  padding: 12px 15px;
-  margin-top: 10px;
-  font-weight: bold;
+  background: #d9d9d9;
+  padding: 12px;
   cursor: pointer;
+  display: flex;
+  gap: 10px;
 }
 
-.acc-header.dark {
-  background: #3f3f3f;
-  color: white;
+
+.acc-item.open .acc-header {
+  background: #3d3b3b;
+  color: #fff;
 }
 
 .acc-body {
   background: #f9f9f9;
   padding: 15px;
+  border-left: 3px solid #4aa3df;
 }
 
-/* Left blue border like govt site */
-.blue-left {
-  border-left: 4px solid #1e5fd8;
-  padding-left: 12px;
-}
-
-.acc-body p {
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-/* ================= Text Helpers ================= */
-.red-text {
+.soon {
   color: red;
+  font-weight: bold;
 }
 
-/* ================= Links ================= */
-.rti-link {
-  color: #1e5fd8;
-  text-decoration: none;
-  font-size: 14px;
+.acc-item {
+  margin-bottom: 12px;     /* gap between boxes */
 }
 
-.rti-link:hover {
-  text-decoration: underline;
+.acc-header:hover {
+  background: #3d3b3b;   /* dark grey */
+  color: #fff;
 }
 
-/* ================= Table ================= */
-.rti-table {
+.cpio-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 13px;
   margin-top: 10px;
+  font-size: 14px;
 }
 
-.rti-table th {
-  background: #3f5468;
-  color: white;
+.cpio-table th {
+  background: #3f556b;
+  color: #fff;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
+  text-align: center;
 }
 
-.rti-table td {
-  padding: 8px;
-  border: 1px solid #ccc;
+.cpio-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  vertical-align: top;
+}
+
+.cpio-table tbody tr:nth-child(even) {
+  background: #f5f5f5;
+}
+.notice-box {
+  background: #f7f7f7;
+  padding: 15px 20px;
+  border-left: 3px solid #2bb1e7; /* blue vertical line */
+}
+
+.notice-text {
+  color: red;
+  font-weight: bold;
+}
+.acc-body p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+.rti-title {
+  font-size: 26px;
+  font-weight: normal;
+  margin-bottom: 6px;
+}
+
+.rti-blue-line {
+  width: 60px;          /* small line */
+  height: 3px;
+  background: #0b5ed7;  /* blue color */
+  margin-bottom: 15px; /* space after line */
+}
+
+.rti-content {
+  padding: 35px 20px 20px 20px;
+  /* top right bottom left */
+}
+.rti-maincontaint{
+  margin: 10px 30px;
 }

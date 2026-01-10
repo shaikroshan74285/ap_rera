@@ -1,8 +1,8 @@
-body {
+/* body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background: #f2f2f2;
-}
+} */
 
 .goap-wrapper {
   width: 95%;
@@ -19,11 +19,11 @@ body {
   font-size: 14px;
 
 }
-.goap-breadcrumb  .home{
+.goap-breadcrumb  .goap-home{
   text-decoration: underline;
   color: yellow;
 }
-.goap-breadcrumb .home:hover{
+.goap-breadcrumb .goap-home:hover{
   text-decoration: underline;
   color: white;
 }

@@ -5,8 +5,8 @@ export default function Feedback() {
     <section className="feedback-wrapper">
 
       {/* LEFT : REACH US */}
-      <div className="reach-box">
-        <div className="reach-inner">
+      <div className="feedback-reach-box">
+        <div className="feedback-reach-inner">
           <h4>REACH US</h4>
 
           <h2>
@@ -21,12 +21,12 @@ export default function Feedback() {
             Pin - 522237.
           </p>
 
-          <p className="helpdesk">
+          <p className="feedback-helpdesk">
             Help Desk : <span>6304906011</span> <br />
             (All Working Days, 10AM - 6PM)
           </p>
 
-          <p className="email">
+          <p className="feedback-email">
             Write to : <span>helpdesk-rera[at]ap[dot]gov[dot]in</span>
           </p>
         </div>
@@ -35,15 +35,15 @@ export default function Feedback() {
       {/* RIGHT : FEEDBACK */}
       <div className="feedback-box">
         <h2>FEEDBACK / SUGGESTION</h2>
-        <div className="title-line"></div>
+        <div className="feedback-title-line"></div>
 
         <form className="feedback-form">
-          <div className="form-row">
+          <div className="feedback-form-row">
             <input type="text" placeholder="Name*" />
             <input type="text" placeholder="Mobile*" />
           </div>
 
-          <div className="form-row">
+          <div className="feedback-form-row">
             <select>
               <option>Select *</option>
               <option>Feedback</option>

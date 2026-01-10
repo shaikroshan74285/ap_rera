@@ -7,13 +7,13 @@ export default function Guidelines() {
   return (
     <div className="guidelines-container">
 
-      <div className="breadcrumb">
+      <div className="guidelines-breadcrumb">
         You are here : <span>Home</span> / <span>Registration</span> / Guidelines for Registration
       </div>
 
       {/* STEP 1 */}
       <div className="guideline-card">
-        <div className="step-box step1">STEP 1</div>
+        <div className="guidelines-step-box guidelines-step1">STEP 1</div>
 
         <div className="guideline-content">
           <p>
@@ -24,40 +24,40 @@ export default function Guidelines() {
             <li>
               Application form for Project/Agent/Complaint Registration
                             <span
-    className="pr-link"
+    className="guidelines-pr-link"
     onClick={() => navigate("/complaintRegistration")}
   > Click Here</span>
             </li>
           </ul>
 
-          <p className="note">
+          <p className="guidelines-note">
             <b>NOTE :</b> The documents and drawings must be self-attested and in PDF Format (70MB),
             Photo in JPEG Format (35mm x 45mm, 300DPI, straight view / light background)
           </p>
         </div>
 
-        <div className="icon-box icon1">
+        <div className="guidelines-icon-box guidelines-icon1">
           <i className="fa fa-download"></i>
         </div>
       </div>
 
       {/* STEP 2 */}
       <div className="guideline-card">
-        <div className="step-box step2">STEP 2</div>
+        <div className="guidelines-step-box guidelines-step2">STEP 2</div>
 
         <div className="guideline-content">
           Fill the required application form printable/digital, it would be more useful during the
           submission for online application.
         </div>
 
-<div className="icon-box icon2">
+<div className="guidelines-icon-box guidelines-icon2">
   <i className="fa-regular fa-file-lines"></i>
 </div>
       </div>
 
       {/* STEP 3 */}
       <div className="guideline-card">
-        <div className="step-box step3">STEP 3</div>
+        <div className="guidelines-step-box guidelines-step3">STEP 3</div>
 
         <div className="guideline-content">
           For better understanding of registration screens verify the below user manuals and videos tutorials.
@@ -65,21 +65,21 @@ export default function Guidelines() {
             <li>
               User manuals for Project / Agent / Complaint Registration
                             <span
-    className="pr-link"
+    className="guidelines-pr-link"
     onClick={() => navigate("/usermanual")}
   > Click Here</span>
             </li>
             <li>
               Video tutorials
                             <span
-    className="pr-link"
+    className="guidelines-pr-link"
     onClick={() => navigate("/videoTutorial")}
   > Click Here</span>
             </li>
           </ul>
         </div>
 
-<div className="icon-box icon3">
+<div className="guidelines-icon-box guidelines-icon3">
   <i className="fa-solid fa-bullhorn"></i>
 </div>
 

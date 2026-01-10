@@ -20,7 +20,7 @@ const CopyrightPolicy = () => {
         <div className="copyright-underline"></div>
 
         <div className="copyright-content">
-          <div className="copyright-text slide-left">
+          <div className="copyright-text copyright-slide-left">
             <p>
               Contents of this website may not be reproduced partially or fully,
               without due permission from NIC. If referred to as a part of another
@@ -33,7 +33,7 @@ const CopyrightPolicy = () => {
             </p>
           </div>
 
-          <div className="copyright-image slide-right">
+          <div className="copyright-image copyright-slide-right">
             <img src={copyrightImg} alt="Copyright Policy" />
           </div>
         </div>

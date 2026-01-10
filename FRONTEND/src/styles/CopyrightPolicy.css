@@ -158,11 +158,11 @@
 /* ==============================
    ANIMATIONS
 ============================== */
-.slide-left {
+.copyright-slide-left {
   animation: slideFromLeft 1s ease forwards;
 }
 
-.slide-right {
+.copyright-slide-right {
   animation: slideFromRight 1s ease forwards;
 }
 

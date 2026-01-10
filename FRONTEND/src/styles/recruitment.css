@@ -1,82 +1,138 @@
-/* Page Background */
-.recruitment-page {
-  background: #f2f2f2;
-  padding: 20px;
-  min-height: 100vh;
-  font-family: Arial, Helvetica, sans-serif;
+/* OUTER WHITE BOX (FINAL BORDER) */
+.recruitment-outer-box {
+  max-width: 1200px;
+  margin: 20px auto 0;
+  background: #fff;
+  border: 1px solid #cfcfcf;   /* ✅ OUTER BORDER */
+  border-top: none;  
+  overflow: hidden;
+   min-height: calc(100vh - 260px);
 }
 
-/* Breadcrumb */
-.recruitment-breadcrumb {
-  background: #1e88e5;
-  color: white;
-  padding: 10px 15px;
+/* Breadcrumb (inside box) */
+.breadcrumb-bar {
+  background: #1484e6;
+  padding:10px 15px 10px 30px;
+  color: #fff;  
   font-size: 14px;
+
+  border-radius: 0 !important; /* ✅ NO CURVES */
+  margin-bottom: 4px;          /* ✅ GAP REDUCED */
+
+  border-bottom: none !important;   /* ✅ VERY IMPORTANT */
+  box-shadow: none !important;      /* ✅ JUST IN CASE */
 }
 
-.recruitment-breadcrumb span {
-  color: #ffeb3b;
-  cursor: pointer;
+
+
+/* Content spacing */
+.recruitment-container {
+  padding: 10px;     /* ✅ TOP PADDING REDUCED */
 }
 
-.recruitment-breadcrumb .recruitment-active {
-  color: #ffffff;
-  font-weight: bold;
-}
-
-/* Main Content Box */
-.recruitment-content-box {
-  background: white;
-  padding: 20px;
-  margin-top: 15px;
-  border: 1px solid #ccc;
-}
-
-/* Heading */
-.recruitment-content-box h2 {
-  margin: 0;
+/* Recruitment Title */
+.recruitment-title {
   font-size: 22px;
+  font-weight: bold;
+
+  margin-top: 0;               /* ✅ EXTRA GAP REMOVED */
+  margin-bottom: 10px;
+
+  position: relative;
+  padding-bottom: 6px;
+  display: inline-block;
 }
 
-/* Blue underline */
-.recruitment-title-line {
-  width: 60px;
+/* Short underline (ONLY THIS LINE SHOULD BE VISIBLE) */
+.recruitment-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;          /* ✅ NOT negative */
+  width: 40px;
   height: 3px;
-  background: #1565c0;
-  margin: 8px 0 20px;
+  background: #005cab;
 }
 
-/* Table */
+
+/* ❌ REMOVE EXTRA LINE ABOVE TABLE */
 .recruitment-table {
-  width: 100%;
-  border-collapse: collapse;
+  margin-top: 6px;             /* ✅ SMALL GAP AFTER TITLE */
+  border-top: none !important; /* ✅ IMPORTANT */
 }
 
-.recruitment-table th {
-  background: #3f5468;
-  color: white;
-  padding: 12px;
-  font-size: 14px;
-  border: 1px solid #ddd;
+.recruitment-table thead th {
+  border-top: none !important; /* ✅ KILLS EXTRA LINE */
 }
 
-.recruitment-table td {
-  padding: 12px;
-  border: 1px solid #ddd;
-  font-size: 14px;
+
+
+.recruitment-table {
+  border-top: none !important;
 }
 
-/* Download Icon */
-.recruitment-download {
+.recruitment-container hr {
+  display: none !important;
+}
+
+.recruitment-container {
+  border-top: none !important;
+}
+
+
+/* ❌ FORCE REMOVE ANY BORDER LINE BELOW TITLE */
+.recruitment-title {
+  border-bottom: none !important;
+}
+
+/* ❌ KILL ANY PSEUDO LINE FROM GLOBAL CSS */
+.recruitment-title::before {
+  display: none !important;
+}
+.recruitment-page {
+  min-height: auto !important;   /* ❌ remove forced height */
+  padding-bottom: 0 !important;  /* ❌ remove extra space */
+  background: #f2f2f2;
+}
+
+/* Download icon styling */
+.download-cell {
   text-align: center;
 }
 
-.recruitment-download a {
-  font-size: 18px;
-  text-decoration: none;
-  color: #1e88e5;
+.download-link {
+  color: #1484e6;        /* AP RERA blue */
+  font-size: 20px;
+  cursor: pointer;
 }
 
-.recruitment-download a:hover {
-  color: #0d47a1;
+.download-link:hover {
+  color: #0d5fb3;
+}
+
+/* Home – YELLOW */
+.breadcrumb-home {
+  color: #ffeb3b;          /* 🟡 yellow */
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* About Us & Recruitment – WHITE */
+.breadcrumb-text {
+  color: #ffffff;          /* ⚪ white */
+}
+
+.breadcrumb-separator {
+  color: #ffffff;
+  margin: 0 4px;
+}
+
+/* FORCE white for breadcrumb text */
+.breadcrumb-bar .breadcrumb-text {
+  color: #ffffff !important;
+}
+
+/* FORCE yellow only for Home */
+.breadcrumb-bar .breadcrumb-home {
+  color: #ffeb3b !important;
 }

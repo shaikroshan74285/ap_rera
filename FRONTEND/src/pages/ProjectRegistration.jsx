@@ -18,23 +18,23 @@ export default function ProjectRegistration() {
   };
 
   return (
-    <div className="pr-container">
+    <div className="proregi-container">
 
       {/* CARD */}
-      <div className="pr-card">
+      <div className="proregi-card">
 
         {/* breadcrumb attached to the card */}
-        <div className="breadcrumb-card">
+        <div className="proregi-breadcrumb-card">
           You are here :{" "}
           <span onClick={() => navigate("/")}>Home</span> /
           <span> Registration / Project Registration</span>
         </div>
 
-        <h2>Project Registration</h2>
+        <h2 className="proregi-h2">Project Registration</h2>
 
-        <h3>General Instructions :</h3>
+        <h3 className="proregi-h3">General Instructions :</h3>
 
-        <ol className="pr-list">
+        <ol className="proregi-list">
           <li>This is not a mobile App (however can be viewed on mobile screen) so kindly use laptop/desktop for use of this site.</li>
           <li>Clear the cookies before filling the online form</li>
           <li>Remove pop-up block from your browser</li>
@@ -49,7 +49,7 @@ export default function ProjectRegistration() {
 
         <h3>Guide to fill online registration form :</h3>
 
-        <ol className="pr-list">
+        <ol className="proregi-list">
           <li>
             Many details are required for the registration of project which involves information regarding promoter, Promoter 2,
             plan approvals, Time schedule, Location details of project, Bank account of the project, Associate details etc
@@ -57,7 +57,7 @@ export default function ProjectRegistration() {
 
           <li>
             For step by step understanding of filing online application, kindly refer{" "}
-            <span className="pr-link" onClick={() => navigate("/guidelines")}>
+            <span className="proregi-link" onClick={() => navigate("/guidelines")}>
               Guidelines for Registration
             </span>{" "}
             page.
@@ -74,13 +74,13 @@ export default function ProjectRegistration() {
           </li>
 
           <li>
-          <strong className="address-red">List of Address Proof:</strong>
+          <strong className="proregi-address-red">List of Address Proof:</strong>
  Aadhaar/Ration Card/Bank Book/Driving License/Voter Id/Gas/Phone Bill/Passport (Any one)
           </li>
 
           <li>
             <span
-              className="pr-link"
+              className="proregi-link"
               onClick={() => window.open(testingPdf, "_blank")}
             >
               Click Here
@@ -89,16 +89,16 @@ export default function ProjectRegistration() {
           </li>
 
           <li
-            className="nav-link-like"
+            className="proregi-nav-link-like"
             onClick={() => navigate("/feecalculater")}
           >
             Fee Calculator
           </li>
         </ol>
 
-<div className="application-type">
-  <div className="section-label">
-    Application Type<span className="required">*</span>
+<div className="proregi-application-type">
+  <div className="proregi-section-label">
+    Application Type<span className="proregi-required">*</span>
   </div>
 
 
@@ -123,7 +123,7 @@ export default function ProjectRegistration() {
           </label>
         </div>
 
-        <button className="submit-btn" onClick={handleSubmit}>
+        <button className="proregi-submit-btn" onClick={handleSubmit}>
           Submit
         </button>
       </div>

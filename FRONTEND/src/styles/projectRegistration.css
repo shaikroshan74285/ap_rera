@@ -1,5 +1,5 @@
 /* PAGE BASE */
-.pr-container {
+.proregi-container {
   width: 100%;
   min-height: 100vh;
   background: #f5f7fb;        /* outside card background */
@@ -7,7 +7,7 @@
 }
 
 /* MAIN CARD */
-.pr-card {
+.proregi-card {
   width: 84%;
   margin: 20px auto 35px;
   border: 1px solid #d6d6d6;
@@ -16,7 +16,7 @@
 }
 
 /* breadcrumb attached to card */
-.breadcrumb-card {
+.proregi-breadcrumb-card {
   background: #0c84e4;
   color: #fff;
   padding: 8px 12px;
@@ -25,19 +25,19 @@
   border-bottom: 1px solid #b6b6b6;
 }
 
-.breadcrumb-card span {
+.proregi-breadcrumb-card span {
   color: #ffe14d;
   font-weight: 600;
   cursor: pointer;
 }
 
 /* heading underline */
-.pr-card h2 {
+.proregi-card .proregi-h2 {
   margin-bottom: 8px;
   color: #222;
 }
 
-.pr-card h2::after {
+.proregi-card .proregi-h2::after {
   content: "";
   display: block;
   width: 65px;
@@ -47,7 +47,7 @@
 }
 
 /* section headings */
-.pr-card h3 {
+.proregi-card .proregi-h3 {
   margin-top: 22px;
   margin-bottom: 10px;
   color: #1b2e57;
@@ -55,13 +55,13 @@
 }
 
 /* lists */
-.pr-list {
+.proregi-list {
   margin-left: 18px;
   line-height: 1.55;
   font-size: 16px;
 }
 
-.pr-link {
+.proregi-link {
   color: #0b5ed7;
   font-weight: 650;
   text-decoration: underline;
@@ -69,7 +69,7 @@
 }
 
 /* form bottom section */
-.application-type {
+.proregi-application-type {
   margin-top: 25px;
   font-size: 15px;
   display: flex;
@@ -78,11 +78,11 @@
 }
 
 
-.application-type label {
+.proregi-application-type label {
   margin-right: 18px;
 }
 
-.submit-btn {
+.proregi-submit-btn {
   margin-bottom: 10px;
   background: #0c70de;
   border: none;
@@ -93,12 +93,12 @@
    float: right;
 }
 
-.submit-btn:hover {
+.proregi-submit-btn:hover {
   opacity: 0.9;
 }
 
 /* Fee calculator link */
-.nav-link-like {
+.proregi-nav-link-like {
   color: #0a8a00;
   font-weight: 600;
   text-decoration: underline;
@@ -106,21 +106,21 @@
 }
 
 
-.nav-link-like:hover {
+.proregi-nav-link-like:hover {
   opacity: 0.8;
 }
-.section-label {
+.proregi-section-label {
   font-weight: 600;
   color: #000;
   margin-bottom: 6px;
 }
 
-.address-red {
+.proregi-address-red {
   color: #d00000;
 }
 
 
-.pr-card h3 {
+.proregi-card .proregi-h3 {
   color: darkcyan;
   text-decoration: underline;
 }

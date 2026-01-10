@@ -288,14 +288,14 @@ const ComplaintOrders = () => {
         </button>
 
         <button
-          className={currentPage === 1 ? "active" : ""}
+          className={currentPage === 1 ? "complaint-active" : ""}
           onClick={() => goToPage(1)}
         >
           1
         </button>
 
         <button
-          className={currentPage === totalPages ? "active" : ""}
+          className={currentPage === totalPages ? "complaint-active" : ""}
           onClick={() => goToPage(totalPages)}
         >
           {totalPages}

@@ -1,0 +1,225 @@
+/* =========================
+   PAGE CONTAINER
+========================= */
+
+
+
+.main-container {
+  width: 92%;
+  margin: 16px auto;
+  background: #ffffff;
+  border: 1px solid #d6d6d6;   /* this is the ONLY border */
+  padding: 0;
+  box-shadow: none;           /* just in case */
+}
+
+/* =========================
+   BREADCRUMB
+========================= */
+
+.breadcrumb-bar {
+  background: #1087e6;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 8px 16px;
+  box-sizing: border-box;
+}
+
+.breadcrumb-bar span {
+  margin: 0 4px;
+}
+
+.breadcrumb-bar .active {
+  font-weight: 600;
+}
+
+/* =========================
+   CONTENT WRAPPER
+========================= */
+
+.content-padding {
+  padding: 20px;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.page-title {
+  font-size: 22px;
+  border-bottom: 3px solid #1087e6;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+/* =========================
+   STEPPER
+========================= */
+
+.step-box {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  margin-bottom: 20px;
+  border: none;                /* no inner box */
+}
+
+.step-line {
+  position: absolute;
+  top: 32px;
+  left: 40px;
+  right: 40px;
+  height: 2px;
+  background: #cfcfcf;
+}
+
+.step-item {
+  text-align: center;
+  z-index: 1;
+}
+
+.step-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #bbb;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  font-size: 14px;
+}
+
+.step-circle.completed,
+.step-circle.active {
+  background: #0bb35c;
+  color: #fff;
+  border-color: #0bb35c;
+}
+
+.step-item p {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #555;
+}
+
+/* =========================
+   SECTION TITLES
+========================= */
+
+.section-title {
+  color: #1087e6;
+  border-bottom: 2px solid #1087e6;
+  display: inline-block;
+  margin: 25px 0 15px;
+  font-size: 16px;
+}
+
+/* =========================
+   PREVIEW GRID
+========================= */
+
+.preview-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr 220px 1fr;
+  column-gap: 20px;
+  row-gap: 10px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.preview-label {
+  font-weight: 600;
+  color: #333;
+}
+
+.preview-value {
+  min-height: 18px;            /* keeps empty rows visible */
+}
+
+/* =========================
+   PREVIEW SINGLE ROW
+========================= */
+
+.preview-section {
+  margin-bottom: 10px;
+}
+
+.preview-row {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  column-gap: 20px;
+  font-size: 14px;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.preview-table-wrapper {
+  margin-top: 10px;
+}
+
+.doc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.doc-table th {
+  background: #2f4f4f;
+  color: #ffffff;
+  padding: 10px;
+}
+
+.doc-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-height: 20px;
+}
+
+/* =========================
+   DECLARATION
+========================= */
+
+.declaration-box {
+  margin-top: 10px;
+}
+
+.declaration-checkbox {
+  font-size: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.space-top {
+  margin-top: 30px;
+}
+
+.submit-btn {
+  background: #1087e6;
+  color: #ffffff;
+  border: none;
+  padding: 8px 18px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.submit-btn.primary {
+  background: #0a5fb4;
+}

@@ -1,12 +1,12 @@
 /* PAGE BACKGROUND */
-.wizard-page {
+.projwizard-page {
   background: #f5f7fb;
   min-height: 100vh;
   font-family: "Segoe UI", Arial;
 }
 
 /* MAIN CARD */
-.wizard-card {
+.projwizard-card {
   width: 80%;
   margin: 20px auto 30px;
   background: #ffffff;
@@ -14,24 +14,24 @@
 }
 
 /* breadcrumb inside card */
-.wizard-breadcrumb {
+.projwizard-breadcrumb {
   background: #0c84e4;
   color: white;
   padding: 8px 12px;
   font-size: 13px;
 }
 
-.wizard-breadcrumb span {
+.projwizard-breadcrumb span {
   color: #ffe14d;
   font-weight: 600;
 }
 
 /* HEADER */
-.wizard-title {
+.projwizard-title {
   margin: 15px 18px 0;
 }
 
-.header-line {
+.projwizard-header-line {
   width: 60px;
   height: 3px;
   background: #0c84e4;
@@ -39,7 +39,7 @@
 }
 
 /* STEPPER */
-.stepper {
+.projwizard-stepper {
   position: relative;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -49,7 +49,7 @@
 }
 
 /* gray line */
-.stepper::before {
+.projwizard-stepper::before {
   content: "";
   position: absolute;
   top: 35px;
@@ -60,11 +60,11 @@
   z-index: 0;
 }
 
-.step-item {
+.projwizard-step-item {
   font-size: 11px;
 }
 
-.step-circle {
+.projwizard-step-circle {
   width: 28px;
   height: 28px;
   border-radius: 50%;
@@ -78,59 +78,59 @@
   z-index: 1;
 }
 
-.step-circle.active {
+.projwizard-step-circle.projwizard-active {
   background: #6fbe4a;
   border-color: #6fbe4a;
   color: white;
 }
 
 /* FORM BODY */
-.form-body {
+.projwizard-form-body {
   padding: 18px;
 }
 
-.section-block {
+.projwizard-projwizard-section-block {
   margin-bottom: 20px;
 }
 
-.section-block h3 {
+.projwizard-section-block .projwizard-h3 {
   margin: 0;
 }
 
-.section-line {
+.projwizard-section-line {
   width: 55px;
   height: 3px;
   background: #0c84e4;
   margin: 5px 0 10px;
 }
 
-.field-label {
+.projwizard-field-label {
   font-size: 13px;
   margin-bottom: 4px;
   display: block;
 }
 
-.text-input {
+.projwizard-text-input {
   width: 260px;
   padding: 6px 8px;
   border: 1px solid #cfcfcf;
 }
 
 /* RADIO */
-.radio-row {
+.projwizard-radio-row {
   display: flex;
   gap: 30px;
   margin-top: 6px;
 }
 
 /* ROW */
-.row {
+.projwizard-row {
   display: flex;
   gap: 10px;
   align-items: center;
 }
 
-.btn {
+.projwizard-btn {
   background: #0c84e4;
   color: white;
   border: none;
