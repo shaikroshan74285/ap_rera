@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+
 import Layout from "./layouts/layout";
 
 // pages
@@ -71,7 +72,37 @@ import Preview from "./pages/Preview";
 import Payment from "./pages/Payment";
 import ContactUs from "./pages/contactus";
 
-
+//// new imports for mis reports
+import MisReports from './pages/MisReports';
+import R1_1_Report from './pages/R1_1_Report';
+import AgentStatusReport from './pages/AgentStatusReport';
+import ApartmentsReport from './pages/ApartmentsReport';
+import CommercialReport from './pages/CommercialReport';
+import MixedReport from './pages/MixedReport';
+import LayoutForPlotsReport from './pages/LayoutForPlotsReport';
+import LayoutForPlotsBuildingsReport from './pages/LayoutForPlotsBuildingsReport';
+import ApprovedProjectReport from './pages/ApprovedProjectReport';
+import ApprovedAgentReport from './pages/ApprovedAgentReport';
+import ApcrdaReport from './pages/ApcrdaReport';
+import UdaReport from './pages/UdaReport';
+import UlbReport from './pages/UlbReport';
+import DtcpReport from './pages/DtcpReport';
+import OfficerPendingReport from './pages/OfficerPendingReport';
+import ApprovedProjectReportSheet from './pages/ApprovedProjectReportSheet';
+import R9_2_Report from './pages/R9_2_Report';
+import R9_3_Report from './pages/R9_3_Report';
+import DistrictFinancialAgentReport from './pages/DistrictFinancialAgentReport';
+import DistrictFinancialProjectReport from './pages/DistrictFinancialProjectReport';
+import R15_2 from './pages/R15_2';
+import R17_1 from './pages/R17_1';
+import R17_2 from './pages/R17_2';
+import R20_1 from './pages/R20_1';
+import R20_2 from './pages/R20_2';
+import R20_3 from './pages/R20_3';
+import R21_2 from './pages/R21_2';
+import R22_2 from './pages/R22_2';
+import R23_1 from './pages/R23_1';
+import R24_1 from './pages/R24_1';
 
 
 function App() {
@@ -145,6 +176,41 @@ function App() {
           <Route path="/agent-upload-documents" element={<UploadDocuments />} />
             <Route path="/agent-preview" element={<Preview />} />
             <Route path="/agent-payment" element={<Payment />} />
+
+
+
+             <Route path="/mis-reports" element={<MisReports />} />
+             <Route path="/reports/R1.1" element={<R1_1_Report />} />
+             <Route path="/reports/R1.2" element={<AgentStatusReport />} />
+             <Route path="/reports/R3.1" element={<ApartmentsReport />} />
+             <Route path="/reports/R3.4" element={<CommercialReport />} />
+             <Route path="/reports/R3.5" element={<MixedReport />} />
+             <Route path="/reports/R3.6" element={<LayoutForPlotsReport />} />
+             <Route path="/reports/R3.7" element={<LayoutForPlotsBuildingsReport />} />
+             <Route path="/reports/R4.1" element={<ApprovedProjectReport />} />
+             <Route path="/reports/R4.2" element={<ApprovedAgentReport />} />
+             <Route path="/reports/R5.1" element={<ApcrdaReport />} />
+             <Route path="/reports/R5.2" element={<UdaReport />} />
+             <Route path="/reports/R5.3" element={<UlbReport />} />
+             <Route path="/reports/R5.4" element={<DtcpReport />} />
+             <Route path="/reports/R6.4" element={<OfficerPendingReport />} />
+             <Route path="/reports/approved-detailed" element={<ApprovedProjectReportSheet />} />
+             <Route path="/reports/R9.2" element={<R9_2_Report />} />
+             <Route path="/reports/R9.3" element={<R9_3_Report />} />
+             <Route path="/reports/R13.5" element={<DistrictFinancialAgentReport />} />
+             <Route path="/reports/R13.6" element={<DistrictFinancialProjectReport />} />
+             <Route path="/reports/R15.2" element={<R15_2 />} />
+             <Route path="/reports/R17.1" element={<R17_1 />} />
+             <Route path="/reports/R17.2" element={<R17_2 />} />
+             <Route path="/reports/R20.1" element={<R20_1 />} />
+             <Route path="/reports/R20.2" element={<R20_2 />} />
+             <Route path="/reports/R20.3" element={<R20_3 />} />
+             <Route path="/reports/R21.2" element={<R21_2 />} />
+             <Route path="/reports/R22.2" element={<R22_2 />} />
+             <Route path="/reports/R23.1" element={<R23_1 />} />
+             <Route path="/reports/R24.1" element={<R24_1 />} />
+
+
         </Routes>
       </Layout>
     </BrowserRouter>

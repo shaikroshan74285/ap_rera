@@ -1,0 +1,183 @@
+.report-page-wrapper {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.breadcrumb-blue {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  font-size: 13px;
+}
+
+.report-card-container {
+  background: white;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.report-title {
+  color: #333;
+  border-bottom: 2px solid #0056b3;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+/* Table Controls */
+.table-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.export-search {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.icons i {
+  font-size: 22px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+.excel { color: green; }
+.pdf { color: red; }
+
+/* Table Styling */
+.rera-report-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.rera-report-table th {
+  background-color: #3e5369;
+  color: white;
+  padding: 12px;
+  border: 1px solid #dee2e6;
+  text-align: center;
+}
+
+.rera-report-table .sla-header {
+  background-color: #0056b3;
+}
+
+.rera-report-table td {
+  padding: 10px;
+  border: 1px solid #dee2e6;
+  text-align: center;
+  color: #444;
+}
+
+.text-left { text-align: left !important; }
+.blue-text { color: #0056b3; font-weight: 500; }
+
+/* Countdown Timer UI */
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.time-block {
+  display: flex;
+  flex-direction: column;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  width: 38px;
+  padding: 2px 0;
+}
+
+.time-block span {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.time-block small {
+  font-size: 9px;
+  text-transform: uppercase;
+}
+
+.separator {
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* Pagination Footer Layout */
+.pagination-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.pagination-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.page-nav, .page-num {
+    padding: 5px 12px;
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+    font-size: 13px;
+    border-radius: 3px;
+    transition: 0.2s;
+}
+
+.page-nav:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.page-num.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.page-num:hover:not(.active), .page-nav:hover:not(:disabled) {
+    background-color: #f8f9fa;
+    border-color: #bbb;
+}
+
+/* Fix Countdown padding */
+.countdown-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+.time-block {
+    background: #007bff;
+    color: white;
+    padding: 3px 5px;
+    border-radius: 3px;
+    min-width: 35px;
+    text-align: center;
+}
+
+.time-block span {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.time-block small {
+    display: block;
+    font-size: 9px;
+    text-transform: uppercase;
+}
