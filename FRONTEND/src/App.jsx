@@ -103,6 +103,40 @@ import R21_2 from './pages/R21_2';
 import R22_2 from './pages/R22_2';
 import R23_1 from './pages/R23_1';
 import R24_1 from './pages/R24_1';
+import R1_3 from './pages/R1_3';
+import R2_1 from './pages/R2_1';
+import R2_2 from './pages/R2_2';
+import R2_3 from './pages/R2_3';
+import R3_2 from './pages/R3_2';
+import R3_3 from './pages/R3_3';
+import R6_1 from './pages/R6_1';
+import R6_2_1 from './pages/R6_2_1';
+import R6_2_2 from './pages/R6_2_2';
+import R6_2_3 from './pages/R6_2_3';
+import R6_3 from './pages/R6_3';
+import R7_1 from './pages/R7_1';
+import R7_3 from './pages/R7_3';
+import R7_2 from './pages/R7_2';
+import R8_1 from './pages/R8_1';
+import R8_2 from './pages/R8_2';
+import R10_1 from './pages/R10_1';
+import R10_2 from './pages/R10_2';
+import R10_3 from './pages/R10_3';
+import R11_1 from './pages/R11_1';
+import R13_1 from './pages/R13_1';
+import R13_2 from './pages/R13_2';
+import R13_3 from './pages/R13_3';
+import R13_4 from './pages/R13_4';
+import R14_1 from './pages/R14_1';
+import R14_2 from './pages/R14_2';
+import R14_3 from './pages/R14_3';
+import R18_1 from './pages/R18_1';
+import R18_2 from './pages/R18_2';
+import R16_1 from './pages/R16_1';
+import R12_1 from './pages/R12_1';
+import R12_2 from './pages/R12_2';
+import R12_3 from './pages/R12_3';
+import R12_4 from './pages/R12_4';
 
 
 function App() {
@@ -178,7 +212,6 @@ function App() {
             <Route path="/agent-payment" element={<Payment />} />
 
 
-
              <Route path="/mis-reports" element={<MisReports />} />
              <Route path="/reports/R1.1" element={<R1_1_Report />} />
              <Route path="/reports/R1.2" element={<AgentStatusReport />} />
@@ -209,6 +242,41 @@ function App() {
              <Route path="/reports/R22.2" element={<R22_2 />} />
              <Route path="/reports/R23.1" element={<R23_1 />} />
              <Route path="/reports/R24.1" element={<R24_1 />} />
+             <Route path="/reports/R1.3" element={<R1_3 />} />
+             <Route path="/reports/R2.1" element={<R2_1 />} />
+             <Route path="/reports/R2.2" element={<R2_2 />} />
+             <Route path="/reports/R2.3" element={<R2_3 />} />
+             <Route path="/reports/R3.2" element={<R3_2 />} />
+             <Route path="/reports/R3.3" element={<R3_3 />} />
+             <Route path="/reports/R6.1" element={<R6_1 />} />
+             <Route path="/reports/R6.2.1" element={<R6_2_1 />} />
+             <Route path="/reports/R6.2.2" element={<R6_2_2 />} />
+             <Route path="/reports/R6.2.3" element={<R6_2_3 />} />
+             <Route path="/reports/R6.3" element={<R6_3 />} />
+             <Route path="/reports/R7.3" element={<R7_3 />} />
+             <Route path="/reports/R7.2" element={<R7_2 />} />
+             <Route path="/reports/R7.1" element={<R7_1 />} />
+             <Route path="/reports/R8.1" element={<R8_1 />} />
+             <Route path="/reports/R8.2" element={<R8_2 />} />
+             <Route path="/reports/R10.2" element={<R10_2 />} />
+             <Route path="/reports/R10.3" element={<R10_3 />} />
+             <Route path="/reports/R11.1" element={<R11_1 />} />
+             <Route path="/reports/R10.1" element={<R10_1 />} />
+             <Route path="/reports/R13.1" element={<R13_1 />} />
+             <Route path="/reports/R13.2" element={<R13_2 />} />
+             <Route path="/reports/R13.4" element={<R13_4 />} />
+             <Route path="/reports/R13.3" element={<R13_3 />} />
+             <Route path="/reports/R14.1" element={<R14_1 />} />
+             <Route path="/reports/R14.2" element={<R14_2 />} />
+             <Route path="/reports/R14.3" element={<R14_3 />} />
+             <Route path="/reports/R18.1" element={<R18_1 />} />
+             <Route path="/reports/R18.2" element={<R18_2 />} />
+             <Route path="/reports/R16.1" element={<R16_1 />} />
+             <Route path="/reports/R12.1" element={<R12_1 />} />
+             <Route path="/reports/R12.2" element={<R12_2 />} />
+             <Route path="/reports/R12.3" element={<R12_3 />} />
+             <Route path="/reports/R12.4" element={<R12_4 />} />
+
 
 
         </Routes>
