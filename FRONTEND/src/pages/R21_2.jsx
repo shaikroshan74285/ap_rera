@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/reportPage.css';
-import timeTakenData from '../data/R21_2_Data.json'; // Ensure filename matches your JSON
+import timeTakenData from '../data/R21_2_Data.json';
+
+// Import libraries for professional data export
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
+import * as XLSX from "xlsx";
 
 const R21_2 = () => {
   // Map to the "Agent Application wise time tak" key from your JSON sample
@@ -30,48 +35,46 @@ const R21_2 = () => {
     return pages;
   };
 
-  // CSV Export Logic
-  const downloadCSV = () => {
-    // Due to high number of columns, we map them carefully
-    const headers = [
-        "S.No", "Application No", "Agent Name", "Initiation Time", 
-        "S1", "S2", "S3", "S4", "S5", "S6", "S7", "S8", "S9", "S10",
-        "D1", "D2", "D3", "D4", "D5", "D6", "D7", "D8", "D9", "D10",
-        "Approved Date", "Total Scrutiny", "Total Agent Time", "Total Time"
-    ];
-    
-    const csvContent = [
-      headers.join(","),
-      ...filteredData.map(r => [
-        `"${r["S.No"]}"`, 
-        `"${r["Application No"]}"`,
-        `"${r["Agent Name"]}"`,
-        `"${r["Time taken to submit application (Payment date to Initiated date )"]}"`,
-        `"${r["Scrutiny - S1 Days/Hours"]}"`, `"${r["Scrutiny - S2 Days/Hours"]}"`,
-        `"${r["Scrutiny - S3 Days/Hours"]}"`, `"${r["Scrutiny - S4 Days/Hours"]}"`,
-        `"${r["Scrutiny - S5 Days/Hours"]}"`, `"${r["Scrutiny - S6 Days/Hours"]}"`,
-        `"${r["Scrutiny - S7 Days/Hours"]}"`, `"${r["Scrutiny - S8 Days/Hours"]}"`,
-        `"${r["Scrutiny - S9 Days/Hours"]}"`, `"${r["Scrutiny - S10 Days/Hours"]}"`,
-        `"${r["Time taken to submit shortfall documents by Agent - D1 Days/Hours"]}"`,
-        `"${r["Time taken to submit shortfall documents by Agent - D2 Days/Hours"]}"`,
-        `"${r["Time taken to submit shortfall documents by Agent - D3 Days/Hours"]}"`,
-        `"${r["Approved date"]}"`,
-        `"${r["Total no of Days/Hours to scrutiny"]}"`,
-        `"${r["Total no of Days/Hours application with Agent"]}"`,
-        `"${r["Total Time"]}"`
-      ].join(","))
-    ].join("\n");
-    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = "Agent_Time_Taken_Report_R21_2.csv";
-    link.click();
+  // Professional Excel Export (Full Data)
+  const downloadExcel = () => {
+    const worksheet = XLSX.utils.json_to_sheet(filteredData);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Agent Time Taken");
+    XLSX.writeFile(workbook, "Agent_Time_Taken_Report_R21_2.xlsx");
+  };
+
+  // Professional PDF Export (Complete Data)
+  const downloadPDF = () => {
+    const doc = new jsPDF("l", "mm", "a4");
+    doc.setFontSize(14);
+    doc.text("Agent Application Wise Time Taken Report", 14, 15);
+
+    const tableRows = filteredData.map((r) => [
+      r["S.No"],
+      r["Application No"],
+      r["Agent Name"],
+      r["Scrutiny - S1 Days/Hours"],
+      r["Scrutiny - S2 Days/Hours"],
+      r["Time taken to submit shortfall documents by Agent - D1 Days/Hours"],
+      r["Approved date"],
+      r["Total Time"]
+    ]);
+
+    autoTable(doc, {
+      head: [["S.No", "App No", "Agent Name", "S1", "S2", "D1", "Approved Date", "Total Time"]],
+      body: tableRows,
+      startY: 22,
+      styles: { fontSize: 7 },
+      headStyles: { fillColor: [62, 83, 105] },
+    });
+
+    doc.save("Agent_Time_Taken_Full_Report_R21_2.pdf");
   };
 
   return (
     <div className="report-page-wrapper">
       <div className="breadcrumb-blue no-print">
-        You are here : <Link to="/" className="text-white underline">Home</Link> / <Link to="/mis-reports" className="text-white underline">MIS Reports</Link> / R21.2 Agent Application Wise Time Taken
+        You are here : <Link to="/" className="text-white underline" target="_blank" rel="noopener noreferrer">Home</Link> / <Link to="/mis-reports" className="text-white underline" target="_blank" rel="noopener noreferrer">MIS Reports</Link> / R21.2 Agent Application Wise Time Taken
       </div>
 
       <div className="report-card-container">
@@ -85,15 +88,26 @@ const R21_2 = () => {
             </select> entries
           </div>
           <div className="export-search">
-            <div className="icons">
-              <i className="fas fa-file-excel excel" onClick={downloadCSV} title="Export to Excel"></i>
-              <i className="fas fa-file-pdf pdf" onClick={() => window.print()} title="Print PDF"></i>
+            <div className="icons" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <img 
+                src="https://cdn-icons-png.flaticon.com/512/732/732220.png" 
+                className="apr-icon-btn" 
+                alt="Excel" 
+                title="Export to Excel"
+                onClick={downloadExcel} 
+              />
+              <img 
+                src="https://cdn-icons-png.flaticon.com/512/337/337946.png" 
+                className="apr-icon-btn" 
+                alt="PDF" 
+                title="Download Full PDF"
+                onClick={downloadPDF} 
+              />
             </div>
             <div className="search-box">Search: <input type="text" value={searchTerm} onChange={(e) => {setSearchTerm(e.target.value); setCurrentPage(1);}} /></div>
           </div>
         </div>
 
-        {/* Added overflow-x-auto for the wide table */}
         <div className="table-responsive" style={{ overflowX: 'auto' }}>
           <table className="rera-report-table min-w-full">
             <thead>
@@ -121,19 +135,16 @@ const R21_2 = () => {
                   <td className="blue-text font-bold">{row["Application No"]}</td>
                   <td className="text-left" style={{minWidth: '200px'}}>{row["Agent Name"]}</td>
                   <td>{row["Time taken to submit application (Payment date to Initiated date )"]}</td>
-                  {/* Scrutiny S1-S5 */}
                   <td>{row["Scrutiny - S1 Days/Hours"]}</td>
                   <td>{row["Scrutiny - S2 Days/Hours"]}</td>
                   <td>{row["Scrutiny - S3 Days/Hours"]}</td>
                   <td>{row["Scrutiny - S4 Days/Hours"]}</td>
                   <td>{row["Scrutiny - S5 Days/Hours"]}</td>
-                  {/* Shortfall D1-D5 */}
                   <td>{row["Time taken to submit shortfall documents by Agent - D1 Days/Hours"]}</td>
                   <td>{row["Time taken to submit shortfall documents by Agent - D2 Days/Hours"]}</td>
                   <td>{row["Time taken to submit shortfall documents by Agent - D3 Days/Hours"]}</td>
                   <td>{row["Time taken to submit shortfall documents by Agent - D4 Days/Hours"]}</td>
                   <td>{row["Time taken to submit shortfall documents by Agent - D5 Days/Hours"]}</td>
-                  
                   <td>{row["Approved date"]}</td>
                   <td className="font-bold">{row["Total no of Days/Hours to scrutiny"]}</td>
                   <td className="font-bold">{row["Total no of Days/Hours application with Agent"]}</td>
@@ -154,8 +165,8 @@ const R21_2 = () => {
             {getPageNumbers().map(num => (
               <button key={num} onClick={() => setCurrentPage(num)} className={`page-num ${currentPage === num ? 'active' : ''}`}>{num}</button>
             ))}
-            <button disabled={currentPage === totalPages} onClick={() => setCurrentPage(currentPage + 1)} className="page-nav">Next</button>
-            <button disabled={currentPage === totalPages} onClick={() => setCurrentPage(totalPages)} className="page-nav">Last</button>
+            <button disabled={currentPage === totalPages || totalPages === 0} onClick={() => setCurrentPage(currentPage + 1)} className="page-nav">Next</button>
+            <button disabled={currentPage === totalPages || totalPages === 0} onClick={() => setCurrentPage(totalPages)} className="page-nav">Last</button>
           </div>
         </div>
       </div>

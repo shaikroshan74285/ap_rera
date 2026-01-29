@@ -131,16 +131,22 @@ const MisReports = () => {
         {label: 'R14.2 - Form R', link: '/reports/R14.2'},
         {label: 'R14.3 - Form S', link: '/reports/R14.3'}
       ] },
-    { id: 'R15', title: 'Rating by User - Reports', 
-      subItems: [
-        {label: 'R15.1 - Feedback', link: '#'},
-        { label: 'R15.2 - Status of Application for Agent', link: '/reports/R15.2' },
-
-      ] },
-    { id: 'R16', title: 'Application Initiated - Reports', 
-      subItems: [
-        {label: 'R16.1 - Initiated Report', link: '/reports/R16.1'}
-      ] },
+    { 
+  id: 'R15', 
+  title: 'Rating by User - Reports', 
+  subItems: [
+    // Changed link to match your Route path="/reports/R15.1"
+    { label: 'R15.1 - Rate of Website Graph', link: '/reports/R15.1' }, 
+    { label: 'R15.2 - Feedback Details', link: '/reports/R15.2' }, 
+  ] 
+},
+{ 
+  id: 'R16', 
+  title: 'Application Initiated - Reports', 
+  subItems: [
+    { label: 'R16.1 - Initiated Report', link: '/reports/R16.1' }
+  ] 
+},
     { id: 'R17', title: 'Login wise Pending Reports', 
       subItems: [
         {label: 'R17.1 - Pending Projects', link: '/reports/R17.1'},
@@ -153,7 +159,7 @@ const MisReports = () => {
       ] },
     { id: 'R19', title: 'DPMS Reports', 
       subItems: [
-        {label: 'R19.1 - Eligible Projects', link: '#'}
+        {label: 'R19.1 - Eligible Projects', link: '/reports/R19.1'}
       ] },
     { id: 'R20', title: 'Micro Reports', 
       subItems: [
@@ -179,6 +185,13 @@ const MisReports = () => {
       subItems: [
         {label: 'R24.1 - Application Status', link: '/reports/R24.1'}
       ] },
+
+      { id: 'R25', title: 'Status Of Projects', 
+      subItems: [
+        {label: 'R25.1 - Extension Of Projects', link: '/reports/R25.1'},
+        {label: 'R25.2 - Change Request Status', link: '/reports/R25.2'},
+        {label: 'R25.3 - Renewal Of Agent Registration', link: '/reports/R25.3'}
+      ] }
   ];
 
   return (
@@ -209,7 +222,6 @@ const MisReports = () => {
                 <ul className="sub-list">
                   {report.subItems.map((sub, idx) => (
                     <li key={idx} className="sub-item">
-                      {/* Check if sub-item has its own nested sub-items (like R6.2) */}
                       {sub.subItems ? (
                         <div className="nested-wrapper">
                           <div 
@@ -226,7 +238,13 @@ const MisReports = () => {
                             <ul className="nested-sub-list" style={{ paddingLeft: '20px', marginTop: '5px' }}>
                               {sub.subItems.map((nestedSub, nIdx) => (
                                 <li key={nIdx} className="nested-sub-item" style={{ padding: '5px 0' }}>
-                                  <Link to={nestedSub.link} className="report-link">
+                                  {/* 🔹 Added target="_blank" and rel for Nested Link */}
+                                  <Link 
+                                    to={nestedSub.link} 
+                                    className="report-link" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                  >
                                     <i className="fas fa-file-alt mr-2 text-gray-400"></i>
                                     {nestedSub.label}
                                   </Link>
@@ -237,7 +255,14 @@ const MisReports = () => {
                         </div>
                       ) : (
                         /* Regular Sub-item Link */
-                        <Link to={sub.link}>{sub.label}</Link>
+                        /* 🔹 Added target="_blank" and rel for Standard Sub-item */
+                        <Link 
+                          to={sub.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                        >
+                          {sub.label}
+                        </Link>
                       )}
                     </li>
                   ))}
@@ -250,5 +275,4 @@ const MisReports = () => {
     </div>
   );
 };
-
 export default MisReports;

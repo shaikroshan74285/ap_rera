@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/reportPage.css';
-import agentData from '../data/AgentStatusData.json'; // Ensure path is correct
+import agentData from '../data/AgentStatusData.json';
+
+// Import libraries for professional data export
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
+import * as XLSX from "xlsx";
 
 const AgentStatusReport = () => {
-  // Map to the specific key in your JSON
   const allData = agentData["AgentStatusReort "] || [];
   
   const [searchTerm, setSearchTerm] = useState("");
@@ -12,24 +16,18 @@ const AgentStatusReport = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [now, setNow] = useState(new Date());
 
-  // Real-time update for countdown
   useEffect(() => {
     const timer = setInterval(() => setNow(new Date()), 1000);
     return () => clearInterval(timer);
   }, []);
 
-  /**
-   * STRICT PARSER: Corrects the "263 Days" error by manually 
-   * extracting Day, Month, and Year from the DD/MM/YYYY string.
-   */
   const parseStrictDate = (dateStr) => {
     if (!dateStr || typeof dateStr !== 'string') return null;
     try {
       const parts = dateStr.trim().split(' ');
       const dateParts = parts[0].split('/');
-      
       const day = parseInt(dateParts[0], 10);
-      const month = parseInt(dateParts[1], 10) - 1; // JS Months are 0-11
+      const month = parseInt(dateParts[1], 10) - 1;
       const year = parseInt(dateParts[2], 10);
 
       let hours = 0, minutes = 0;
@@ -48,19 +46,14 @@ const AgentStatusReport = () => {
     } catch (e) { return null; }
   };
 
-  /**
-   * COUNTDOWN LOGIC: Limits to a 30-day span from "Received Date".
-   */
   const calculateSLA = (receivedDateStr) => {
     const startDate = parseStrictDate(receivedDateStr);
     if (!startDate || isNaN(startDate.getTime())) return { d: "00", h: "00", m: "00", s: "00" };
 
     const targetDate = new Date(startDate);
-    targetDate.setDate(startDate.getDate() + 30); // 30-day SLA window
+    targetDate.setDate(startDate.getDate() + 30); 
     
     const diff = targetDate - now;
-
-    // Show 00 if the 30-day time span is completed
     if (diff <= 0) return { d: "00", h: "00", m: "00", s: "00" };
 
     return {
@@ -71,12 +64,10 @@ const AgentStatusReport = () => {
     };
   };
 
-  // Filter Logic
   const filteredData = allData.filter(item => 
     Object.values(item).some(val => String(val).toLowerCase().includes(searchTerm.toLowerCase()))
   );
 
-  // Pagination Logic
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -90,27 +81,42 @@ const AgentStatusReport = () => {
     return pages;
   };
 
-  // CSV Export
-  const downloadCSV = () => {
-    const headers = ["S.No", "Application No", "Agent Name", "Agent Type", "Submission Date", "Status"];
-    const csvContent = [
-      headers.join(","),
-      ...filteredData.map(r => [
-        r["Sl.No"], r["Application No"], `"${r["Agent Name"]}"`, 
-        r["Agent Type"], r["Date of Submission"], r["Status"]
-      ].join(","))
-    ].join("\n");
-    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = "Agent_Status_Report.csv";
-    link.click();
+  const downloadExcel = () => {
+    const worksheet = XLSX.utils.json_to_sheet(filteredData);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Agent Status");
+    XLSX.writeFile(workbook, "Agent_Status_Report.xlsx");
+  };
+
+  const downloadPDF = () => {
+    const doc = new jsPDF("l", "mm", "a4");
+    doc.setFontSize(16);
+    doc.text("Agent Status Report", 14, 15);
+
+    const tableRows = filteredData.map((row) => [
+      row["Sl.No"],
+      row["Application No"],
+      row["Agent Name"],
+      row["Agent Type"],
+      row["Date of Submission"],
+      row["Status"]
+    ]);
+
+    autoTable(doc, {
+      head: [["S.No.", "App No", "Agent Name", "Agent Type", "Submission Date", "Status"]],
+      body: tableRows,
+      startY: 22,
+      styles: { fontSize: 8 },
+      headStyles: { fillColor: [62, 83, 105] },
+    });
+
+    doc.save("Agent_Status_Full_Report.pdf");
   };
 
   return (
     <div className="report-page-wrapper">
       <div className="breadcrumb-blue no-print">
-        You are here : <Link to="/" className="text-white underline">Home</Link> / MIS Reports / R1.2 Agent Status
+        You are here : <Link to="/" className="text-white underline" target="_blank" rel="noopener noreferrer">Home</Link> / MIS Reports / R1.2 Agent Status
       </div>
 
       <div className="report-card-container">
@@ -123,52 +129,65 @@ const AgentStatusReport = () => {
             </select> entries
           </div>
           <div className="export-search">
-            <div className="icons">
-              <i className="fas fa-file-excel excel" onClick={downloadCSV}></i>
-              <i className="fas fa-file-pdf pdf" onClick={() => window.print()}></i>
+            <div className="icons" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <img 
+                src="https://cdn-icons-png.flaticon.com/512/732/732220.png" 
+                className="apr-icon-btn" 
+                alt="Excel" 
+                title="Export to Excel"
+                onClick={downloadExcel} 
+              />
+              <img 
+                src="https://cdn-icons-png.flaticon.com/512/337/337946.png" 
+                className="apr-icon-btn" 
+                alt="PDF" 
+                title="Download Full PDF"
+                onClick={downloadPDF} 
+              />
             </div>
             <div className="search-box">Search: <input type="text" value={searchTerm} onChange={(e) => {setSearchTerm(e.target.value); setCurrentPage(1);}} /></div>
           </div>
         </div>
 
-        <table className="rera-report-table">
-          <thead>
-            <tr>
-              <th>S.No.</th>
-              <th>Application No</th>
-              <th>Agent Name</th>
-              <th>Agent Type</th>
-              <th>Date of Submission</th>
-              <th>Status</th>
-              <th className="sla-header">SLA Count Down</th>
-            </tr>
-          </thead>
-          <tbody>
-            {currentItems.map((row, index) => {
-              const timer = calculateSLA(row["Received Date"]);
-              return (
-                <tr key={index}>
-                  <td>{row["Sl.No"]}</td>
-                  <td className="blue-text">{row["Application No"]}</td>
-                  <td className="text-left">{row["Agent Name"]}</td>
-                  <td>{row["Agent Type"]}</td>
-                  <td>{row["Date of Submission"]}</td>
-                  <td className="text-left">{row["Status"]}</td>
-                  <td>
-                    <div className="countdown-container">
-                      <div className="time-block"><span>{timer.d}</span><small>Days</small></div><span className="separator">:</span>
-                      <div className="time-block"><span>{timer.h}</span><small>Hours</small></div><span className="separator">:</span>
-                      <div className="time-block"><span>{timer.m}</span><small>Mins</small></div><span className="separator">:</span>
-                      <div className="time-block"><span>{timer.s}</span><small>Secs</small></div>
-                    </div>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+        <div className="table-responsive">
+          <table className="rera-report-table">
+            <thead>
+              <tr>
+                <th>S.No.</th>
+                <th>Application No</th>
+                <th>Agent Name</th>
+                <th>Agent Type</th>
+                <th>Date of Submission</th>
+                <th>Status</th>
+                <th className="sla-header">SLA Count Down</th>
+              </tr>
+            </thead>
+            <tbody>
+              {currentItems.map((row, index) => {
+                const timer = calculateSLA(row["Received Date"]);
+                return (
+                  <tr key={index}>
+                    <td>{row["Sl.No"]}</td>
+                    <td className="blue-text font-bold">{row["Application No"]}</td>
+                    <td className="text-left">{row["Agent Name"]}</td>
+                    <td>{row["Agent Type"]}</td>
+                    <td>{row["Date of Submission"]}</td>
+                    <td className="text-left">{row["Status"]}</td>
+                    <td>
+                      <div className="countdown-container">
+                        <div className="time-block"><span>{timer.d}</span><small>Days</small></div><span className="separator">:</span>
+                        <div className="time-block"><span>{timer.h}</span><small>Hours</small></div><span className="separator">:</span>
+                        <div className="time-block"><span>{timer.m}</span><small>Mins</small></div><span className="separator">:</span>
+                        <div className="time-block"><span>{timer.s}</span><small>Secs</small></div>
+                      </div>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
 
-        {/* Multi-page Pagination Footer */}
         <div className="pagination-footer no-print">
           <div className="pagination-info">Showing {indexOfFirstItem + 1} to {Math.min(indexOfLastItem, filteredData.length)} of {filteredData.length} entries</div>
           <div className="pagination-buttons">

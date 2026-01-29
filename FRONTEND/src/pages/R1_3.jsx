@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 import '../styles/reportPage.css';
 import complaintData from '../data/R1_3_Data.json';
 
+// Import libraries for professional data export
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
+import * as XLSX from "xlsx";
+
 const R1_3 = () => {
   const allData = complaintData["ComplaintStatusReort "] || [];
   
@@ -13,7 +18,6 @@ const R1_3 = () => {
   // Helper function to handle scientific notation if the JSON data is numeric
   const formatComplaintNo = (val) => {
     if (!val) return "-";
-    // If the value is a number or looks like scientific notation, convert it to a fixed string
     const num = Number(val);
     if (!isNaN(num) && String(val).toLowerCase().includes('e')) {
       return num.toLocaleString('fullwide', {useGrouping:false});
@@ -38,38 +42,56 @@ const R1_3 = () => {
     return pages;
   };
 
-  const downloadCSV = () => {
-    const headers = [
-      "S.No.", "Application No", "SR No", "CCP No (As per Form N)", 
-      "CP No (As per form M)", "Complaint By", "Complainant Name", 
-      "Complaint Against", "Respondent Name", "Status of the Complaint"
-    ];
-    const csvContent = [
-      headers.join(","),
-      ...filteredData.map(r => [
-        `"${r["Sl.No"]}"`, 
-        `'${formatComplaintNo(r["Complaint No"])}`, // Added single quote to prevent Excel from converting back to scientific
-        `"-"`, 
-        `"-"`, 
-        `"-"`, 
-        `"${r["Complaint By"]}"`,
-        `"${r["Complainant Name"]}"`,
-        `"${r["Complaint Against"]}"`,
-        `"${r["Respondent Name"] || "-"}"`,
-        `"${r["Application Status"]}"`
-      ].join(","))
-    ].join("\n");
-    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = "Status_Of_Complaints_R1_3.csv";
-    link.click();
+  // Professional Excel Export
+  const downloadExcel = () => {
+    const worksheet = XLSX.utils.json_to_sheet(filteredData.map(r => ({
+        "S.No.": r["Sl.No"],
+        "Application No": formatComplaintNo(r["Complaint No"]),
+        "Complaint By": r["Complaint By"],
+        "Complainant Name": r["Complainant Name"],
+        "Complaint Against": r["Complaint Against"],
+        "Respondent Name": r["Respondent Name"] || "-",
+        "Status": r["Application Status"]
+    })));
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Complaints");
+    XLSX.writeFile(workbook, "Status_Of_Complaints_R1_3.xlsx");
+  };
+
+  // Professional PDF Export
+  const downloadPDF = () => {
+    const doc = new jsPDF("l", "mm", "a4");
+    doc.setFontSize(16);
+    doc.text("Status Of Complaints", 14, 15);
+
+    const tableRows = filteredData.map((r) => [
+      r["Sl.No"],
+      formatComplaintNo(r["Complaint No"]),
+      "-",
+      "-",
+      "-",
+      r["Complaint By"],
+      r["Complainant Name"],
+      r["Complaint Against"],
+      r["Respondent Name"] || "-",
+      r["Application Status"]
+    ]);
+
+    autoTable(doc, {
+      head: [["S.No.", "Application No", "SR No", "CCP No", "CP No", "By", "Complainant", "Against", "Respondent", "Status"]],
+      body: tableRows,
+      startY: 22,
+      styles: { fontSize: 7 },
+      headStyles: { fillColor: [0, 123, 255] },
+    });
+
+    doc.save("Status_Of_Complaints_R1_3.pdf");
   };
 
   return (
     <div className="report-page-wrapper">
       <div className="breadcrumb-blue no-print">
-        You are here : <Link to="/" className="text-white">Home</Link> / Reports / Status Of Complaints
+        You are here : <Link to="/" className="text-white underline" target="_blank" rel="noopener noreferrer">Home</Link> / Reports / Status Of Complaints
       </div>
 
       <div className="report-card-container">
@@ -83,9 +105,21 @@ const R1_3 = () => {
             </select>
           </div>
           <div className="export-search">
-            <div className="icons">
-              <img src="/assets/excel-icon.png" alt="Excel" className="export-icon" onClick={downloadCSV} title="Export to Excel" style={{width: '30px', cursor: 'pointer'}} />
-              <img src="/assets/pdf-icon.png" alt="PDF" className="export-icon" onClick={() => window.print()} title="Print PDF" style={{width: '30px', cursor: 'pointer', marginLeft: '10px'}} />
+            <div className="icons" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <img 
+                src="https://cdn-icons-png.flaticon.com/512/732/732220.png" 
+                className="apr-icon-btn" 
+                alt="Excel" 
+                title="Export to Excel"
+                onClick={downloadExcel} 
+              />
+              <img 
+                src="https://cdn-icons-png.flaticon.com/512/337/337946.png" 
+                className="apr-icon-btn" 
+                alt="PDF" 
+                title="Download Full PDF"
+                onClick={downloadPDF} 
+              />
             </div>
             <div className="search-box">
               Search: <input type="text" value={searchTerm} onChange={(e) => {setSearchTerm(e.target.value); setCurrentPage(1);}} />
@@ -93,7 +127,7 @@ const R1_3 = () => {
           </div>
         </div>
 
-        <div className="table-responsive" style={{ overflowX: 'auto' }}>
+        <div className="table-responsive">
           <table className="rera-report-table custom-ui-table">
             <thead>
               <tr>
@@ -115,7 +149,6 @@ const R1_3 = () => {
               {currentItems.length > 0 ? currentItems.map((row, index) => (
                 <tr key={index}>
                   <td>{row["Sl.No"]}</td>
-                  {/* Updated column to use the formatting helper */}
                   <td>{formatComplaintNo(row["Complaint No"])}</td>
                   <td>-</td>
                   <td>-</td>
@@ -137,7 +170,6 @@ const R1_3 = () => {
           </table>
         </div>
 
-        {/* Pagination logic remains same */}
         <div className="pagination-footer no-print">
           <div className="pagination-info">Showing {filteredData.length > 0 ? indexOfFirstItem + 1 : 0} to {Math.min(indexOfLastItem, filteredData.length)} of {filteredData.length} entries</div>
           <div className="pagination-buttons">
@@ -146,8 +178,8 @@ const R1_3 = () => {
             {getPageNumbers().map(num => (
               <button key={num} onClick={() => setCurrentPage(num)} className={`page-num ${currentPage === num ? 'active' : ''}`}>{num}</button>
             ))}
-            <button disabled={currentPage === totalPages} onClick={() => setCurrentPage(currentPage + 1)} className="page-nav">Next</button>
-            <button disabled={currentPage === totalPages} onClick={() => setCurrentPage(totalPages)} className="page-nav">Last</button>
+            <button disabled={currentPage === totalPages || totalPages === 0} onClick={() => setCurrentPage(currentPage + 1)} className="page-nav">Next</button>
+            <button disabled={currentPage === totalPages || totalPages === 0} onClick={() => setCurrentPage(totalPages)} className="page-nav">Last</button>
           </div>
         </div>
       </div>

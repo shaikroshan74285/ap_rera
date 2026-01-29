@@ -8,6 +8,7 @@ import Hero from "./hero.jsx";
 import Learning from "./Learning.jsx";
 import Philosophy from "./Philosophy.jsx";
 import Services from "./Services.jsx";
+import MisReports from './MisReports';
 
 const Home = () => {
   return (

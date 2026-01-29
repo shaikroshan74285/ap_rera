@@ -152,7 +152,8 @@ const Navbar = () => {
             >
             Statistics
           </li>
-              <li>MIS reports</li>
+               <li onClick={() => navigate("/mis-reports")}>
+              MIS reports</li>
               <li>GIS reports</li>
             </ul>
           </li>

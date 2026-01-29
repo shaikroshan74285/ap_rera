@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/reportPage.css';
-import approvedAgentData from '../data/ApprovedAgentData.json'; // Ensure this path is correct
+import approvedAgentData from '../data/ApprovedAgentData.json';
+
+// Import libraries for professional data export
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
+import * as XLSX from "xlsx";
 
 const ApprovedAgentReport = () => {
   // Map to the specific key in your JSON
@@ -30,32 +35,45 @@ const ApprovedAgentReport = () => {
     return pages;
   };
 
-  // CSV Export Logic
-  const downloadCSV = () => {
-    const headers = ["S.No.", "Registration Id", "Name", "Place", "Date of Submission", "Date of Approval", "Valid Till"];
-    const csvContent = [
-      headers.join(","),
-      ...filteredData.map(r => [
-        r["Sl.No"], 
-        r["Registration Id"], 
-        `"${r["Name"]}"`, 
-        `"${r["Place"]}"`,
-        r["Date of Submission"], 
-        r["Date of Approval"], 
-        r["Valid Till"]
-      ].join(","))
-    ].join("\n");
-    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = "Approved_Agent_Report.csv";
-    link.click();
+  // Professional Excel Export (Full Data)
+  const downloadExcel = () => {
+    const worksheet = XLSX.utils.json_to_sheet(filteredData);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Approved Agents");
+    XLSX.writeFile(workbook, "Approved_Agent_Report.xlsx");
+  };
+
+  // Professional PDF Export (Complete Data)
+  const downloadPDF = () => {
+    const doc = new jsPDF("l", "mm", "a4");
+    doc.setFontSize(16);
+    doc.text("Approved Agent Report", 14, 15);
+
+    const tableRows = filteredData.map((row) => [
+      row["Sl.No"],
+      row["Registration Id"],
+      row["Name"],
+      row["Place"],
+      row["Date of Submission"],
+      row["Date of Approval"],
+      row["Valid Till"]
+    ]);
+
+    autoTable(doc, {
+      head: [["S.No.", "Registration Id", "Name", "Place", "Submission Date", "Approval Date", "Valid Till"]],
+      body: tableRows,
+      startY: 22,
+      styles: { fontSize: 8 },
+      headStyles: { fillColor: [62, 83, 105] },
+    });
+
+    doc.save("Approved_Agent_Full_Report.pdf");
   };
 
   return (
     <div className="report-page-wrapper">
       <div className="breadcrumb-blue no-print">
-        You are here : <Link to="/" className="text-white underline">Home</Link> / <Link to="/mis-reports" className="text-white underline">MIS Reports</Link> / Approved Agent Report
+        You are here : <Link to="/" className="text-white underline" target="_blank" rel="noopener noreferrer">Home</Link> / <Link to="/mis-reports" className="text-white underline" target="_blank" rel="noopener noreferrer">MIS Reports</Link> / Approved Agent Report
       </div>
 
       <div className="report-card-container">
@@ -69,44 +87,57 @@ const ApprovedAgentReport = () => {
             </select> entries
           </div>
           <div className="export-search">
-            <div className="icons">
-              <i className="fas fa-file-excel excel" onClick={downloadCSV} title="Export to Excel"></i>
-              <i className="fas fa-file-pdf pdf" onClick={() => window.print()} title="Print PDF"></i>
+            <div className="icons" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <img 
+                src="https://cdn-icons-png.flaticon.com/512/732/732220.png" 
+                className="apr-icon-btn" 
+                alt="Excel" 
+                title="Export to Excel"
+                onClick={downloadExcel} 
+              />
+              <img 
+                src="https://cdn-icons-png.flaticon.com/512/337/337946.png" 
+                className="apr-icon-btn" 
+                alt="PDF" 
+                title="Download Full PDF"
+                onClick={downloadPDF} 
+              />
             </div>
             <div className="search-box">Search: <input type="text" value={searchTerm} onChange={(e) => {setSearchTerm(e.target.value); setCurrentPage(1);}} /></div>
           </div>
         </div>
 
-        <table className="rera-report-table">
-          <thead>
-            <tr>
-              <th>S.No.</th>
-              <th>Registration Id</th>
-              <th>Name</th>
-              <th>Place</th>
-              <th>Date of Submission</th>
-              <th>Date of Approval</th>
-              <th>Valid Till</th>
-            </tr>
-          </thead>
-          <tbody>
-            {currentItems.length > 0 ? currentItems.map((row, index) => (
-              <tr key={index}>
-                <td>{row["Sl.No"]}</td>
-                <td className="blue-text">{row["Registration Id"]}</td>
-                <td className="text-left">{row["Name"]}</td>
-                <td className="text-left">{row["Place"]}</td>
-                <td>{row["Date of Submission"]}</td>
-                <td>{row["Date of Approval"]}</td>
-                <td>{row["Valid Till"]}</td>
+        <div className="table-responsive">
+          <table className="rera-report-table">
+            <thead>
+              <tr>
+                <th>S.No.</th>
+                <th>Registration Id</th>
+                <th>Name</th>
+                <th>Place</th>
+                <th>Date of Submission</th>
+                <th>Date of Approval</th>
+                <th>Valid Till</th>
               </tr>
-            )) : (
-              <tr><td colSpan="7" style={{padding: '20px'}}>No records found</td></tr>
-            )}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {currentItems.length > 0 ? currentItems.map((row, index) => (
+                <tr key={index}>
+                  <td>{row["Sl.No"]}</td>
+                  <td className="blue-text font-bold">{row["Registration Id"]}</td>
+                  <td className="text-left">{row["Name"]}</td>
+                  <td className="text-left">{row["Place"]}</td>
+                  <td>{row["Date of Submission"]}</td>
+                  <td>{row["Date of Approval"]}</td>
+                  <td>{row["Valid Till"]}</td>
+                </tr>
+              )) : (
+                <tr><td colSpan="7" style={{padding: '20px', textAlign: 'center'}}>No records found</td></tr>
+              )}
+            </tbody>
+          </table>
+        </div>
 
-        {/* Pagination Footer */}
         <div className="pagination-footer no-print">
           <div className="pagination-info">Showing {filteredData.length > 0 ? indexOfFirstItem + 1 : 0} to {Math.min(indexOfLastItem, filteredData.length)} of {filteredData.length} entries</div>
           <div className="pagination-buttons">
@@ -115,8 +146,8 @@ const ApprovedAgentReport = () => {
             {getPageNumbers().map(num => (
               <button key={num} onClick={() => setCurrentPage(num)} className={`page-num ${currentPage === num ? 'active' : ''}`}>{num}</button>
             ))}
-            <button disabled={currentPage === totalPages} onClick={() => setCurrentPage(currentPage + 1)} className="page-nav">Next</button>
-            <button disabled={currentPage === totalPages} onClick={() => setCurrentPage(totalPages)} className="page-nav">Last</button>
+            <button disabled={currentPage === totalPages || totalPages === 0} onClick={() => setCurrentPage(currentPage + 1)} className="page-nav">Next</button>
+            <button disabled={currentPage === totalPages || totalPages === 0} onClick={() => setCurrentPage(totalPages)} className="page-nav">Last</button>
           </div>
         </div>
       </div>

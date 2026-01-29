@@ -137,7 +137,11 @@ import R12_1 from './pages/R12_1';
 import R12_2 from './pages/R12_2';
 import R12_3 from './pages/R12_3';
 import R12_4 from './pages/R12_4';
-
+import R25_1 from "./pages/R25_1";
+import R25_2 from "./pages/R25-2";
+import R25_3 from "./pages/R25_3";
+import R15_1 from "./pages/R15_1";
+import R19_1 from "./pages/R19_1";
 
 function App() {
   return (
@@ -276,6 +280,11 @@ function App() {
              <Route path="/reports/R12.2" element={<R12_2 />} />
              <Route path="/reports/R12.3" element={<R12_3 />} />
              <Route path="/reports/R12.4" element={<R12_4 />} />
+             <Route path="/reports/R25.1" element={<R25_1 />} />
+             <Route path="/reports/R25.2" element={<R25_2 />} />
+             <Route path="/reports/R25.3" element={<R25_3 />} />
+             <Route path="/reports/R15.1" element={<R15_1 />} />
+             <Route path="/reports/R19.1" element={<R19_1 />} />
 
 
 

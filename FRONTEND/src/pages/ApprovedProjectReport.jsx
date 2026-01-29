@@ -1,22 +1,24 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/reportPage.css';
-import approvedData from '../data/ApprovedProjectData.json'; // Ensure this path is correct
+import approvedData from '../data/ApprovedProjectData.json';
+
+// Import libraries for professional data export
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
+import * as XLSX from "xlsx";
 
 const ApprovedProjectReport = () => {
-  // Map to the specific key in your JSON
   const allData = approvedData["Approved Project Report"] || [];
   
   const [searchTerm, setSearchTerm] = useState("");
   const [itemsPerPage, setItemsPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Filter Logic based on search input
   const filteredData = allData.filter(item => 
     Object.values(item).some(val => String(val).toLowerCase().includes(searchTerm.toLowerCase()))
   );
 
-  // Pagination Logic
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -30,33 +32,45 @@ const ApprovedProjectReport = () => {
     return pages;
   };
 
-  // CSV Export Logic (No external libraries required)
-  const downloadCSV = () => {
-    const headers = ["S.No.", "APRERA Registration ID", "Project Name", "Place", "Project Type", "Status", "Date of Approval", "Expected Date of Completion"];
-    const csvContent = [
-      headers.join(","),
-      ...filteredData.map(r => [
-        r["S.No."], 
-        r["APRERA Registration ID"], 
-        `"${r["Project Name"]}"`, 
-        `"${r["Place"]}"`,
-        r["Project Type"], 
-        r["Status"], 
-        r["Date of Approval"], 
-        r["Expected Date of Completion"]
-      ].join(","))
-    ].join("\n");
-    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = "Approved_Project_Report.csv";
-    link.click();
+  const downloadExcel = () => {
+    const worksheet = XLSX.utils.json_to_sheet(filteredData);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Approved Projects");
+    XLSX.writeFile(workbook, "Approved_Project_Report.xlsx");
+  };
+
+  const downloadPDF = () => {
+    const doc = new jsPDF("l", "mm", "a4");
+    doc.setFontSize(16);
+    doc.text("Approved Project Report", 14, 15);
+
+    const tableRows = filteredData.map((row) => [
+      row["S.No."],
+      row["APRERA Registration ID"],
+      row["Project Name"],
+      row["Place"],
+      row["Project Type"],
+      row["Status"],
+      row["Date of Approval"],
+      row["Expected Date of Completion"],
+    ]);
+
+    autoTable(doc, {
+      head: [["S.No.", "Registration ID", "Project Name", "Place", "Type", "Status", "Approval Date", "Completion Date"]],
+      body: tableRows,
+      startY: 22,
+      styles: { fontSize: 8 },
+      headStyles: { fillColor: [0, 123, 255] },
+    });
+
+    doc.save("Approved_Project_Full_Report.pdf");
   };
 
   return (
     <div className="report-page-wrapper">
+      {/* 🔹 target="_blank" added to open links in new tab */}
       <div className="breadcrumb-blue no-print">
-        You are here : <Link to="/" className="text-white underline">Home</Link> / <Link to="/mis-reports" className="text-white underline">MIS Reports</Link> / Approved Project Report
+        You are here : <Link to="/" className="text-white underline" target="_blank">Home</Link> / <Link to="/mis-reports" className="text-white underline" target="_blank">MIS Reports</Link> / Approved Project Report
       </div>
 
       <div className="report-card-container">
@@ -71,45 +85,60 @@ const ApprovedProjectReport = () => {
           </div>
           <div className="export-search">
             <div className="icons">
-              <i className="fas fa-file-excel excel" onClick={downloadCSV} title="Export to Excel"></i>
-              <i className="fas fa-file-pdf pdf" onClick={() => window.print()} title="Print PDF"></i>
+              {/* 🔹 High-quality icons added here */}
+              <img 
+                src="https://cdn-icons-png.flaticon.com/512/732/732220.png" 
+                className="apr-icon-btn" 
+                alt="Excel" 
+                title="Export to Excel"
+                onClick={downloadExcel} 
+              />
+              <img 
+                src="https://cdn-icons-png.flaticon.com/512/337/337946.png" 
+                className="apr-icon-btn" 
+                alt="PDF" 
+                title="Download Full PDF"
+                style={{marginLeft: '10px'}}
+                onClick={downloadPDF} 
+              />
             </div>
             <div className="search-box">Search: <input type="text" value={searchTerm} onChange={(e) => {setSearchTerm(e.target.value); setCurrentPage(1);}} /></div>
           </div>
         </div>
 
-        <table className="rera-report-table">
-          <thead>
-            <tr>
-              <th>S.No.</th>
-              <th>APRERA Registration ID</th>
-              <th>Project Name</th>
-              <th>Place</th>
-              <th>Project Type</th>
-              <th>Status</th>
-              <th>Date of Approval</th>
-              <th>Expected Date of Completion</th>
-            </tr>
-          </thead>
-          <tbody>
-            {currentItems.length > 0 ? currentItems.map((row, index) => (
-              <tr key={index}>
-                <td>{row["S.No."]}</td>
-                <td className="blue-text">{row["APRERA Registration ID"]}</td>
-                <td className="text-left">{row["Project Name"]}</td>
-                <td className="text-left">{row["Place"]}</td>
-                <td>{row["Project Type"]}</td>
-                <td>{row["Status"]}</td>
-                <td>{row["Date of Approval"]}</td>
-                <td>{row["Expected Date of Completion"]}</td>
+        <div className="table-responsive">
+          <table className="rera-report-table">
+            <thead>
+              <tr>
+                <th>S.No.</th>
+                <th>Registration ID</th>
+                <th>Project Name</th>
+                <th>Place</th>
+                <th>Project Type</th>
+                <th>Status</th>
+                <th>Approval Date</th>
+                <th>Completion Date</th>
               </tr>
-            )) : (
-              <tr><td colSpan="8" style={{padding: '20px'}}>No records found</td></tr>
-            )}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {currentItems.length > 0 ? currentItems.map((row, index) => (
+                <tr key={index}>
+                  <td>{row["S.No."]}</td>
+                  <td className="blue-text font-bold">{row["APRERA Registration ID"]}</td>
+                  <td className="text-left min-w-200">{row["Project Name"]}</td>
+                  <td className="text-left min-w-300">{row["Place"]}</td>
+                  <td>{row["Project Type"]}</td>
+                  <td>{row["Status"]}</td>
+                  <td>{row["Date of Approval"]}</td>
+                  <td>{row["Expected Date of Completion"]}</td>
+                </tr>
+              )) : (
+                <tr><td colSpan="8" style={{padding: '20px'}}>No records found</td></tr>
+              )}
+            </tbody>
+          </table>
+        </div>
 
-        {/* Pagination Footer */}
         <div className="pagination-footer no-print">
           <div className="pagination-info">Showing {filteredData.length > 0 ? indexOfFirstItem + 1 : 0} to {Math.min(indexOfLastItem, filteredData.length)} of {filteredData.length} entries</div>
           <div className="pagination-buttons">
@@ -118,8 +147,8 @@ const ApprovedProjectReport = () => {
             {getPageNumbers().map(num => (
               <button key={num} onClick={() => setCurrentPage(num)} className={`page-num ${currentPage === num ? 'active' : ''}`}>{num}</button>
             ))}
-            <button disabled={currentPage === totalPages} onClick={() => setCurrentPage(currentPage + 1)} className="page-nav">Next</button>
-            <button disabled={currentPage === totalPages} onClick={() => setCurrentPage(totalPages)} className="page-nav">Last</button>
+            <button disabled={currentPage === totalPages || totalPages === 0} onClick={() => setCurrentPage(currentPage + 1)} className="page-nav">Next</button>
+            <button disabled={currentPage === totalPages || totalPages === 0} onClick={() => setCurrentPage(totalPages)} className="page-nav">Last</button>
           </div>
         </div>
       </div>

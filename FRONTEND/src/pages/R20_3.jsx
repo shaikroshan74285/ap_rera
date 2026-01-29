@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/reportPage.css';
-import builtUpData from '../data/R20_3_Data.json'; // Ensure this matches your JSON filename
+import builtUpData from '../data/R20_3_Data.json';
+
+// Import libraries for professional data export
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
+import * as XLSX from "xlsx";
 
 const R20_3 = () => {
   // Map to the "TotalBuildulpAreaReport" key from your JSON sample
@@ -30,38 +35,54 @@ const R20_3 = () => {
     return pages;
   };
 
-  // CSV Export Logic
-  const downloadCSV = () => {
-    const headers = [
-        "S.No.", 
-        "Registered ID", 
-        "Project Name", 
-        "Promoter Name",
-        "Location",
-        "Total Built-Up Area"
-    ];
-    const csvContent = [
-      headers.join(","),
-      ...filteredData.map(r => [
-        `"${r["S.No."]}"`, 
-        `"${r["Registered ID"]}"`,
-        `"${r["Project Name"]}"`,
-        `"${r["Promoter Name"]}"`,
-        `"${r["Location"].replace(/"/g, '""')}"`, // Handles semicolons/commas in addresses
-        `"${r["Total BuiltUp Area"]}"`
-      ].join(","))
-    ].join("\n");
-    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = "Total_BuiltUp_Area_Report_R20_3.csv";
-    link.click();
+  // Professional Excel Export (Complete Data)
+  const downloadExcel = () => {
+    const worksheet = XLSX.utils.json_to_sheet(filteredData.map(r => ({
+      "S.No.": r["S.No."],
+      "Registered ID": r["Registered ID"],
+      "Project Name": r["Project Name"],
+      "Promoter Name": r["Promoter Name"],
+      "Location": r["Location"],
+      "Total Built-Up Area (sq.mt)": r["Total BuiltUp Area"]
+    })));
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Built-Up Area Report");
+    XLSX.writeFile(workbook, "Total_BuiltUp_Area_Report_R20_3.xlsx");
+  };
+
+  // Professional PDF Export (Complete Data)
+  const downloadPDF = () => {
+    const doc = new jsPDF("l", "mm", "a4");
+    doc.setFontSize(16);
+    doc.text("Total Built-Up Area Report", 14, 15);
+
+    const tableRows = filteredData.map((row) => [
+      row["S.No."],
+      row["Registered ID"],
+      row["Project Name"],
+      row["Promoter Name"],
+      row["Location"],
+      row["Total BuiltUp Area"]
+    ]);
+
+    autoTable(doc, {
+      head: [["S.No.", "Registered ID", "Project Name", "Promoter Name", "Location", "Area (sq.mt)"]],
+      body: tableRows,
+      startY: 22,
+      styles: { fontSize: 8 },
+      headStyles: { fillColor: [62, 83, 105] },
+      columnStyles: {
+        4: { cellWidth: 80 } // Optimize Location column width in PDF
+      }
+    });
+
+    doc.save("Total_BuiltUp_Area_Full_Report_R20_3.pdf");
   };
 
   return (
     <div className="report-page-wrapper">
       <div className="breadcrumb-blue no-print">
-        You are here : <Link to="/" className="text-white underline">Home</Link> / <Link to="/mis-reports" className="text-white underline">MIS Reports</Link> / R20.3 Total Built-Up Area Report
+        You are here : <Link to="/" className="text-white underline" target="_blank" rel="noopener noreferrer">Home</Link> / <Link to="/mis-reports" className="text-white underline" target="_blank" rel="noopener noreferrer">MIS Reports</Link> / R20.3 Total Built-Up Area Report
       </div>
 
       <div className="report-card-container">
@@ -75,42 +96,55 @@ const R20_3 = () => {
             </select> entries
           </div>
           <div className="export-search">
-            <div className="icons">
-              <i className="fas fa-file-excel excel" onClick={downloadCSV} title="Export to Excel"></i>
-              <i className="fas fa-file-pdf pdf" onClick={() => window.print()} title="Print PDF"></i>
+            <div className="icons" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <img 
+                src="https://cdn-icons-png.flaticon.com/512/732/732220.png" 
+                className="apr-icon-btn" 
+                alt="Excel" 
+                title="Export to Excel"
+                onClick={downloadExcel} 
+              />
+              <img 
+                src="https://cdn-icons-png.flaticon.com/512/337/337946.png" 
+                className="apr-icon-btn" 
+                alt="PDF" 
+                title="Download Full PDF"
+                onClick={downloadPDF} 
+              />
             </div>
             <div className="search-box">Search: <input type="text" value={searchTerm} onChange={(e) => {setSearchTerm(e.target.value); setCurrentPage(1);}} /></div>
           </div>
         </div>
 
-        <table className="rera-report-table">
-          <thead>
-            <tr>
-              <th>S.No.</th>
-              <th>Registered ID</th>
-              <th>Project Name</th>
-              <th>Promoter Name</th>
-              <th>Location</th>
-              <th>Total Built-Up Area (sq.mt)</th>
-            </tr>
-          </thead>
-          <tbody>
-            {currentItems.length > 0 ? currentItems.map((row, index) => (
-              <tr key={index}>
-                <td>{row["S.No."]}</td>
-                <td className="blue-text font-bold">{row["Registered ID"]}</td>
-                <td className="text-left">{row["Project Name"]}</td>
-                <td className="text-left">{row["Promoter Name"]}</td>
-                <td className="text-left text-sm">{row["Location"]}</td>
-                <td className="font-bold">{row["Total BuiltUp Area"]}</td>
+        <div className="table-responsive">
+          <table className="rera-report-table">
+            <thead>
+              <tr>
+                <th>S.No.</th>
+                <th>Registered ID</th>
+                <th>Project Name</th>
+                <th>Promoter Name</th>
+                <th>Location</th>
+                <th>Total Built-Up Area (sq.mt)</th>
               </tr>
-            )) : (
-              <tr><td colSpan="6" style={{padding: '20px', textAlign: 'center'}}>No records found</td></tr>
-            )}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {currentItems.length > 0 ? currentItems.map((row, index) => (
+                <tr key={index}>
+                  <td>{row["S.No."]}</td>
+                  <td className="blue-text font-bold">{row["Registered ID"]}</td>
+                  <td className="text-left">{row["Project Name"]}</td>
+                  <td className="text-left">{row["Promoter Name"]}</td>
+                  <td className="text-left text-sm">{row["Location"]}</td>
+                  <td className="font-bold">{row["Total BuiltUp Area"]}</td>
+                </tr>
+              )) : (
+                <tr><td colSpan="6" style={{padding: '20px', textAlign: 'center'}}>No records found</td></tr>
+              )}
+            </tbody>
+          </table>
+        </div>
 
-        {/* Pagination Footer */}
         <div className="pagination-footer no-print">
           <div className="pagination-info">Showing {filteredData.length > 0 ? indexOfFirstItem + 1 : 0} to {Math.min(indexOfLastItem, filteredData.length)} of {filteredData.length} entries</div>
           <div className="pagination-buttons">
@@ -119,8 +153,8 @@ const R20_3 = () => {
             {getPageNumbers().map(num => (
               <button key={num} onClick={() => setCurrentPage(num)} className={`page-num ${currentPage === num ? 'active' : ''}`}>{num}</button>
             ))}
-            <button disabled={currentPage === totalPages} onClick={() => setCurrentPage(currentPage + 1)} className="page-nav">Next</button>
-            <button disabled={currentPage === totalPages} onClick={() => setCurrentPage(totalPages)} className="page-nav">Last</button>
+            <button disabled={currentPage === totalPages || totalPages === 0} onClick={() => setCurrentPage(currentPage + 1)} className="page-nav">Next</button>
+            <button disabled={currentPage === totalPages || totalPages === 0} onClick={() => setCurrentPage(totalPages)} className="page-nav">Last</button>
           </div>
         </div>
       </div>
